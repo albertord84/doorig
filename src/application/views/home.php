@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Mirrored from www.kiathemes.in/tf/busizone/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Dec 2018 03:40:20 GMT -->
     <head>
 	<meta charset="UTF-8">
 	<title>Maior visibilidade no Instagram</title>
-	<!-- responsive meta -->
+	
+        <!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- For IE -->
+	
+        <!-- For IE -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- master stylesheet -->
+	
+        <!-- master stylesheet -->
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css">
-	<!-- Responsive stylesheet -->
+        
+        <!-- Minified Bootstrap 3 CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Responsive stylesheet -->
         <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href=<?php echo base_url().'assets/'?>"css/responsive.css">
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">
+        
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
-<!--        <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon-16x16.png" sizes="16x16">-->
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
-        <!-- Fixing Internet Explorer-->
-        <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script src="js/html5shiv.js"></script>
-        <![endif]-->
     </head>
 
     <body>
+        <A name="lnk_home_start"></A>
         <div class="boxed_wrapper">
             <!-- Start Preloader -->
             <div class="loader-container">
               <div class="progress-circle float loader-shadow">
                 <div class="progress-item">
-                    <img src="<?php echo base_url().'assets/'?>images/resources/logo.png" width="65%" height="80%" alt="logo">
+                    <img src="<?php echo base_url().'assets/'?>images/resources/logo-header.png" width="65%" height="80%" alt="logo">
                 </div>
               </div>
             </div>
@@ -49,13 +50,9 @@
                         <div class="top-right">
                             <h6>Siga-nos</h6>
                         </div>
-                        <ul class="social-links">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>|
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-<!--                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
+                        <ul class="social-links" style="top:80px">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/doorigisyoursolution/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,7 +66,7 @@
                         <div class="col-md-3 col-sm-12 col-xs-12">
                             <div class="logo">
                                 <a href="#">
-                                    <img src="<?php echo base_url().'assets/'?>images/resources/logo.png" alt="Awesome Logo">
+                                    <img src="<?php echo base_url().'assets/'?>images/resources/logo-header.png" alt="Awesome Logo">
                                 </a>
                             </div>
                         </div>
@@ -81,19 +78,10 @@
                                             <span class="flaticon-pin"></span>
                                         </div>
                                         <div class="text-holder">
-                                            <h6>Coronel Moreira César, 160</h6>
+                                            <h6>Cel. Moreira César, 160</h6>
                                             <p>Icaraí, Niterói - RJ, 24230-061</p>
                                         </div>
                                     </li>
-<!--                                    <li>
-                                        <div class="iocn-holder">
-                                            <span class="flaticon-call"></span>
-                                        </div>
-                                        <div class="text-holder">
-                                            <h6>Call Free</h6>
-                                            <p>+24-554-246-2466</p>
-                                        </div>
-                                    </li>-->
                                     <li>
                                         <div class="iocn-holder">
                                             <span class="flaticon-clock"></span>
@@ -127,76 +115,23 @@
                                         </button>
                                     </div>
                                     <div class="navbar-collapse collapse clearfix">
-                                                <ul class="navigation clearfix">
-<!--                                                    <li class="dropdown"><a href="#">Home</a>
-                                                        <ul>
-                                                            <li><a href="index-2.html">Home Demo 1</a></li>
-                                                            <li><a href="index-3.html">Home Demo 2</a></li>
-                                                            <li><a href="index-4.html">Home Demo 3</a></li>
-                                                            <li><a href="index-5.html">Home Demo 4</a></li>
-                                                            <li><a href="index-6.html">Home Demo 5</a></li>
-                                                            <li><a href="index-7.html">Home Demo 6</a></li>
-                                                        </ul>
-                                                    </li>-->
-                                                    <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs'?>">FAQs</a>
-<!--                                                        <ul>
-                                                            <li><a href="about.html">About Style 1</a></li>
-                                                            <li><a href="about-1.html">About Style 2</a></li>
-                                                        </ul>-->
-                                                    </li>
-<!--                                                    <li class="dropdown"><a href="#">Our Services</a>
-                                                        <ul>
-                                                            <li><a href="services.html">Services Version 1</a></li>
-                                                            <li><a href="services-1.html">Services Version 2</a></li>
-                                                            <li><a href="services-2.html">Services Version 3</a></li>
-                                                            <li><a href="services-details.html">Services Details V1</a></li>
-                                                            <li><a href="services-details-1.html">Services Details V2</a></li>
-                                                        </ul>
-                                                    </li>-->
-                                                    <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a>
-<!--                                                        <ul>
-                                                            <li><a href="faq.html">Our Faq Style 1</a></li>
-                                                            <li><a href="faq-1.html">Our Faq Style 2</a></li>
-                                                            <li><a href="404.html">404 Style 1</a></li>
-                                                            <li><a href="404-1.html">404 Style 2</a></li>
-                                                        </ul>-->
-                                                    </li>
-                                                    <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a>
-<!--                                                        <ul>
-                                                            <li><a href="project.html">Projects Version 1</a></li>
-                                                            <li><a href="project-1.html">Projects Version 2</a></li>
-                                                            <li><a href="single-project.html">Projects  details V1</a></li>
-                                                            <li><a href="single-project-1.html">Projects  details V2</a></li>
-                                                        </ul>-->
-                                                    </li>
-<!--                                                    <li class="dropdown"><a href="#">Blog</a>
-                                                        <ul>
-                                                            <li><a href="blog.html">Blog Style 1</a></li>
-                                                            <li><a href="blog-1.html">Blog Style 2</a></li>
-                                                            <li><a href="blog-2.html">Blog Style 3</a></li>
-                                                            <li><a href="blog-3.html">Blog Style 4</a></li>
-                                                            <li><a href="blog-4.html">Blog Style 5</a></li>
-                                                            <li><a href="blog-5.html">Blog Style 6</a></li>
-                                                            <li><a href="blog-6.html">Blog Style 7</a></li>
-                                                            <li><a href="blog-single.html">Blog Details V1</a></li>
-                                                            <li><a href="blog-single-1.html">Blog Details V2</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown"><a href="contact.html">Contact</a>
-                                                        <ul>
-                                                            <li><a href="contact.html">Contact Style 1</a></li>
-                                                            <li><a href="contact-1.html">Contact Style 2</a></li>
-                                                        </ul>
-                                                    </li>-->
-                                                </ul>
-                                            </div>
+                                        <ul class="navigation clearfix">
+                                            <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a>                                                        
+                                            </li>
+                                            <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a>
+                                            </li>
+                                            <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a>
+                                            </li>
+                                            <li class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </nav>
                                 <!--End mainmenu-->
-
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="free-consulation-button pull-right">
-                                    <a class="thm-btn bg-clr1" href="#">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
                                 </div>
                             </div>
                         </div>
@@ -211,8 +146,8 @@
                 <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
                     <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
                         <ul>
-                            <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="<?php echo base_url().'assets/'?>images/slides/doorig-1.jpg" data-title="Slide Title" data-transition="">
-                                <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="" data-bgposition="center top" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo base_url().'assets/'?>images/slides/doorig-1.jpg"> 
+                            <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="<?php echo base_url().'assets/'?>images/slides/doorig-5.jpg" data-title="Slide Title" data-transition="">
+                                <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="" data-bgposition="center top" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo base_url().'assets/'?>images/slides/doorig-5.jpg"> 
                                 <div class="tp-caption" 
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
@@ -269,13 +204,13 @@
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
                                         <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
-                                        <a href="<?php echo base_url().'index.php/welcome/faqs'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                        <a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
                             </li>
 
-<!--                            <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="<?php echo base_url().'assets/'?><?php echo base_url().'assets/'?>images/slides/2.jpg" data-title="Slide Title" data-transition="">
-                                <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="0" data-bgposition="center top" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo base_url().'assets/'?>images/slides/2.jpg">
+                            <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="<?php echo base_url().'assets/'?><?php echo base_url().'assets/'?>images/slides/doorig-3.jpg" data-title="Slide Title" data-transition="">
+                                <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="0" data-bgposition="center top" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo base_url().'assets/'?>images/slides/doorig-3.jpg">
                                 <div class="tp-caption" 
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
@@ -292,7 +227,7 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <h1>Provide best <br>Consulting Services.</h1>
+                                    <h1>Seja bem-vindo.<br>Você tém a solução aqui!</h1>
                                 </div>
 
                                 <div class="tp-caption" 
@@ -311,7 +246,7 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <div class="text">How all this mistaken Idea Of Denouncing Pleasure and Praising will give you a Complete Account of the System Solution.</div>
+                                    <div class="text">Aumente sua visibilidade no Instagram. Interaja com atuais e futuros clientes. Automatize funções. Controle suas estatísticas.</div>
                                 </div>
 
                                 <div class="tp-caption tp-resizeme" 
@@ -331,11 +266,11 @@
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
-                                        <a href="#" class="thm-btn bg-clr1">Learn More</a>
-                                        <a href="contact.html" class="thm-btn bg-clr2">Contact Us</a>
-                                    </div>
+                                        <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
+                                        <a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                    </div> 
                                 </div>
-                            </li>                    -->
+                            </li>                    
                         </ul>
                     </div>
                 </div>
@@ -350,7 +285,6 @@
                             <div class="sec-title text-center">
                                 <h2>Como podemos ajudar você?</h2>
                                 <span class="border"></span>
-                                <!--<p>Lorem ipsum dolor  amet mi ultricies interdum pede eu vestibulum vulputate maurimtum <br>commod rhoncus consectetuer reduce producet</p>-->
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -627,94 +561,6 @@
             </section>
             <!--End fact counter area-->
 
-            <!--Start tema area-->
-<!--            <section class="team-sec">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="sec-title text-center">
-                                <h2>Meet Our Team</h2>
-                                <span class="border"></span>
-                                <p>Lorem ipsum dolor  amet mi ultricies interdum pede eu vestibulum vulputate maurimtum <br>commod rhoncus consectetuer reduce producet</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="team-single text-center">
-                                <figure><img src="<?php echo base_url().'assets/'?>images/team/team-1.jpg" alt="team"></figure>
-                                <div class="overlay">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="text-bottom">
-                                    <h5>Madaline Gibson</h5>
-                                    <h6>Insurance Advisor</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="team-single text-center">
-                                <figure><img src="<?php echo base_url().'assets/'?>images/team/team-2.jpg" alt="team"></figure>
-                                <div class="overlay">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="text-bottom">
-                                    <h5>Alejandra Pollich</h5>
-                                    <h6>Insurance Advisor</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="team-single text-center">
-                                <figure><img src="<?php echo base_url().'assets/'?>images/team/team-3.jpg" alt="team"></figure>
-                                <div class="overlay">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="text-bottom">
-                                    <h5>Dixie Armstrong</h5>
-                                    <h6>Insurance Advisor</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="team-single text-center">
-                                <figure><img src="<?php echo base_url().'assets/'?>images/team/team-4.jpg" alt="team"></figure>
-                                <div class="overlay">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="text-bottom">
-                                    <h5>Jeanette Gottlieb</h5>
-                                    <h6>Insurance Advisor</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
-            <!--End tema area-->
-
             <!--Client Section-->
             <section class="client-sec">
                 <div class="container">
@@ -814,39 +660,38 @@
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <div class="form-sec">
-                                <form name="contact_form" class="default-form contact-form" 
-                                method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="text" name="name" placeholder="Seu nome" required="">
-                                        </div>                                                    
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
-                                        </div>                  
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="tel" name="phone" placeholder="Telefone (opcional)" required="">
-                                        </div>                                                    
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="tel" name="phone" placeholder="Profissão (opcional)" required="">
-                                        </div>                 
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <textarea name="form_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
+                                <form name="contact_form" class="default-form contact-form" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="text" name="name" placeholder="Seu nome" required="">
+                                            </div>                                                    
                                         </div>
-                                        <div class="form-group text-center">
-                                            <button type="submit" class="thm-btn bg-clr2">Enviar agora</button>
-                                        </div>                            
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="Email" required="">
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="tel" name="phone" placeholder="Telefone (opcional)" required="">
+                                            </div>                                                    
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="tel" name="phone" placeholder="Profissão (opcional)" required="">
+                                            </div>                 
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <textarea name="form_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
+                                            </div>
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="thm-btn bg-clr2">Enviar agora</button>
+                                            </div>                            
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
                             </div>
                         </div>
                         
@@ -1055,19 +900,18 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="single-footer-widget pd-bottom">
                                 <div class="footer-logo">
-                                    <a href="index-3.html">
-                                        <img src="<?php echo base_url().'assets/'?>images/footer/footer-logo.png" alt="Awesome Footer Logo">
+                                    <a href="#lnk_home_start">
+                                        <img src="<?php echo base_url().'assets/'?>images/resources/logo-footer-white.png" width="65%" height="80%" alt="Awesome Footer Logo">
                                     </a>
                                 </div>
                                 <div class="our-info">
-                                    <p>Lorem ipsum dolor sit amet, semnger esapie tempus,aliquam silitud aquam vitae, fugiat poere incididunt, nbero. Nunc camcorper  vphasellus </p>
+                                    <p>Soluções tecnológicas para aumentar sua vissibilidade.</p>
+                                    <p>Coronel Moreira César, 160, Icaraí, Niterói - RJ, 24230-061.</p>
+                                    <p>CNPJ - 999.9999.9999.99</p>
                                 </div>
-                                <ul class="footer-social-links">
+                                <ul class="footer-social-links" style="margin-left: 20%">
                                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.instagram.com/doorigisyoursolution/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1078,15 +922,15 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="single-footer-widget pd-top pd-left">
                                  <div class="title">
-                                    <h5>NewsLetter</h5>
+                                    <h5>Notícias e promoções?</h5>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consect etur adipisicing.</p>
+                                <p>Subscreva-se e receba nossas notícias e novidades em primeira mão!</p>
                                 <form name="contact_form" class="default-form contact-form" method="post">
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Enter your email" required="">
+                                        <input type="email" name="email" placeholder="Seu email" required="">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="thm-btn bg-clr4">Subscribe</button>
+                                        <button type="submit" class="thm-btn bg-clr4">Subscrever</button>
                                     </div>
                                 </form>               
                             </div>
@@ -1115,25 +959,34 @@
 
             <!-- main jQuery -->
             <script src="<?php echo base_url().'assets/'?>js/jquery.min.js"></script>
+            
             <!-- bootstrap -->
             <script src="<?php echo base_url().'assets/'?>js/bootstrap.min.js"></script>
+            
             <!-- count to -->
             <script src="<?php echo base_url().'assets/'?>js/jquery.countTo.js"></script>
+            
             <!-- validate -->
             <script src="<?php echo base_url().'assets/'?>js/validation.js"></script>
+            
             <!-- owl carousel -->
             <script src="<?php echo base_url().'assets/'?>js/owl.carousel.min.js"></script>
+            
             <!-- mixit up -->
             <script src="<?php echo base_url().'assets/'?>js/jquery.mixitup.min.js"></script>
+            
             <!-- fancy box -->
             <script src="<?php echo base_url().'assets/'?>js/jquery.fancybox.pack.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/jquery.appear.js"></script>
+            
             <!-- isotope script-->
             <script src="<?php echo base_url().'assets/'?>js/isotope.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/lightbox.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/jquery.magnific-popup.min.js"></script>
+            
             <!-- Bootstrap select picker js -->
             <script src="<?php echo base_url().'assets/'?>bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
+            
             <!-- Bootstrap bootstrap touchspin js -->
             <!-- jQuery ui js -->
             <script src="<?php echo base_url().'assets/'?>jquery-ui-1.11.4/jquery-ui.js"></script>
@@ -1151,9 +1004,9 @@
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/main-slider-script.js"></script>
+            
             <!-- thm custom script -->
             <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
         </div>
     </body>
-    <!-- Mirrored from www.kiathemes.in/tf/busizone/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Dec 2018 03:42:26 GMT -->
 </html>

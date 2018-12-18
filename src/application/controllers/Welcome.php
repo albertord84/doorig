@@ -25,7 +25,11 @@ class Welcome extends CI_Controller {
         $this->load->view('home', $param);
     }
     
-    public function faqs() {
+    public function login_view() {
+        $this->load->view('secondary-pages/login');
+    }
+    
+    public function faqs_view() {
         $this->load->view('secondary-pages/faq');
     }
     

@@ -45,7 +45,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700,700i|Roboto:400,400i,500,700,900');
 
 @import url(imp.css);
-@import url(bootstrap.min.css);
+/*@import url(bootstrap.min.css);*/
 @import url(font-awesome.min.css);
 @import url(hover.css);
 @import url(owl.carousel.min.css);
@@ -59,9 +59,9 @@
 @import url('magnific-popup.css');
 
 /*** Jquery ui css ***/
-@import url(../assets/jquery-ui-1.11.4/jquery-ui.css);
+@import url(../jquery-ui-1.11.4/jquery-ui.css);
 /*** Bootstrap select picker css ***/
-@import url(../assets/bootstrap-sl-1.12.1/bootstrap-select.css);
+@import url(../bootstrap-sl-1.12.1/bootstrap-select.css);
 
 
 /*==============================================
@@ -2031,7 +2031,7 @@ select:focus {
 .erinyen.tp-bullets::before {
 
   background: linear-gradient(to bottom, #818181 0%,#818181 100%) !important;
-  filter: progid:dximagetransform.microsoft.gradient( startcolorstr="#818181"!important, endcolorstr="#818181"!important,gradienttype=0 );
+  filter: progid:dximagetransform.microsoft.gradient( startcolorstr=="#818181"!important, endcolorstr=="#818181"!important,gradienttype=0 );
   border-radius: 35px !important;
   box-shadow: 0px 0px 0px 0px rgba(129,129,129,1) !important;
   -webkit-transition: all 0.7s ease-in;
@@ -5843,7 +5843,7 @@ select:focus {
   color: #212121;
   font-weight: 500;
   line-height: 24px;
-  font-family: "Poppins". sans-serif;
+  font-family: "Poppins sans-serif";
 }
 .blog-details.style-two .left-side .item span {
   font-size: 14px;
@@ -9226,7 +9226,7 @@ select:focus {
   margin-top: 30px;
 }
 .about-me .social-links li {
-  display: ;
+  display: anything;
   display: inline-block;
   margin-right: 17px;
 }
@@ -9766,4 +9766,10 @@ border-top: 1px solid #3d4447;
   color: #292929;
   font-size: 30px;
   font-weight: 500;
+}
+
+@media (min-width: 800px) {
+  .entrar {
+    display: none;
+  }
 }
