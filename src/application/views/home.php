@@ -37,6 +37,7 @@
               </div>
             </div>
             <!-- End Preloader -->  
+         <?php var_dump(base_url());die();?>
 
             <!--Start Top bar area -->  
             <section class="top-bar-area">
@@ -58,7 +59,6 @@
                 </div>
             </section>
             <!--End Top bar area --> 
- 
             <!--Start header area-->
             <header class="header-area">
                 <div class="container">
@@ -116,13 +116,10 @@
                                     </div>
                                     <div class="navbar-collapse collapse clearfix">
                                         <ul class="navigation clearfix">
-                                            <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a>                                                        
-                                            </li>
-                                            <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a>
-                                            </li>
-                                            <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a>
-                                            </li>
-                                            <li class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>
+                                            <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
+                                            <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
+                                            <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a></li>
+                                            <li id="0" class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -131,7 +128,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="free-consulation-button pull-right">
-                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                                    <a class="thm-btn bg-clr1" href="<?php //echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
                                 </div>
                             </div>
                         </div>
@@ -870,8 +867,34 @@
                     </div>
                 </div>
             </section>-->
+            
+            
+            <!--modal_container_alert_message-->
+<!--                <div class="modal fade" style="top:30%" id="modal_alert_message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div id="modal_container_alert_message" class="modal-dialog modal-sm" role="document">                                                          
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button id="btn_modal_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                              <img src="<?php echo base_url() . 'assets/images/FECHAR.png'; ?>" alt="cancel"> <spam aria-hidden="true">&times;</spam>
+                                </button>
+                                <h5 class="modal-title" id="myModalLabel"><b><?php echo $CI->T("Mensagem", array(),$language); ?></b></h5>                        
+                            </div>
+                            <div class="modal-body">                                            
+                                <p id="message_text"></p>                        
+                            </div>
+                            <div class="modal-footer text-center">
+                                <button id="accept_modal_alert_message" type="button" class="btn btn-default active text-center ladda-button" data-style="expand-left" data-spinner-color="#ffffff">
+                                    <spam class="ladda-label"><div style="color:white; font-weight:bold"><?php echo $CI->T("ACEITAR", array(),$language); ?></div></spam>
+                                </button>
+                            </div>
+                        </div>
+                    </div>                                                        
+                </div> -->
+            
+            
+            
             <!--End Blog Section-->
-            <div class="modal" tabindex="-1" role="dialog">
+            <div id="mymodal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

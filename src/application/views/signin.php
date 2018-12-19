@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="logo">
-                            <a href="index-2.html">
+                            <a href="<?php echo base_url()?>">
                                 <img src="<?php echo base_url().'assets/'?>images/resources/logo-header.png" alt="Awesome Logo">
                             </a>
                         </div>
@@ -152,6 +152,12 @@
                     <div class="row">
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
                         <div class="col-md-6 col-xs-12">
+                            <div class="col-md-12">
+                                <div class="sec-title text-center">
+                                    <h2>Faça sua conta aqui!</h2>
+                                    <span class="border"></span>
+                                </div>
+                            </div>
                             <div class="form-sec">
                                 <form name="contact_form" class="default-form contact-form" method="post">
                                     <div class="row">

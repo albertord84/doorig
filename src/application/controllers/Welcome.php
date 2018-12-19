@@ -26,11 +26,11 @@ class Welcome extends CI_Controller {
     }
     
     public function login_view() {
-        $this->load->view('secondary-pages/login');
+        $this->load->view('signin');
     }
     
     public function faqs_view() {
-        $this->load->view('secondary-pages/faq');
+        $this->load->view('faq');
     }
     
 }
