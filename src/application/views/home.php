@@ -37,7 +37,6 @@
               </div>
             </div>
             <!-- End Preloader -->  
-         <?php var_dump(base_url());die();?>
 
             <!--Start Top bar area -->  
             <section class="top-bar-area">
@@ -869,28 +868,7 @@
             </section>-->
             
             
-            <!--modal_container_alert_message-->
-<!--                <div class="modal fade" style="top:30%" id="modal_alert_message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div id="modal_container_alert_message" class="modal-dialog modal-sm" role="document">                                                          
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button id="btn_modal_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                                              <img src="<?php echo base_url() . 'assets/images/FECHAR.png'; ?>" alt="cancel"> <spam aria-hidden="true">&times;</spam>
-                                </button>
-                                <h5 class="modal-title" id="myModalLabel"><b><?php echo $CI->T("Mensagem", array(),$language); ?></b></h5>                        
-                            </div>
-                            <div class="modal-body">                                            
-                                <p id="message_text"></p>                        
-                            </div>
-                            <div class="modal-footer text-center">
-                                <button id="accept_modal_alert_message" type="button" class="btn btn-default active text-center ladda-button" data-style="expand-left" data-spinner-color="#ffffff">
-                                    <spam class="ladda-label"><div style="color:white; font-weight:bold"><?php echo $CI->T("ACEITAR", array(),$language); ?></div></spam>
-                                </button>
-                            </div>
-                        </div>
-                    </div>                                                        
-                </div> -->
-            
+                     
             
             
             <!--End Blog Section-->
