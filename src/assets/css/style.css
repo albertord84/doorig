@@ -2548,6 +2548,7 @@ select:focus {
 .consltation-area .form-group input[type="text"],
 .consltation-area .form-group input[type="email"],
 .consltation-area .form-group input[type="tel"],
+.consltation-area .form-group input[type="password"],
 .consltation-area .form-group select,
 .consltation-area .form-group textarea{
   color: #272727;
@@ -7097,7 +7098,7 @@ select:focus {
   height: 100%;
   content: '';
   z-index: -1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .page-title.style-two:before{

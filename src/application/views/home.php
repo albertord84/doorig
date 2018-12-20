@@ -58,6 +58,7 @@
                 </div>
             </section>
             <!--End Top bar area --> 
+            
             <!--Start header area-->
             <header class="header-area">
                 <div class="container">
@@ -98,6 +99,8 @@
             </header>  
             <!--End header area--> 
 
+            
+            
             <!--Start mainmenu area-->
             <section class="mainmenu-area stick">
                 <div class="container">
@@ -118,8 +121,7 @@
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
                                             <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a></li>
-                                            <li id="0" class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>
-                                            </li>
+                                            <li id="0" class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -127,7 +129,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="free-consulation-button pull-right">
-                                    <a class="thm-btn bg-clr1" href="<?php //echo base_url().'index.php/welcome/login_view?l=1'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
                                 </div>
                             </div>
                         </div>
@@ -200,7 +202,7 @@
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
                                         <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
-                                        <a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                        <a href="<?php echo base_url().'index.php/welcome/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
                             </li>

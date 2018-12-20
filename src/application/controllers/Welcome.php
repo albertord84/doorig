@@ -29,6 +29,10 @@ class Welcome extends CI_Controller {
         $this->load->view('signin');
     }
     
+    public function signin_view() {
+        $this->load->view('signin');
+    }
+    
     public function faqs_view() {
         $this->load->view('faq');
     }

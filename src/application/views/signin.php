@@ -24,6 +24,9 @@
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
+        
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <!--<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>-->
     </head>
 
 <body>
@@ -146,49 +149,138 @@
         </section>
         <!--End Page Title--> 
 
-        <!--Start service style 2-->        
+        <!--Start service style 2-->    
+            <A name="lnk_sigin_section"></A>
             <section class="consltation-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
                         <div class="col-md-6 col-xs-12">
-                            <div class="col-md-12">
-                                <div class="sec-title text-center">
-                                    <h2>Faça sua conta aqui!</h2>
-                                    <span class="border"></span>
+                            
+                            <!-- STEEP 1 -->
+                            <div class="form-sec sigin-painel-steep-1" style="border:3px;border-color:silver">
+                                <div class="col-md-12">
+                                    <div class="sec-title text-center">
+                                        <h2>Faça sua conta aqui!</h2>
+                                        <span class="border"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-sec">
-                                <form name="contact_form" class="default-form contact-form" method="post">
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 1</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 2</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 3</div>
+                                <form name="signin-form1" class="default-form contact-form" method="post" >
                                     <div class="row">
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12" >
                                             <div class="form-group">
                                                 <input type="text" name="name" placeholder="Seu nome" required="">
                                             </div>                                                    
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="email" name="email" placeholder="Email" required="">
                                             </div>                  
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="tel" name="phone" placeholder="Telefone (opcional)" required="">
+                                                <input type="tel" name="phone" placeholder="Telefone" required="">
                                             </div>                                                    
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <input type="tel" name="phone" placeholder="Profissão (opcional)" required="">
-                                            </div>                 
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <textarea name="form_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
-                                            </div>
+                                                <input type="password" name="pass" placeholder="Senha" required="">
+                                            </div>                 
+                                        </div>                                        
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="password" name="pass" placeholder="Comfirmar Senha" required="">
+                                            </div>                 
+                                        </div>                                        
+<!--                                        <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group text-center">
-                                                <button type="submit" class="thm-btn bg-clr2">Enviar agora</button>
-                                            </div>                            
+                                                <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
+                                            </div>
+                                        </div>                                        -->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group text-right">
+                                                <input type="checkbox" name="user-term" checked="" required=""> Li e aceito os <a href="<?php echo base_url().'assets/'?>use-terms/TERMOS DE USO.pdf" target="blank">Termos de uso</a>.
+                                            </div>                 
+                                        </div>                                        
+                                        <div class="form-group text-center">
+                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Continuar</button>
+                                        </div>                            
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- STEEP 2 -->
+                            <div class="form-sec sigin-painel-steep-2" style="display:none; border:1px;border-color:silver">
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:green"> PASSO 1</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 2</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 3</div>
+                                <form name="signin-form2" class="default-form contact-form" method="post">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="sec-title text-center">
+                                                <h2>Onde receber o Código de verificação?</h2>
+                                                <span class="border"></span>
+                                            </div>
                                         </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12"></div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <button id="btn-sigin-steep-2a" type="button" class="thm-btn bg-clr2">Email</button>
+                                            </div>                                                    
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <button id="btn-sigin-steep-2b" type="button" class="thm-btn bg-clr2">Telefone</button>
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12"></div>                                                                  
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- STEEP 3 -->
+                            <div class="form-sec sigin-painel-steep-3" style="display:none; border:1px;border-color:silver">
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:green"> PASSO 1</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:green"> PASSO 2</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 3</div>
+                                <form name="signin-form3" class="default-form contact-form" method="post">
+                                    <div class="row">                                        
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group text-center">
+                                                <h2>Insera o código aqui</h2>
+                                                <span class="border"></span>
+                                            </div>                                                    
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12"></div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
+                                            <div class="form-group">
+                                                <input type="text" name="name" placeholder="Código" required="">
+                                            </div>                                                                                            
+                                            <div class="form-group">
+                                                <button id="btn-sigin-steep-3" type="button" class="thm-btn bg-clr2">Enviar</button>
+                                            </div>                  
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12"></div>                                                                  
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- STEEP 4 -->
+                            <div class="form-sec sigin-painel-steep-4" style="display:none; border:1px;border-color:silver">
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:green"> PASSO 1</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:green"> PASSO 2</div>
+                                <div class="col-md-3 col-md-6 col-xs-12" style="color:gray"> PASSO 3</div>
+                                <form name="signin-form2" class="default-form contact-form" method="post">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="sec-title text-center">
+                                                <h2>Parabens Roberto!</h2>
+                                            </div>
+                                            <div class="sec-title text-center">
+                                                <h2>Seu cadastro foi realizado com sucesso</h2>
+                                                <span class="border"></span>
+                                            </div>
+                                        </div>                                                                                                 
                                     </div>
                                 </form>
                             </div>
@@ -316,6 +408,9 @@
             
             <!-- thm custom script -->
             <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
+            
+            <!-- system scripts -->
+            <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
     </div>
 </body>
 
