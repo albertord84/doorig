@@ -574,11 +574,11 @@
                                 <div class="img-holder">
                                     <img src="<?php echo base_url().'assets/'?>images/testmonial/leticiajural.jpg" alt="Client Photo">
                                 </div>
-                                <div class="text-holder">
+<!--                                <div class="text-holder">
                                     <h5  style="text-transform:lowercase;">@leticiajural</h5>
                                     <h6>Modelo e atriz</h6>
                                     <p>"Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium..."</p>
-                                </div>
+                                </div>-->
                            </div> 
 
                            <div class="single-item text-center">
