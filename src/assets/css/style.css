@@ -2549,6 +2549,7 @@ select:focus {
 .consltation-area .form-group input[type="email"],
 .consltation-area .form-group input[type="tel"],
 .consltation-area .form-group input[type="password"],
+/*.consltation-area .form-group input[type="checkbox"],*/
 .consltation-area .form-group select,
 .consltation-area .form-group textarea{
   color: #272727;
@@ -9769,8 +9770,67 @@ border-top: 1px solid #3d4447;
   font-weight: 500;
 }
 
-@media (min-width: 800px) {
-  .entrar {
+.m-top-10{
+    margin-top:  10px
+}
+
+.m-top-15{
+    margin-top:  15px
+}
+
+.m-top-20{
+    margin-top:  20px
+}
+
+.m-top-25{
+    margin-top:  25px
+}
+
+.m-top-30{
+    margin-top:  30px
+}
+
+.m-top-35{
+    margin-top:  35px
+}
+
+.m-right-5{
+    margin-right: 5px
+}
+
+.m-right-10{
+    margin-right: 10px
+}
+
+.m-right-15{
+    margin-right: 15px
+}
+
+.m-right-20{
+    margin-right: 20px
+}
+
+.m-right-25{
+    margin-right: 25px
+}
+
+.m-right-30{
+    margin-right: 30px
+}
+
+.m-right-35{
+    margin-right: 35px
+}
+
+.pd-20{
+    padding: 20px
+}
+
+
+
+
+@media (min-width: 600px) {
+  .non-show-in-moviles {
     display: none;
   }
 }

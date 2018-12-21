@@ -156,8 +156,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
-                        <div class="col-md-6 col-xs-12">
-                            
+                        <div class="col-md-6 col-xs-12">                            
                             <!-- STEEP 1 -->
                             <div class="form-sec sigin-painel-steep-1" style="border:3px;border-color:silver">
                                 <div class="col-md-12">
@@ -225,137 +224,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- STEEP 2 -->
-                            <div class="form-sec sigin-painel-steep-2" style="display:none; border:1px;border-color:silver">
-                                <div class="col-md-12">
-                                    <div class="sec-title text-center">
-                                        <h2>Faça sua conta aqui!</h2>                                        
-                                        <span class="border"></span>
-                                    </div>
-                                </div>
-                                    <div class="col-md-12 col-md-12 col-xs-12 stepwizard ">
-                                        <div class="stepwizard-row setup-panel">
-                                            <div class="stepwizard-step">
-                                                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                                            </div>
-                                            <div class="stepwizard-step">
-                                                <a href="#step-2" type="button" class="btn btn-primary btn-circle">2</a>
-                                            </div>
-                                            <div class="stepwizard-step">
-                                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                            </div>
-                                        </div>
-                                        <br>
-                                    </div>
-                                <form name="signin-form2" class="default-form contact-form" method="post">
-                                    <div class="row">
-                                        <div class="col-md-12 col-md-12 col-xs-12 text-center m-top-35">
-                                            <h4>Onde receber o Código de verificação?</h4>
-                                        </div>                                        
-                                    </div>
-                                    <div class="row">                                        
-                                        <div class="col-md-2 col-sm-12 col-xs-12"></div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-                                            <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-2a" style="width:150px" type="button" class="thm-btn bg-clr2">Email</button>
-                                            </div>                                                    
-                                        </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-                                            <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-2b" style="width:150px" type="button" class="thm-btn bg-clr2">Telefone</button>
-                                            </div>                  
-                                        </div>
-                                        <div class="col-md-2 col-sm-12 col-xs-12"></div>                                                                  
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- STEEP 3 -->
-                            <div class="form-sec sigin-painel-steep-3" style="display:none; border:1px;border-color:silver">
-                                <div class="col-md-12">
-                                    <div class="sec-title text-center">
-                                        <h2>Faça sua conta aqui!</h2>  
-                                        <span class="border"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-md-12 col-xs-12 stepwizard">
-                                    <div class="stepwizard-row setup-panel">
-                                        <div class="stepwizard-step">
-                                            <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                                        </div>
-                                        <div class="stepwizard-step">
-                                            <a href="#step-2" type="button" class="btn btn-success btn-circle">2</a>
-                                        </div>
-                                        <div class="stepwizard-step">
-                                            <a href="#step-3" type="button" class="btn btn-primary btn-circle">3</a>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <form name="signin-form3" class="default-form contact-form" method="post">
-                                    <div class="row">                                        
-                                        <div class="col-md-12 col-md-12 col-xs-12 text-center m-top-35">
-                                            <h4>Insira o código recebido</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">                                        
-                                        <div class="col-md-3 col-sm-12 col-xs-12"></div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12 text-center">
-                                            <div class="form-group m-top-20 pd-20">
-                                                <input type="text" name="name" placeholder="Código" required="">
-                                            </div>                                                                                            
-                                            <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-3" type="button" class="thm-btn bg-clr2">Enviar</button>
-                                            </div>                  
-                                        </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12"></div>                                                                  
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- STEEP 4 -->
-                            <div class="form-sec sigin-painel-steep-4" style="display:none; border:1px;border-color:silver">
-                                <div class="col-md-12">
-                                    <div class="sec-title text-center">
-                                        <h2>Cadastro satisfatório</h2>
-                                        <span class="border"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-md-12 col-xs-12 stepwizard">
-                                    <div class="stepwizard-row setup-panel">
-                                        <div class="stepwizard-step">
-                                            <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                                        </div>
-                                        <div class="stepwizard-step">
-                                            <a href="#step-2" type="button" class="btn btn-success btn-circle">2</a>
-                                        </div>
-                                        <div class="stepwizard-step">
-                                            <a href="#step-3" type="button" class="btn btn-success btn-circle">3</a>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <form name="signin-form2" class="default-form contact-form" method="post">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-2 col-sm-12 col-xs-12"></div>
-                                            <div class="col-md-8 col-sm-12 col-xs-12">
-                                                <div class="text-center m-top-35">
-                                                    <h4>Parabéns, Roberto!</h4>
-                                                </div>
-                                                <div class="text-center m-top-35">
-                                                    <img src="<?php echo base_url().'assets/'?>images/icon/blue-success-icon.png" width="50px" height="50px">
-                                                </div>
-                                                <div class="text-center m-top-20">
-                                                    <p style="font-size:1em">Seu cadastro foi realizado com sucesso. Em breve sera redirecionado para seu Dashboard, onde poderá contratar os módulos desejados por você.</p>
-                                                </div>
-                                                <div class="form-group text-center m-top-20">
-                                                    <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Finalizar</button>
-                                                </div> 
-                                            </div>
-                                            <div class="col-md-2 col-sm-12 col-xs-12"></div>
-                                        </div>                                                                                                 
-                                    </div>
-                                </form>
-                            </div>
+                            
                         </div>
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
                     </div>

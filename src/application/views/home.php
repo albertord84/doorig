@@ -121,7 +121,7 @@
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
                                             <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a></li>
-                                            <li id="0" class="dropdown entrar"><a href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -286,7 +286,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="service-block text-center">
+                            <div class="service-block text-center" id="how-to-help-painel-1">
                                 <div class="icon-area">
                                     <div class="icon-box">
                                         <i class="flaticon-cute-rocket-launching"></i>
@@ -300,7 +300,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="service-block text-center">
+                            <div class="service-block text-center" id="how-to-help-painel-2">
                                 <div class="icon-area">
                                     <div class="icon-box">
                                         <i class="flaticon-seo-performance-marketing-graphic"></i>
@@ -314,7 +314,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="service-block text-center">
+                            <div class="service-block text-center" id="how-to-help-painel-3">
                                 <div class="icon-area">
                                     <div class="icon-box">
                                         <i class="flaticon-support"></i>
@@ -328,12 +328,12 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="service-block text-center">
+                            <div class="service-block text-center" id="how-to-help-painel-4">
                                 <div class="icon-area">
                                     <div class="icon-box">
                                         <i class="flaticon-seo-performance-marketing-graphic"></i>
                                     </div>
-                                    <a href="#"><h5>Deep-analise e estatísticas</h5></a>
+                                    <a href="#"><h5>Deep-account-analisys e estatísticas</h5></a>
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
                                 </div>
                                 <div class="icon-area">                                    
@@ -369,19 +369,19 @@
                        </div>
                        <div class="col-md-6 col-sm-12">
                             <div class="right-content-area"> 
-                                <div class="sec-title text-left"><h2>we create 25000+ business place for growth your profite. </h2></div>
-                                <p>Lorem ipsum dolor sit amet, mi ultricies interdum pede eu vestibulumteunon libero fringilla, fermentum commodo eget etiam, rhoncus constetuerligula ac ultrices, ipsum at aspernatur ante mi. Aliquet est, duis elit. Tortor id,ivamus fugit dictum pellentesque, in in luctus hendrerit mi nisl rutrum, accumsan ac, cquat accumsan eros nisl non etiam eget. </p>
+                                <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram . </h2></div>
+                                <spam>Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line a través da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG te permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de refrência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </spam>
 
                                 <div class="about-item">
                                     <ul>
-                                        <li><i class="fa fa-arrow-circle-right"></i>We have 25000 Happy Client</li>
-                                        <li><i class="fa fa-arrow-circle-right"></i>24/7 Customer Support </li>
-                                        <li><i class="fa fa-arrow-circle-right"></i>75 Over Services Provided</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Mais de 1k clientes satisfeitos</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Atendimento email e WhatApp</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Varios serviços numa plataforma</li>
                                     </ul>
                                     <ul>
-                                        <li><i class="fa fa-arrow-circle-right"></i>Free Advice Provied</li>
-                                        <li><i class="fa fa-arrow-circle-right"></i>Research Company Growth </li>
-                                        <li><i class="fa fa-arrow-circle-right"></i>Achived Gobal Trust</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Ajuda gratuita fornecida</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Uma das Startup que mais cresce</li>
+                                        <li><i class="fa fa-arrow-circle-right"></i>Usada em mais de 80 paises</li>
                                     </ul>
                                 </div>
                             </div>
@@ -574,11 +574,11 @@
                                 <div class="img-holder">
                                     <img src="<?php echo base_url().'assets/'?>images/testmonial/leticiajural.jpg" alt="Client Photo">
                                 </div>
-<!--                                <div class="text-holder">
+                                <div class="text-holder">
                                     <h5  style="text-transform:lowercase;">@leticiajural</h5>
                                     <h6>Modelo e atriz</h6>
                                     <p>"Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium..."</p>
-                                </div>-->
+                                </div>
                            </div> 
 
                            <div class="single-item text-center">

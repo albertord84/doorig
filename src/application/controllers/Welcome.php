@@ -6,8 +6,6 @@ ini_set('xdebug.var_display_max_data', 1024);
 
 class Welcome extends CI_Controller {
 
-    private $security_purchase_code; //random number in [100000;999999] interval and coded by md5 crypted to antihacker control    
-    public $language = NULL;
 
     
     public function index() {
@@ -26,7 +24,7 @@ class Welcome extends CI_Controller {
     }
     
     public function login_view() {
-        $this->load->view('signin');
+        $this->load->view('login');
     }
     
     public function signin_view() {

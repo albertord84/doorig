@@ -1,9 +1,12 @@
 $(document).ready(function(){   
     
+    
     $('.sigin-painel-steep-2').height($('.sigin-painel-steep-1').height());
     $('.sigin-painel-steep-3').height($('.sigin-painel-steep-1').height());
+    $('.sigin-painel-steep-4').height($('.sigin-painel-steep-1').height());
     $('.sigin-painel-steep-2').width($('.sigin-painel-steep-1').width());
     $('.sigin-painel-steep-3').width($('.sigin-painel-steep-1').width());
+    $('.sigin-painel-steep-4').width($('.sigin-painel-steep-1').width());
     
     $("#btn-sigin-steep-1").click(function () {
         if(js_validate_datas_sigin_steep_1())
