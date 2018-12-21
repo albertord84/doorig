@@ -31,6 +31,10 @@ class Welcome extends CI_Controller {
         $this->load->view('signin');
     }
     
+    public function pass_reset() {
+        $this->load->view('pass-reset');
+    }
+    
     public function faqs_view() {
         $this->load->view('faq');
     }

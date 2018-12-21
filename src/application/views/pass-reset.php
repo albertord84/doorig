@@ -160,74 +160,33 @@
                             <div class="form-sec form-login" >
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
-                                        <h2>Entre suas credencias</h2>
+                                        <h2>Informe nova senha</h2>
                                         <span class="border"></span>
                                     </div>
                                 </div>                                                                                                
                                 <form name="login-form-1" class="default-form contact-form m-top-35" method="post" >
-                                    <div class="row">                                        
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <input type="email" name="email" placeholder="Email" autocomplete="on" required="">
-                                            </div>                  
-                                        </div>                                        
+                                    <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="password" name="pass" placeholder="Senha" required="">
+                                            </div>                 
+                                        </div>                                                                                                                     
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="password" name="pass" placeholder="Comfirmar Senha" required="">
                                             </div>                 
                                         </div>                                                                                                                     
                                         <!--<div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group text-center">
                                                 <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
                                             </div>
-                                        </div>                                        -->
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group text-left">
-                                                <a id="lnk-forget-pass" href="#lnk_login_section">Esqueceu sua senha?</a>
-                                            </div>                 
-                                        </div>                                        
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group text-right">
-                                                <a href="<?php echo base_url()?>index.php/welcome/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
-                                            </div>                 
-                                        </div>
+                                        </div>-->                                        
                                         <div class="form-group text-center">
                                             <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
                                         </div>                            
                                     </div>
                                 </form>
-                            </div>
-                            <!--PASS RECUPERATION FORM-->    
-                            <div class="form-sec form-forget-pass" style="display: none">
-                                <div class="col-md-12">
-                                    <div class="sec-title text-center">
-                                        <h2>Informe email para redefenir sua senha</h2>
-                                        <span class="border"></span>
-                                    </div>
-                                </div>                                                                                                
-                                <form name="login-form-2" class="default-form contact-form m-top-35" method="post" >
-                                    <div class="row">                                        
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <input type="email" name="email" placeholder="Email" autocomplete="on" required="">
-                                            </div>                  
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group text-left">
-                                                <a id="lnk-back-to-login" href="#lnk_login_section" >Voltar ao Login?</a>
-                                            </div>                 
-                                        </div>                                        
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group text-right">
-                                                <a href="<?php echo base_url()?>index.php/welcome/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
-                                            </div>                 
-                                        </div>
-                                        <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
-                                        </div>                            
-                                    </div>
-                                </form>
-                            </div>
+                            </div>                            
                             
                         </div>
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
