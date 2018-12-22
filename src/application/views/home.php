@@ -121,7 +121,7 @@
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
                                             <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a></li>
-                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/welcome/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="free-consulation-button pull-right">
-                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
                                 </div>
                             </div>
                         </div>
