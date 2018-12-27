@@ -75,10 +75,12 @@ class Client_status extends CI_Controller {
     }
 
     public function load() {
-
-        $items = $this->client_status->load($this->uri->segment(3));
-
-
+        $id = $this->uri->segment(3);
+        if ($id) {
+            $items = $this->client_status->get_by_id($id);
+        } else {
+            $items = $this->client_status->get_all($this->uri->segment(3));
+        }
 
         echo json_encode($items);
     }

@@ -1,7 +1,3 @@
-<?php $this->load->view('template/head'); ?>
-
-
-
 <table class="easyui-datagrid" title="Client_status"  style="width:auto;height:100%" id="grid_client_status"
 
 			data-options="singleSelect:true,url:'<?php echo base_url() ?>/index.php/client_status/ajaxgrid',method:'post',toolbar:toolbar,autoRowHeight:false,fit:true,fitColumns:true,
@@ -307,6 +303,3 @@
     }
 
 	</script>
-
- <?php $this->load->view('template/footer'); ?>
-
