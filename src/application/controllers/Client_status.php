@@ -18,23 +18,14 @@ class Client_status extends CI_Controller {
 
         parent::__construct();
 
-
-
         $this->load->helper('url');
-
         $this->load->helper('form');
-
         $this->load->helper('html');
-
         $this->load->model('client_status_model', 'client_status');
-
         $this->load->database();
     }
 
     public function index() {
-
-
-
         $this->load->view('client_status_view');
     }
 
@@ -75,10 +66,12 @@ class Client_status extends CI_Controller {
     }
 
     public function load() {
-
-        $items = $this->client_status->load($this->uri->segment(3));
-
-
+        $id = $this->uri->segment(3);
+        if ($id) {
+            $items = $this->client_status->get_by_id($id);
+        } else {
+            $items = $this->client_status->get_all($this->uri->segment(3));
+        }
 
         echo json_encode($items);
     }

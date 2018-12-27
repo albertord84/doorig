@@ -165,7 +165,8 @@
                                         <h2>Faça sua conta aqui!</h2>
                                         <span class="border"></span>
                                     </div>
-                                </div>                                                                
+                                </div>
+                                <!-- Wizzard -->
                                 <div class="col-md-12 col-md-12 col-xs-12 stepwizard" style="padding-right: 20px">
                                     <div class="stepwizard-row setup-panel">
                                         <div class="stepwizard-step">
@@ -182,6 +183,8 @@
                                     </div>
                                     <br>
                                 </div>
+                                
+                                <!-- Sign in form -->
                                 <form name="signin-form1" class="default-form contact-form m-top-35" method="post" >
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12" >
@@ -201,12 +204,12 @@
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="password" name="pass" placeholder="Senha" required="">
+                                                <input type="password" name="password" placeholder="Senha" required="">
                                             </div>                 
                                         </div>                                        
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="password" name="pass" placeholder="Comfirmar Senha" required="">
+                                                <input type="password" name="password-rep" placeholder="Comfirmar Senha" required="">
                                             </div>                 
                                         </div>                                        
 <!--                                        <div class="col-md-12 col-sm-12 col-xs-12">
