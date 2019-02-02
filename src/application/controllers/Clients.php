@@ -85,21 +85,35 @@ class Clients extends CI_Controller {
         echo json_encode($items);
     }
 
-    public function save() {
+    public function signup() {
+        $this->load->library("form_validation");
 
+        $this->form_validation->set_rules('name', 'Nome', 'required|min_length[2]|max_length[150]');
+        $this->form_validation->set_rules('email', 'Email', 'required|min_length[4]|max_length[100]|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[100]');
+        $this->form_validation->set_rules('phone', 'phone', 'required|min_length[11]|max_length[20]|regex_match[/0-9/]');
+
+        if ($this->form_validation->run()) {
+            $this->clients->save($name, $email, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+        } else {
+            $this->load->view('signin');
+        }
+    }
+
+    public function save() {
         $name = $this->input->post('name');
         $email = $this->input->post('email');
         $password = $this->input->post('password');
+        $phone = $this->input->post('phone');
+        $utm_source = $this->input->post('utm_source');
+        $utm_campain = $this->input->post('utm_campain');
+
         $status_id = $this->input->post('status_id');
         $node_id = $this->input->post('node_id');
-        $phone = $this->input->post('phone');
         $verification_code = $this->input->post('verification_code');
         $init_date = $this->input->post('init_date');
         $last_access = $this->input->post('last_access');
-        $utm_source = $this->input->post('utm_source');
-        $utm_campain = $this->input->post('utm_campain');
-        $login_token = $this->input->post('login_token');
-
+        //$login_token = $this->input->post('login_token');
 
         $this->clients->save($name, $email, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
     }
