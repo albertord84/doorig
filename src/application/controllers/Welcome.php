@@ -6,9 +6,9 @@ ini_set('xdebug.var_display_max_data', 1024);
 
 class Welcome extends CI_Controller {
 
+  public function index() {
+    $this->load->library('session');
 
-    
-    public function index() {
 //        $this->is_ip_hacker();
 //        $language = $this->input->get();
 //        $this->load->model('class/system_config');
@@ -20,23 +20,23 @@ class Welcome extends CI_Controller {
 //        $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
 //        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
 //        $GLOBALS['language'] = $param['language'];
-        $this->load->view('home', $param);
-    }
-    
-    public function login_view() {
-        $this->load->view('login');
-    }
-    
-    public function signin_view() {
-        $this->load->view('signin');
-    }
-    
-    public function pass_reset() {
-        $this->load->view('pass-reset');
-    }
-    
-    public function faqs_view() {
-        $this->load->view('faq');
-    }
-    
+    $this->load->view('home', $param);
+  }
+
+  public function login_view() {
+    $this->load->view('login');
+  }
+
+  public function signin_view() {
+    $this->load->view('signin');
+  }
+
+  public function pass_reset() {
+    $this->load->view('pass-reset');
+  }
+
+  public function faqs_view() {
+    $this->load->view('faq');
+  }
+
 }
