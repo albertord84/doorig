@@ -23,7 +23,7 @@ class Clients_model extends CI_Model {
         parent::construct();
     }
 
-    function save($name, $email, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token) {
+    function save($name, $email, $password, $status_id = 1, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
 
         $this->name = $name;
         $this->email = $email;

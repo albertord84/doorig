@@ -8,21 +8,13 @@ class Signin extends CI_Controller {
 
   public function signin_view() {
     $this->load->library('session');
-    //2. Save Signin Data
-    $datas["name"] = "777";
-    $datas["email"] = "777@7.7";
-    $datas["phone"] = "777 77";
-    $datas["password"] = "7777";
-    $datas["password-rep"] = "7777";
-    //$this->load->model('client_model');
-    //$this->client_model->save($datas["name"], $datas["email"], $datas["phone"], $datas["password"], $datas["password-rep"]);
 
     $this->load->view('signin');
   }
 
-  public function signin2() {
+  public function signin_step1() {
     //$this->load->library('input');
-    //$datas = $this->input->post("name");
+    $datas = $this->input->post("name");
     //1. Validate Signin Data
     //$this->load->library('form_validation');
     //$this->form_validation->set_rules();
@@ -43,12 +35,14 @@ class Signin extends CI_Controller {
     $datas["phone"] = "777 77";
     $datas["password"] = "7777";
     $datas["password-rep"] = "7777";
-    $this->load->model('client_model');
-    $this->client_model->save($datas["name"], $datas["email"], $datas["phone"], $datas["password"], $datas["password-rep"]);
+    $datas["status_id"] = "1";
+    $datas["node_id"] = "1";
+    $this->load->model('Clients_model');
+    $result = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
 
 
     // Retur Response
-    echo json_encode($response);
+    echo json_encode($result);
   }
 
   public function request_secure_code_by_email() {
