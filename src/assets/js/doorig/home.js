@@ -21,7 +21,7 @@ $(document).ready(function(){
     
     
     
-    
+    //old functions of dumbu
     
     function modal_alert_message(text_message){
         $('#modal_alert_message').modal('show');

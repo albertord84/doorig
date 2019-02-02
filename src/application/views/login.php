@@ -164,18 +164,18 @@
                                         <span class="border"></span>
                                     </div>
                                 </div>                                                                                                
-                                <form name="login-form-1" class="default-form contact-form m-top-35" method="post" >
-                                    <div class="row">                                        
+                                <form name="login-form-1" class="default-form contact-form m-top-35" method="post">
+                                    <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="email" name="email" placeholder="Email" autocomplete="on" required="">
                                             </div>                  
-                                        </div>                                        
+                                        </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <input type="password" name="pass" placeholder="Senha" required="">
                                             </div>                 
-                                        </div>                                                                                                                     
+                                        </div>
                                         <!--<div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group text-center">
                                                 <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
@@ -188,11 +188,11 @@
                                         </div>                                        
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group text-right">
-                                                <a href="<?php echo base_url()?>index.php/welcome/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
+                                                <a href="<?php echo base_url()?>index.php/signin/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
                                             </div>                 
                                         </div>
                                         <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Entrar</button>
+                                            <button id="login_btn" type="button" class="thm-btn bg-clr2">Entrar</button>
                                         </div>                            
                                     </div>
                                 </form>
@@ -201,7 +201,7 @@
                             <div class="form-sec form-forget-pass" style="display: none">
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
-                                        <h2>Informe email para redefenir sua senha</h2>
+                                        <h2>Insira email para redefenir sua senha</h2>
                                         <span class="border"></span>
                                     </div>
                                 </div>                                                                                                
@@ -209,7 +209,7 @@
                                     <div class="row">                                        
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="email" name="email" placeholder="Email" autocomplete="on" required="">
+                                                <input id="recovery_email" type="email" placeholder="Email" autocomplete="on" required="">
                                             </div>                  
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -219,11 +219,11 @@
                                         </div>                                        
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group text-right">
-                                                <a href="<?php echo base_url()?>index.php/welcome/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
+                                                <a href="<?php echo base_url()?>index.php/signin/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
                                             </div>                 
                                         </div>
                                         <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
+                                            <button id="request_recovery_pass_btn" type="button" class="thm-btn bg-clr2">Seguinte</button>
                                         </div>                            
                                     </div>
                                 </form>
@@ -355,6 +355,8 @@
             <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
             
             <!-- system scripts -->
+            <script src="<?php echo base_url().'assets/'?>js/doorig/PT/internalization.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/doorig/login.js"></script>
     </div>
 </body>

@@ -2,27 +2,26 @@
 <html lang="en">
     <head>
 	<meta charset="UTF-8">
-	<title>Maior visibilidade no Instagram</title>
-	
+	<title>Maior visibilidade no Instagram</title>	
         <!-- responsive meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
         <!-- For IE -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">	
         <!-- master stylesheet -->
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css">
-        
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css">        
         <!-- Minified Bootstrap 3 CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
         <!-- Responsive stylesheet -->
         <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">
-        
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">        
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
+        
+        <script type="text/javascript">
+            var base_url = <?php echo base_url();?>;
+            alert(base_url);
+        </script>
     </head>
 
     <body>
@@ -97,9 +96,7 @@
                     </div>
                 </div>
             </header>  
-            <!--End header area--> 
-
-            
+            <!--End header area-->             
             
             <!--Start mainmenu area-->
             <section class="mainmenu-area stick">
@@ -121,7 +118,7 @@
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
                                             <li class="dropdown"><a href="#lnk_contact_us">CONTATO</a></li>
-                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/welcome/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/signin/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -129,7 +126,7 @@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="free-consulation-button pull-right">
-                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/welcome/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                                    <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/signin/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
                                 </div>
                             </div>
                         </div>
@@ -137,7 +134,6 @@
                 </div>
             </section>
             <!--End mainmenu area--> 
-
 
             <!--Main Slider-->
             <section class="main-slider">
@@ -201,8 +197,8 @@
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
-                                        <a href="#lnk_how_function" class="thm-btn bg-clr2">Contato</a>
-                                        <a href="<?php echo base_url().'index.php/welcome/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                        <a href="#lnk_contact_us" class="thm-btn bg-clr2">Contato</a>
+                                        <a href="<?php echo base_url().'index.php/signin/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
                             </li>
@@ -265,7 +261,7 @@
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
                                         <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
-                                        <a href="<?php echo base_url().'index.php/welcome/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                        <a href="<?php echo base_url().'index.php/signin/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
                             </li>                    
@@ -305,15 +301,15 @@
                                     <div class="icon-box">
                                         <i class="flaticon-business-plan"></i>
                                     </div>
-                                    <a href="#"><h5>Postagens, stories e directs</h5></a>
-                                    <p>Stories e postagens automatizadas nos horários desejados.<br> Vários directs por dia sobre a sua marca. <br><br></p>
+                                    <a href="#"><h5>Agendamento de Postagens e Stories</h5></a>
+                                    <p>Stories e postagens automatizadas nos horários desejados.<br> Edite suas fotos e videos antes de postar. <br><br></p>
                                 </div>
                                 <div class="icon-area">                                    
                                     <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        </div>                       
+                        <!--<div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="service-block text-center" id="how-to-help-painel-3">
                                 <div class="icon-area">
                                     <div class="icon-box">
@@ -321,6 +317,20 @@
                                     </div>
                                     <a href="#"><h5>Extração e análises de Leads </h5></a>
                                     <p>Milhares de leads para Marketing digital e Telemarketing. <br> Mineração em tempo real. Cruzamento com banco de dados.</p>
+                                </div>
+                                <div class="icon-area">                                    
+                                    <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="service-block text-center" id="how-to-help-painel-3">
+                                <div class="icon-area">
+                                    <div class="icon-box">
+                                        <i class="flaticon-landing"></i>
+                                    </div>
+                                    <a href="#"><h5>Marketing com Envio de Directs</h5></a>
+                                    <p> Automatize o envio de Directs. Anuncie seus produtos e serviços. <br> Envie códigos promocionais ou cupom de desconto. </p>
                                 </div>
                                 <div class="icon-area">                                    
                                     <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
@@ -662,30 +672,30 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="text" name="name" placeholder="Seu nome" required="">
+                                                <input id="contact_name" type="text" placeholder="Seu nome" required="">
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="email" name="email" placeholder="Email" required="">
+                                                <input id="contact_email" type="email" placeholder="Email" required="">
                                             </div>                  
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="tel" name="phone" placeholder="Telefone (opcional)" required="">
+                                                <input id="contact_phone" type="tel" placeholder="Telefone (opcional)" required="">
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="tel" name="phone" placeholder="Profissão (opcional)" required="">
+                                                <input id="contact_job" type="tel" placeholder="Profissão (opcional)" required="">
                                             </div>                 
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <textarea name="form_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
+                                                <textarea id="contact_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
                                             </div>
                                             <div class="form-group text-center">
-                                                <button type="submit" class="thm-btn bg-clr2">Enviar agora</button>
+                                                <button id="contact_btn" type="button" class="thm-btn bg-clr2">Enviar agora</button>
                                             </div>                            
                                         </div>
                                     </div>
@@ -697,198 +707,41 @@
                 </div>
             </section>
             <!--End consltation area-->
-
-            <!--Price table sec-->
-<!--            <section class="price-table">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="sec-title text-center">
-                                <h2>Best Pricing Plan</h2>
-                                <span class="border"></span>
-                                <p>Lorem ipsum dolor  amet mi ultricies interdum pede eu vestibulum vulputate maurimtum <br>commod rhoncus consectetuer reduce producet</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="table-block text-center">
-                                <div class="icon-box">
-                                    <i class="flaticon-folder"></i>
-                                </div>
-                                <div class="table-det">
-                                    <h2><span>$</span>20.45</h2>
-                                    <h3>Personal Plan</h3>
-                                    <ul>
-                                        <li>Normal Server Power</li>
-                                        <li>Unlimited Montly Traffic</li>
-                                        <li>Cloud Technology</li>
-                                        <li>Unlimited Disic Space</li>
-                                    </ul>
-                                    <div class="button">
-                                        <a class="thm-btn bg-clr3" href="#">Get Service</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="table-block text-center active">
-                                <div class="icon-box">
-                                    <i class="flaticon-folder"></i>
-                                </div>
-                                <div class="table-det">
-                                    <h2><span>$</span>38.12</h2>
-                                    <h3>Business Plan</h3>
-                                    <ul>
-                                        <li>Normal Server Power</li>
-                                        <li>Unlimited Montly Traffic</li>
-                                        <li>Cloud Technology</li>
-                                        <li>Unlimited Disic Space</li>
-                                    </ul>
-                                    <div class="button">
-                                        <a class="thm-btn bg-clr4" href="#">Get Service</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="table-block text-center">
-                                <div class="icon-box">
-                                    <i class="flaticon-folder"></i>
-                                </div>
-                                <div class="table-det">
-                                    <h2><span>$</span>55.00</h2>
-                                    <h3>Super Service Plan</h3>
-                                    <ul>
-                                        <li>Normal Server Power</li>
-                                        <li>Unlimited Montly Traffic</li>
-                                        <li>Cloud Technology</li>
-                                        <li>Unlimited Disic Space</li>
-                                    </ul>
-                                    <div class="button">
-                                        <a class="thm-btn bg-clr3" href="#">Get Service</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
-            <!--End Price table sec-->
-
-            <!--Blog Section-->
-<!--            <section class="blog-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="sec-title text-center">
-                                <h2>Our Latest Post</h2>
-                                <span class="border"></span>
-                                <p>Lorem ipsum dolor  amet mi ultricies interdum pede eu vestibulum vulputate maurimtum <br>commod rhoncus consectetuer reduce producet</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="item-holder">
-                                <div class="image-box">
-                                    <figure>
-                                        <a href="blog-single.html"><img src="<?php echo base_url().'assets/'?>images/blog/blog-1.jpg" alt=""></a>
-                                    </figure>
-                                    <div class="date-box">
-                                        <span class="date-day">20</span>
-                                        <span class="date-year">Dec</span>
-                                    </div>
-                                </div>
-                                <div class="text-area">
-                                    <div class="content-text text-left">
-                                        <div class="title">
-                                            <a href="blog-single.html"><h5>France Prepares to Stake Place</h5></a>
-                                        </div>
-                                        <div class="text">
-                                            <p>Nisl dolor accllentesque faucibus. numaris vel, tincidunt fusce tempor non, laoreet volat integer quam iaculis est malesuada </p>
-                                        </div>
-                                        <div class="read-more-btn">
-                                            <a href="blog-single.html">Read More</a>
-                                        </div>                            
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="item-holder">
-                                <div class="image-box">
-                                    <figure>
-                                        <a href="blog-single.html"><img src="<?php echo base_url().'assets/'?>images/blog/blog-2.jpg" alt=""></a>
-                                    </figure>
-                                    <div class="date-box">
-                                        <span class="date-day">21</span>
-                                        <span class="date-year">Nov</span>
-                                    </div>
-                                </div>
-                                <div class="text-area">
-                                    <div class="content-text text-left">
-                                        <div class="title">
-                                            <a href="blog-single.html"><h5>Checking a Website’s Security</h5></a>
-                                        </div>
-                                        <div class="text">
-                                            <p>Nisl dolor accllentesque faucibus. numaris vel, tincidunt fusce tempor non, laoreet volat integer quam iaculis est malesuada </p>
-                                        </div>
-                                        <div class="read-more-btn">
-                                            <a href="blog-single.html">Read More</a>
-                                        </div>                            
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="item-holder">
-                                <div class="image-box">
-                                    <figure>
-                                        <a href="blog-single.html"><img src="<?php echo base_url().'assets/'?>images/blog/blog-3.jpg" alt=""></a>
-                                    </figure>
-                                    <div class="date-box">
-                                        <span class="date-day">18</span>
-                                        <span class="date-year">Jun</span>
-                                    </div>
-                                </div>
-                                <div class="text-area">
-                                    <div class="content-text text-left">
-                                        <div class="title">
-                                            <a href="blog-single.html"><h5>It’s Complicated: The Path Israeli</h5></a>
-                                        </div>
-                                        <div class="text">
-                                            <p>Nisl dolor accllentesque faucibus. numaris vel, tincidunt fusce tempor non, laoreet volat integer quam iaculis est malesuada </p>
-                                        </div>
-                                        <div class="read-more-btn">
-                                            <a href="blog-single.html">Read More</a>
-                                        </div>                            
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
             
-            
-                     
-            
-            
-            <!--End Blog Section-->
-            <div id="mymodal" class="modal" tabindex="-1" role="dialog">
+            <!--modal alert message-->
+            <div id="modal_alert_message" class="modal" style="margin-top:15%" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
+                            <h4 class="modal-title"><i class="fa fa-warning" style="color:red"></i> Alerta</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Modal body text goes here.</p>
+                            <p id="alert_message_text" style="color:black"></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button id="accept_modal_alert_message" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--modal success message-->
+            <div id="modal_success_message" class="modal" style="margin-top:15%" tabindex="-2" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><i class="fa fa-check" style="color:green"></i> Sucesso</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="success_message_text" style="color:black"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="accept_modal_success_message" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -930,10 +783,10 @@
                                 <p>Subscreva-se e receba nossas notícias e novidades em primeira mão!</p>
                                 <form name="contact_form" class="default-form contact-form" method="post">
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Seu email" required="">
+                                        <input id="subscription_email" type="email" name="email" placeholder="Seu email" required="">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="thm-btn bg-clr4">Subscrever</button>
+                                        <button id="subscription_btn" type="submit" class="thm-btn bg-clr4">Subscrever</button>
                                     </div>
                                 </form>               
                             </div>
@@ -959,41 +812,29 @@
 
             <!--Scroll to top-->
             <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
             <!-- main jQuery -->
-            <script src="<?php echo base_url().'assets/'?>js/jquery.min.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/jquery.min.js"></script>            
             <!-- bootstrap -->
-            <script src="<?php echo base_url().'assets/'?>js/bootstrap.min.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/bootstrap.min.js"></script>            
             <!-- count to -->
-            <script src="<?php echo base_url().'assets/'?>js/jquery.countTo.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/jquery.countTo.js"></script>            
             <!-- validate -->
-            <script src="<?php echo base_url().'assets/'?>js/validation.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/validation.js"></script>            
             <!-- owl carousel -->
-            <script src="<?php echo base_url().'assets/'?>js/owl.carousel.min.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/owl.carousel.min.js"></script>            
             <!-- mixit up -->
-            <script src="<?php echo base_url().'assets/'?>js/jquery.mixitup.min.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/jquery.mixitup.min.js"></script>            
             <!-- fancy box -->
             <script src="<?php echo base_url().'assets/'?>js/jquery.fancybox.pack.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/jquery.appear.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/jquery.appear.js"></script>            
             <!-- isotope script-->
             <script src="<?php echo base_url().'assets/'?>js/isotope.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/lightbox.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/jquery.magnific-popup.min.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/jquery.magnific-popup.min.js"></script>            
             <!-- Bootstrap select picker js -->
-            <script src="<?php echo base_url().'assets/'?>bootstrap-sl-1.12.1/bootstrap-select.js"></script>                               
-            
-            <!-- Bootstrap bootstrap touchspin js -->
+            <script src="<?php echo base_url().'assets/'?>bootstrap-sl-1.12.1/bootstrap-select.js"></script>            
             <!-- jQuery ui js -->
             <script src="<?php echo base_url().'assets/'?>jquery-ui-1.11.4/jquery-ui.js"></script>
-
             <!--Revolution Slider-->
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
@@ -1006,10 +847,13 @@
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/main-slider-script.js"></script>
-            
+            <script src="<?php echo base_url().'assets/'?>js/main-slider-script.js"></script>            
             <!-- thm custom script -->
             <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
+            <!-- systerm scripts -->
+            <script src="<?php echo base_url().'assets/'?>js/doorig/PT/internalization.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/talkme_painel.js"></script>
         </div>
     </body>
 </html>
