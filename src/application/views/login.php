@@ -160,7 +160,7 @@
                             <div class="form-sec form-login" >
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
-                                        <h2>Entre suas credencias</h2>
+                                        <h2>Login</h2>
                                         <span class="border"></span>
                                     </div>
                                 </div>                                                                                                
@@ -192,7 +192,7 @@
                                             </div>                 
                                         </div>
                                         <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
+                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Entrar</button>
                                         </div>                            
                                     </div>
                                 </form>

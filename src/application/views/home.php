@@ -120,7 +120,7 @@
                                         <ul class="navigation clearfix">
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
-                                            <li class="dropdown"><a href="#lnk_contact_us">CONTÁTENOS</a></li>
+                                            <li class="dropdown"><a href="#lnk_contact_us">CONTATO</a></li>
                                             <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/welcome/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
@@ -162,7 +162,7 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <h1 class="text-left">Seja bem-vindo.<br>Você tém a solução aqui!</h1>
+                                    <h1 class="text-left">Seja bem-vindo.<br>Você tem a solução aqui!</h1>
                                 </div>
 
                                 <div class="tp-caption" 
@@ -201,7 +201,7 @@
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
-                                        <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
+                                        <a href="#lnk_how_function" class="thm-btn bg-clr2">Contato</a>
                                         <a href="<?php echo base_url().'index.php/welcome/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
@@ -289,7 +289,7 @@
                             <div class="service-block text-center" id="how-to-help-painel-1">
                                 <div class="icon-area">
                                     <div class="icon-box">
-                                        <i class="flaticon-cute-rocket-launching"></i>
+                                        <i class="flaticon-team"></i>
                                     </div>
                                     <a href="#"><h5>Maior visibilidade da sua marca </h5></a>
                                     <p>Novos seguidores reais na sua conta.<br> Segmentações e filtros de qualidade.<br> Likes em postagens e comentários.</p>
@@ -303,7 +303,7 @@
                             <div class="service-block text-center" id="how-to-help-painel-2">
                                 <div class="icon-area">
                                     <div class="icon-box">
-                                        <i class="flaticon-seo-performance-marketing-graphic"></i>
+                                        <i class="flaticon-business-plan"></i>
                                     </div>
                                     <a href="#"><h5>Postagens, stories e directs</h5></a>
                                     <p>Stories e postagens automatizadas nos horários desejados.<br> Vários directs por dia sobre a sua marca. <br><br></p>
@@ -317,7 +317,7 @@
                             <div class="service-block text-center" id="how-to-help-painel-3">
                                 <div class="icon-area">
                                     <div class="icon-box">
-                                        <i class="flaticon-support"></i>
+                                        <i class="flaticon-landing"></i>
                                     </div>
                                     <a href="#"><h5>Extração e análises de Leads </h5></a>
                                     <p>Milhares de leads para Marketing digital e Telemarketing. <br> Mineração em tempo real. Cruzamento com banco de dados.</p>
@@ -331,7 +331,7 @@
                             <div class="service-block text-center" id="how-to-help-painel-4">
                                 <div class="icon-area">
                                     <div class="icon-box">
-                                        <i class="flaticon-seo-performance-marketing-graphic"></i>
+                                        <i class="flaticon-website"></i>
                                     </div>
                                     <a href="#"><h5>Deep-account-analisys e estatísticas</h5></a>
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
@@ -370,7 +370,7 @@
                        <div class="col-md-6 col-sm-12">
                             <div class="right-content-area"> 
                                 <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram . </h2></div>
-                                <spam>Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line a través da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG te permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de refrência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </spam>
+                                <spam>Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line através da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de referência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </spam>
 
                                 <div class="about-item">
                                     <ul>
