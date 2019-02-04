@@ -52,6 +52,36 @@ $(document).ready(function(){
                 $('.sigin-painel-steep-3').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
                 $('.sigin-painel-steep-4').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
             }
+    });
+
+    $("#subscription_btn").click(function(){
+        email=validate_element('#subscription_email',"^[a-zA-Z0-9\._-]+@([a-zA-Z0-9-]{2,}[.])*[a-zA-Z]{2,}$");
+        if(email){
+            //var l = Ladda.create(this);  l.start(); l.start();
+            $.ajax({
+                url : base_url+'index.php/welcome/subscription',
+                data :{ 
+                        'subscription_email':$("#subscription_email").val(),
+                    },
+                type : 'POST',
+                dataType : 'json',
+                success : function(response){
+                    if(response['success']){                        
+                        modal_alert_message(response['message']);                        
+                        $("#subscription_email").val("");
+                    } else
+                        modal_alert_message(response['message']);    
+                    //l.stop();
+                },
+                error : function(xhr, status) {
+                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
+                    //l.stop();
+                    $("#subscription_email").val("");
+                }
+            });
+        } else{
+            modal_alert_message(T('Alguns dados incorretos'));            
+        }                             
     });        
         
     $('.sigin-painel-steep-2').height($('.sigin-painel-steep-1').height());

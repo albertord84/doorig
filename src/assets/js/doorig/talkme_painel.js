@@ -41,37 +41,7 @@ $(document).ready(function(){
         } else{
             modal_alert_message(T('Alguns dados incorretos'));            
         }                             
-    });
-    
-    $("#subscription_btn").click(function(){
-        email=validate_element('#subscription_email',"^[a-zA-Z0-9\._-]+@([a-zA-Z0-9-]{2,}[.])*[a-zA-Z]{2,}$");
-        if(email){
-            //var l = Ladda.create(this);  l.start(); l.start();
-            $.ajax({
-                url : base_url+'index.php/welcome/subscription',
-                data :{ 
-                        'subscription_email':$("#subscription_email").val(),
-                    },
-                type : 'POST',
-                dataType : 'json',
-                success : function(response){
-                    if(response['success']){                        
-                        modal_alert_message(response['message']);                        
-                        $("#subscription_email").val("");
-                    } else
-                        modal_alert_message(response['message']);    
-                    //l.stop();
-                },
-                error : function(xhr, status) {
-                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();
-                    $("#subscription_email").val("");
-                }
-            });
-        } else{
-            modal_alert_message(T('Alguns dados incorretos'));            
-        }                             
-    });
+    });        
               
     $('#contact_form').keypress(function (e) {
         if (e.which == 13) {

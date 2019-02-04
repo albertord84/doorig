@@ -45,14 +45,14 @@
 
 
         <!--Start Top bar area -->  
-        <section class="top-bar-area n-on-show-in-moviles">
+        <!--<section class="top-bar-area n-on-show-in-moviles">
             <div class="container clearfix">
                 <div class="left-side">
                     <div class="top-info">
                         <h6>Levamos sua marca a outro nível</h6>
                     </div>
                 </div>
-                <div class="right-side clearfix">
+                div class="right-side clearfix">
                     <div class="top-right">
                         <h6>Siga-nos</h6>
                     </div>
@@ -62,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!--End Top bar area --> 
 
         <!--Start header area-->
@@ -175,7 +175,7 @@
                                             <div class="form-group">
                                                 <input type="password" name="pass" placeholder="Comfirmar Senha" required="">
                                             </div>                 
-                                        </div>                                                                                                                     
+                                        </div>
                                         <!--<div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group text-center">
                                                 <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
