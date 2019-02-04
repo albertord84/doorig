@@ -14,10 +14,30 @@ class Signin extends CI_Controller {
     require_once getcwd() . '/application/business/Response/Response.php';
   }
 
+  //----------LOGIN FUNCTIONS--------------------------
+  //OJO: Decidir si se va a hacer un controlador para el login y recuperacion de senha
+  public function login_view() {
+    $this->load->view('login');
+  }
+
+  public function pass_reset() {
+    $this->load->view('pass-reset');
+  }
+
+  public function password_recovery() {
+    $datas = $this->input->post();
+    //enviar email a $datas["email"] con link para vista de trocar senha	
+  }
+
   public function signin_view() {
     $this->load->library('session');
+    //$this->redirect_to_dasboard();
+  }
 
-    $this->load->view('signin');
+  public function do_login() {
+    $datas = $this->input->post();
+    //implementar aqui el resto		
+    //$this->redirect_to_dasboard();
   }
 
   public function signin_step1() {
@@ -49,7 +69,7 @@ class Signin extends CI_Controller {
     $client_id = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
 
     // Retur Response   
-    $reponse = $client_id? new business\Response\Response(0, "Steep 1 OK") : new business\Response\Response(1, "Error inserting client");
+    $reponse = $client_id ? new business\Response\Response(0, "Steep 1 OK") : new business\Response\Response(1, "Error inserting client");
     return $reponse->toJson();
   }
 
