@@ -42,7 +42,7 @@
 
 
 <!--Start Top bar area -->  
-<section class="top-bar-area">
+<!--<section class="top-bar-area">
     <div class="container clearfix">
         <div class="left-side">
             <div class="top-info">
@@ -56,14 +56,10 @@
             <ul class="social-links">
                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>|
                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-<!--                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
             </ul>
         </div>
     </div>
-</section>
+</section>-->
 <!--End Top bar area --> 
  
 <!--Start header area-->

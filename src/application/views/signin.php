@@ -45,7 +45,7 @@
 
 
         <!--Start Top bar area -->  
-        <section class="top-bar-area n-on-show-in-moviles">
+        <!--<section class="top-bar-area n-on-show-in-moviles">
             <div class="container clearfix">
                 <div class="left-side">
                     <div class="top-info">
@@ -62,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!--End Top bar area --> 
 
         <!--Start header area-->

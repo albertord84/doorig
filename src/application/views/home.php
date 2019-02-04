@@ -18,10 +18,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
         
-        <script type="text/javascript">
-            var base_url = <?php echo base_url();?>;
-            alert(base_url);
-        </script>
+        <script type="text/javascript"> var base_url = <?php echo base_url();?>;</script>
     </head>
 
     <body>
@@ -38,7 +35,7 @@
             <!-- End Preloader -->  
 
             <!--Start Top bar area -->  
-            <section class="top-bar-area">
+            <!--<section class="top-bar-area">
                 <div class="container clearfix">
                     <div class="left-side">
                         <div class="top-info">
@@ -55,7 +52,7 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section>-->
             <!--End Top bar area --> 
             
             <!--Start header area-->
@@ -380,7 +377,7 @@
                        <div class="col-md-6 col-sm-12">
                             <div class="right-content-area"> 
                                 <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram . </h2></div>
-                                <spam>Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line através da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de referência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </spam>
+                                <p class="text-justify">Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line através da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de referência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </p>
 
                                 <div class="about-item">
                                     <ul>
