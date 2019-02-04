@@ -70,7 +70,7 @@ class Signin extends CI_Controller {
 
     // Retur Response   
     $reponse = $client_id ? new business\Response\Response(0, "Steep 1 OK") : new business\Response\Response(1, "Error inserting client");
-    return $reponse->toJson();
+    echo $reponse->toJson();
   }
 
   public function request_secure_code_by_email() {
