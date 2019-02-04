@@ -9,7 +9,9 @@ class Signin extends CI_Controller {
   public function __construct() {
     parent::__construct();
 
-    require_once config_item('business-reponse-class');
+    // TODO: Preguntar a Carlos
+    //require_once config_item('business-reponse-class');
+    require_once getcwd() . '/application/business/Response/Response.php';
   }
 
   public function signin_view() {
@@ -44,12 +46,10 @@ class Signin extends CI_Controller {
     $datas["status_id"] = "1";
     $datas["node_id"] = "1";
     $this->load->model('Clients_model');
-    $result = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-
+    $client_id = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
 
     // Retur Response   
-    require_once getcwd() . '/application/business/Response/Response.php';
-    $reponse = new business\Response\Response();
+    $reponse = $client_id? new business\Response\Response(0, "Steep 1 OK") : new business\Response\Response(1, "Error inserting client");
     return $reponse->toJson();
   }
 
