@@ -38,11 +38,15 @@ class Clients_model extends CI_Model {
     $this->utm_campain = $utm_campain;
     $this->login_token = $login_token;
 
-
-    $this->db->insert('clients', $this);
-
-
-
+    try {
+      $this->db->insert('clients', $this);
+    } catch (\Error $e) {
+      if ($this->db->error()['code'] != 0) {
+        throw new \Db_Exception($this->db->error(), $e);
+      } else {
+        throw $e;
+      }
+    }
     return $this->db->insert_id();
   }
 
@@ -78,8 +82,15 @@ class Clients_model extends CI_Model {
     if ($login_token)
       $this->login_token = $login_token;
 
-
-    $this->db->update('clients', $this, array('id' => $id));
+    try {
+      $this->db->update('clients', $this, array('id' => $id));
+    } catch (Error $e) {
+      if ($this->db->error()['code'] != 0) {
+        throw new Db_Exception($this->db->error(), $e);
+      } else {
+        throw $e;
+      }
+    }
   }
 
   function get_by_id($id) {

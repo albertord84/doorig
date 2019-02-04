@@ -2,6 +2,8 @@
 
 namespace business {
 
+  require_once getcwd() . '/application/business/Business.php';
+  require_once getcwd() . '/application/business/OwnException.php';
   //require_once config_item('business-user-class');
 
   /**
@@ -12,7 +14,7 @@ namespace business {
    * @todo Define an Client business class.
    * 
    */
-  class Client extends Bussines {
+  class Client extends Business {
 
     /**
      * 
@@ -43,9 +45,7 @@ namespace business {
       parent::__construct();
 
       $ci = &get_instance();
-      $ci->load->model('clients_model');
-      
-      require_once getcwd() . '/application/business/Business.php';
+      $ci->load->model('Clients_model');
     }
 
     /**
@@ -67,7 +67,7 @@ namespace business {
      */
     public function load_data_by_email(string $email) {
       $ci = &get_instance();
-      $data = $ci->Clients_model->get_by_email($id);
+      $data = $ci->Clients_model->get_by_email($email);
 
       $this->fill_data($data);
     }

@@ -41,13 +41,18 @@ class Signin extends CI_Controller {
   public function do_login() {
     try {
       $datas = $this->input->post();
+      $datas["email"] = "777@7.7";
+      $datas["password"] = "7777";
+
+
 
       $Client = new Client();
       $Client->load_data_by_email($datas["email"]);
       if ($Client->check_pass($datas["password"]) == FALSE)
         throw new Exception("Password do not match for this email");
     } catch (Exception $exc) {
-      Response::ResponseFAIL($exc->getTraceAsString())->toJson();
+      Response::ResponseFAIL($exc->getMessage())->toJson();
+      return;
     }
 
     Response::ResponseOK()->toJson();
@@ -85,8 +90,11 @@ class Signin extends CI_Controller {
       $datas["node_id"] = "1";
       $this->load->model('Clients_model');
       $client_id = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-    } catch (Exception $exc) {
-      Response::ResponseFAIL(1, $exc->getTraceAsString())->toJson();
+    } catch (\Error $e) {
+      Response::ResponseFAIL(1, $e->getTraceAsString())->toJson();
+    } catch (\Db_Exception $e) {
+      echo "<h2>try-catch del controller</h2>";
+      echo $e->getErrorInfo();
     }
     // Retur Response   
     Response::ResponseOK()->toJson();
