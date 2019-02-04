@@ -6,6 +6,12 @@ ini_set('xdebug.var_display_max_data', 1024);
 
 class Signin extends CI_Controller {
 
+  public function __construct() {
+    parent::__construct();
+
+    require_once config_item('business-reponse-class');
+  }
+
   public function signin_view() {
     $this->load->library('session');
 
@@ -41,8 +47,10 @@ class Signin extends CI_Controller {
     $result = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
 
 
-    // Retur Response
-    echo json_encode($result);
+    // Retur Response   
+    require_once getcwd() . '/application/business/Response/Response.php';
+    $reponse = new business\Response\Response();
+    return $reponse->toJson();
   }
 
   public function request_secure_code_by_email() {
