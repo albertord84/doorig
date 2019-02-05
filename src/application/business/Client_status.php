@@ -43,9 +43,9 @@ namespace business {
          * 
          */
         function __construct() {
-            parent::__construct();
-
-            $ci = &get_instance();
+            parent::__construct(); 
+            
+            $ci = &get_instance(); 
             $ci->load->model('Clients_model');
         }
 

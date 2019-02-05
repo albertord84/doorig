@@ -9,118 +9,122 @@ use business\Client;
 
 class Signin extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
 
-  public function __construct() {
-    parent::__construct();
-
-    // TODO: Preguntar a Carlos
-    //require_once config_item('business-reponse-class');
-    require_once getcwd() . '/application/business/Response/Response.php';
-    require_once getcwd() . '/application/business/Client.php';
-  }
-
-  //----------LOGIN FUNCTIONS--------------------------
-
-  public function login_view() {
-    $this->load->view('login');
-  }
-
-  public function pass_reset() {
-    $this->load->view('pass-reset');
-  }
-
-  public function password_recovery() {
-    $datas = $this->input->post();
-    //enviar email a $datas["email"] con link para vista de trocar senha	
-  }
-
-  public function signin_view() {
-    $this->load->library('session');
-    //$this->redirect_to_dasboard();
-  }
-
-  public function do_login() {
-    try {
-      $datas = $this->input->post();
-      $datas["email"] = "777@7.7";
-      $datas["password"] = "7777";
-
-
-
-      $Client = new Client();
-      $Client->load_data_by_email($datas["email"]);
-      if ($Client->check_pass($datas["password"]) == FALSE)
-        throw new Exception("Password do not match for this email");
-    } catch (Exception $exc) {
-      Response::ResponseFAIL($exc->getMessage())->toJson();
-      return;
+        // TODO: Preguntar a Carlos
+        //require_once config_item('business-reponse-class');
+        require_once getcwd() . '/application/business/Response/Response.php';
+        require_once getcwd() . '/application/business/Client.php';
     }
 
-    Response::ResponseOK()->toJson();
-  }
+    //----------LOGIN FUNCTIONS--------------------------
 
-  //---------------SIGNIN FUNCTIONS-----------------------------
-  // Step 1 {
-  public function signin_step1() {
-    try {
-
-
-      //$this->load->library('input');
-      $datas = $this->input->post();
-      //1. Validate Signin Data
-      //$this->load->library('form_validation');
-      //$this->form_validation->set_rules();
-      //$this->form_validation->set_rules('name', 'Name', 'required');
-      //$this->form_validation->set_rules('email', 'Email', 'required');
-      //$this->form_validation->set_rules('phone', 'Phone', 'required');
-      //$this->form_validation->set_rules('password', 'Password', 'required');
-      //$this->form_validation->set_rules('password-rep', 'Password Confirmation', 'required');
-      //if ($this->form_validation->run() == FALSE) {
-      // Returnd erros
-      // $this->form_validation->validation_errors();
-      //echo json_encode($response);
-      //return;
-      //}
-      //2. Save Signin Data
-      $datas["name"] = "777";
-      $datas["email"] = "777@7.7";
-      $datas["phone"] = "777 77";
-      $datas["password"] = "7777";
-      $datas["password-rep"] = "7777";
-      $datas["status_id"] = "1";
-      $datas["node_id"] = "1";
-      $this->load->model('Clients_model');
-      $client_id = $this->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-    } catch (\Error $e) {
-      Response::ResponseFAIL(1, $e->getTraceAsString())->toJson();
-    } catch (\Db_Exception $e) {
-      echo "<h2>try-catch del controller</h2>";
-      echo $e->getErrorInfo();
+    public function login_view() {
+        $this->load->view('login');
     }
-    // Retur Response   
-    Response::ResponseOK()->toJson();
-  }
 
-  // Step 2 {
-  public function request_secure_code_by_email() {
-    //implementar aqui el resto
-    //retornar success ou error
-    echo json_encode($response);
-  }
+    public function pass_reset() {
+        $this->load->view('pass-reset');
+    }
 
-  public function request_secure_code_by_sms() {
-    //implementar aqui el resto
-    //retornar success ou error
-    echo json_encode($response);
-  }
+    public function password_recovery() {
+        $datas = $this->input->post();
+        //enviar email a $datas["email"] con link para vista de trocar senha	
+    }
 
-  // Step 3 {
-  public function confirm_secure_code() {
-    $datas = $this->input->post();
-    //implementar aqui el resto		
+    public function signin_view() {
+        $this->load->library('session');
+        //$this->redirect_to_dasboard();
+    }
 
-    $this->redirect_to_dasboard();
-  }
+    public function do_login() {
+        try {
+            $datas = $this->input->post();
+            $datas["email"] = "777@7.7";
+            $datas["password"] = "7777";
 
-  //---------------SECUNDARY FUNCTIONS-----------------------------
+
+
+            $Client = new Client();
+            $Client->load_data_by_email($datas["email"], Statu);
+            if ($Client->check_pass($datas["password"]) == FALSE)
+                throw new Exception("", \Error_code::WRON_PASSWORD);
+        } catch (Exception $exc) {
+            if ($exc->getCode() == \Error_code::EMAIL_NOT_FOUND)
+                Response::ResponseFAIL(\Error_code::getMessage($exc->getCode()))->toJson();
+            else 
+                Response::ResponseFAIL($exc->getMessage())->toJson();
+            return;
+        }
+
+        Response::ResponseOK()->toJson();
+    }
+
+    //---------------SIGNIN FUNCTIONS-----------------------------
+    // Step 1 {
+    public function signin_step1() {
+        try {
+
+
+            //$this->load->library('input');
+            $datas = $this->input->post();
+            //1. Validate Signin Data
+            //$this->load->library('form_validation');
+            //$this->form_validation->set_rules();
+            //$this->form_validation->set_rules('name', 'Name', 'required');
+            //$this->form_validation->set_rules('email', 'Email', 'required');
+            //$this->form_validation->set_rules('phone', 'Phone', 'required');
+            //$this->form_validation->set_rules('password', 'Password', 'required');
+            //$this->form_validation->set_rules('password-rep', 'Password Confirmation', 'required');
+            //if ($this->form_validation->run() == FALSE) {
+            // Returnd erros
+            // $this->form_validation->validation_errors();
+            //echo json_encode($response);
+            //return;
+            //}
+            //2. Save Signin Data
+            $datas["name"] = "777";
+            $datas["email"] = "777@7.7";
+            $datas["phone"] = "777 77";
+            $datas["password"] = "7777";
+            $datas["password-rep"] = "7777";
+            $datas["status_id"] = "1";
+            $datas["node_id"] = "1";
+            $Client = new Client();
+            if (!$Client->exist($datas["email"], Status)) 
+                $Client->ci->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
+        } catch (\Error $e) {
+            Response::ResponseFAIL(1, $e->getMessage())->toJson();
+        } catch (\Db_Exception $e) {
+            Response::ResponseFAIL(2, $e->getMessage())->toJson();
+        } catch (\Exception $e) {
+            Response::ResponseFAIL(2, $e->getMessage())->toJson();
+        }
+        // Retur Response   
+        Response::ResponseOK()->toJson();
+    }
+
+    // Step 2 {
+    public function request_secure_code_by_email() {
+        //implementar aqui el resto
+        //retornar success ou error
+        echo json_encode($response);
+    }
+
+    public function request_secure_code_by_sms() {
+        //implementar aqui el resto
+        //retornar success ou error
+        echo json_encode($response);
+    }
+
+    // Step 3 {
+    public function confirm_secure_code() {
+        $datas = $this->input->post();
+        //implementar aqui el resto		
+
+        $this->redirect_to_dasboard();
+    }
+
+    //---------------SECUNDARY FUNCTIONS-----------------------------
 }
