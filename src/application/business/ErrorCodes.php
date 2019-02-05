@@ -13,12 +13,14 @@ namespace business {
         const WRONG_PASSWORD = 2;
         const EMAIL_ALREADY_EXIST = 3;
         const CLIENT_DATA_NOT_FOUND = 4;
+        const DB_ERROR = 5;
 
         public static $Messages = array(
             ErrorCodes::EMAIL_NOT_FOUND => "Email não encontrado",
             ErrorCodes::WRONG_PASSWORD => "O password não coiside para o email informado",
             ErrorCodes::EMAIL_ALREADY_EXIST => "O email informado ja existe",
-            ErrorCodes::CLIENT_DATA_NOT_FOUND => "Os dados do cliente não foram encontrados"
+            ErrorCodes::CLIENT_DATA_NOT_FOUND => "Os dados do cliente não foram encontrados",
+            ErrorCodes::DB_ERROR => "Database error"
         );
 
         public function __construct() {

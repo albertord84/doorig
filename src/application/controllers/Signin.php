@@ -45,8 +45,8 @@ class Signin extends CI_Controller {
             $datas["password"] = "777";
 
 
-
-            Client::do_login($datas["email"], $datas["password"]);
+            $Client = new Client();
+            //Client::do_login($datas["email"], $datas["password"]);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
