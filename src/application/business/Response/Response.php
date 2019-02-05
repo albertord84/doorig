@@ -20,8 +20,18 @@ namespace business\Response {
 
     public function toJSON() {
       get_instance()->output
-        ->set_content_type('application/json')
-        ->set_output(json_encode($this->output_array));
+              ->set_content_type('application/json')
+              ->set_output(json_encode($this->output_array));
+    }
+
+    static function ResponseOK(string $message = "OK") {
+      $R = new Response(0, $message);
+      return $R;
+    }
+
+    static function ResponseFAIL(string $message = "FAIL", int $code = 1) {
+      $R = new Response($code, $message);
+      return $R;
     }
 
   }
