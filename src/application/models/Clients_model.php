@@ -110,9 +110,7 @@ class Clients_model extends CI_Model {
 
     $query = $this->db->get('clients');
 
-
-
-    return $query->row();
+    return $query->last_row();
   }
 
   function get_all() {

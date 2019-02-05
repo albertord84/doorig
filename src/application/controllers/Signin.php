@@ -42,19 +42,13 @@ class Signin extends CI_Controller {
         try {
             $datas = $this->input->post();
             $datas["email"] = "777@7.7";
-            $datas["password"] = "7777";
+            $datas["password"] = "777";
 
 
 
-            $Client = new Client();
-            $Client->load_data_by_email($datas["email"], Statu);
-            if ($Client->check_pass($datas["password"]) == FALSE)
-                throw new Exception("", \Error_code::WRON_PASSWORD);
+            Client::do_login($datas["email"], $datas["password"]);
         } catch (Exception $exc) {
-            if ($exc->getCode() == \Error_code::EMAIL_NOT_FOUND)
-                Response::ResponseFAIL(\Error_code::getMessage($exc->getCode()))->toJson();
-            else 
-                Response::ResponseFAIL($exc->getMessage())->toJson();
+            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
         }
 
@@ -92,17 +86,16 @@ class Signin extends CI_Controller {
             $datas["status_id"] = "1";
             $datas["node_id"] = "1";
             $Client = new Client();
-            if (!$Client->exist($datas["email"], Status)) 
-                $Client->ci->Clients_model->save($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
+            $Client->Insert($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
         } catch (\Error $e) {
-            Response::ResponseFAIL(1, $e->getMessage())->toJson();
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Db_Exception $e) {
-            Response::ResponseFAIL(2, $e->getMessage())->toJson();
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Exception $e) {
-            Response::ResponseFAIL(2, $e->getMessage())->toJson();
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
         // Retur Response   
-        Response::ResponseOK()->toJson();
+        return Response::ResponseOK()->toJson();
     }
 
     // Step 2 {

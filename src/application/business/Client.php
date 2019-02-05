@@ -3,6 +3,8 @@
 namespace business {
 
     require_once getcwd() . '/application/business/Business.php';
+    require_once getcwd() . '/application/business/ClientStatus.php';
+    require_once getcwd() . '/application/business/ErrorCodes.php';
     require_once getcwd() . '/application/business/OwnException.php';
     //require_once config_item('business-user-class');
 
@@ -73,7 +75,7 @@ namespace business {
             $this->fill_data($data);
         }
 
-        private function fill_data(\stdClass $data) {
+        private function fill_data(\stdClass $data = NULL) {
             if ($data) {
                 $this->Id = $data->id;
                 $this->Name = $data->name;
@@ -88,10 +90,22 @@ namespace business {
                 $this->Utm_source = $data->utm_source;
                 $this->Utm_campain = $data->utm_campain;
                 $this->Login_token = $data->login_token;
+            } else {
+                //throw ErrorCodes::getException(ErrorCodes::CLIENT_DATA_NOT_FOUND);
             }
-            else {
-                throw new Exception("Data not found", 101);
+        }
+
+        public function insert($name, $email, $password, $status_id = 1, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
+            try {
+                if (Client::exist($email, ClientStatus::ACTIVE)) {
+                    throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
+                }
+                $ci = &get_instance();
+                $client_id = $ci->Clients_model->save($name, $email, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            } catch (\Exception $exc) {
+                throw $exc;
             }
+            return $client_id;
         }
 
         /**
@@ -107,10 +121,24 @@ namespace business {
                 $id = $id ? $id : $this->id;
                 $status_id = $status_id ? $status_id : $this->status_id;
                 $result = $ci->Clients_model->update($id, NULL, NULL, NULL, $status_id);
-            } catch (Exception $exc) {
+            } catch (\Exception $exc) {
                 echo $exc->getTraceAsString();
             }
         }
+
+        /**
+         * 
+         * @param type $password
+         * @return boolean
+         */
+        public function check_pass($password) {
+            if ($this->Password === $password) {
+                return TRUE;
+            }
+            return FALSE;
+        }
+
+        //---------------SIGNIN FUNCTIONS-----------------------------
 
         /**
          * 
@@ -121,11 +149,24 @@ namespace business {
             return $ci->Clients_model->get_all();
         }
 
-        function check_pass($password) {
-            if ($this->Password === $password) {
-                return TRUE;
+        /**
+         * Check if $password match with client password
+         * @param string $email
+         * @param string $password
+         * @throws Exception
+         */
+        static function do_login(string $email, string $password) {
+            $Client = new Client();
+            $Client->load_data_by_email($email);
+            if ($Client->check_pass($password) == FALSE) {
+                throw ErrorCodes::getException(ErrorCodes::WRONG_PASSWORD);
             }
-            return FALSE;
+        }
+
+        static function exist(string $email, int $status) {
+            $Client = new Client();
+            $Client->load_data_by_email($email);
+            return $Client->Status_id == $status;
         }
 
     }
