@@ -7,9 +7,9 @@ class Translation{
       $this->ci = & get_instance();
     }
    
-    function T($token,$array_params){ 
+    function T($token,$lang){ 
         $this->ci->load->model('Translation_model');
-        return $this->ci->Translation_model->get_text_by_token('COMO FUNCIONA');        
+        return $this->ci->Translation_model->get_text_by_token($token,$lang);        
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace business\Response {
+namespace shared\Response {
 
   /**
    * Description of Response

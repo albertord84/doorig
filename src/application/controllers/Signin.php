@@ -12,10 +12,8 @@ class Signin extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        // TODO: Preguntar a Carlos
-        //require_once config_item('business-reponse-class');
-        require_once getcwd() . '/application/business/Response/Response.php';
-        require_once getcwd() . '/application/business/Client.php';
+        require_once config_item('business-client-class');
+        require_once config_item('business-response-class');
     }
 
     //----------LOGIN FUNCTIONS--------------------------
@@ -42,11 +40,11 @@ class Signin extends CI_Controller {
         try {
             $datas = $this->input->post();
             $datas["email"] = "777@7.7";
-            $datas["password"] = "777";
+            $datas["password"] = "7777";
 
 
             $Client = new Client();
-            //Client::do_login($datas["email"], $datas["password"]);
+            Client::do_login($datas["email"], $datas["password"]);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
@@ -100,9 +98,11 @@ class Signin extends CI_Controller {
 
     // Step 2 {
     public function request_secure_code_by_email() {
-        //implementar aqui el resto
-        //retornar success ou error
-        echo json_encode($response);
+        try {
+            
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
     public function request_secure_code_by_sms() {
