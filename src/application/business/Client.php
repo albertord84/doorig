@@ -5,7 +5,6 @@ namespace business {
     require_once config_item('business-class');
     require_once config_item('business-client-status-class');
     require_once config_item('business-error-codes-class');
-    require_once config_item('business-own-exception-class');
 
     /**
      * @category Business class

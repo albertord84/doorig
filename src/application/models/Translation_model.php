@@ -1,13 +1,30 @@
 <?php
 
+if (!defined('BASEPATH'))
+  exit('No direct script access allowed');
+
+/**
+
+ * @category CodeIgniter-Model: clients_Model
+
+ * 
+
+ * @access public
+
+ * @todo <description>
+
+ * 
+
+ */
 class Translation_model extends CI_Model {
 
     public $language = NULL;
 
-    function __construct() {
+    function construct() {
+        parent::construct();
     }
 
-    public function get_text_by_token($token,$lang) {
+    public function get_text_by_token($token, $lang = "PT") {
         if($lang==='PT')
             $this->language ='portugues';
         else
