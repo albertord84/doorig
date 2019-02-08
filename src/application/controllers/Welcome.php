@@ -8,7 +8,7 @@ use business\Response\Response;
 use business\Client;
 
 class Welcome extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
 
@@ -18,31 +18,16 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $this->load->library('session');
-        /* $this->is_ip_hacker();
-          $language = $this->input->get();
-          $this->load->model('class/system_config');
-          $GLOBALS['sistem_config'] = $this->system_config->load();
-          if (isset($language['language']))
-          $param['language'] = $language['language'];
-          else
-          $param['language'] = $GLOBALS['sistem_config']->LANGUAGE;
-<<<<<<< HEAD
-      $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
-      $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
-      $GLOBALS['language'] = $param['language'];*/
-      $param["footer"] = $this->load->view('footer', '' , true);
-      $this->load->view('home', $param);
-=======
-          $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
-          $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
-          $GLOBALS['language'] = $param['language']; */
+
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
+        $GLOBALS['language'] = $param['language'];
+        $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('home', $param);
->>>>>>> 525c5d9c2a80abb8737f4cca694cfd83b4c79ee5
     }
 
     public function faqs_view() {
-        $param["footer"] = $this->load->view('footer', '' , true);
-        $this->load->view('faq',$param);
+        $param["footer"] = $this->load->view('footer', '', true);
+        $this->load->view('faq', $param);
     }
 
     public function message() {
@@ -63,15 +48,14 @@ class Welcome extends CI_Controller {
 //            $result['message'] = $this->T('Mensagem enviada, agradecemos seu contato', array(), $GLOBALS['language']);
 //        }
 //        echo json_encode($result);
-        
+
         $datas = $this->input->post();
-        $result['success']= true;
-        $result['message'] = "Mensagem enviada, agradecemos seu contato";//$this->T('Mensagem enviada, agradecemos seu contato', array(), $GLOBALS['language']);
+        $result['success'] = true;
+        $result['message'] = "Mensagem enviada, agradecemos seu contato"; //$this->T('Mensagem enviada, agradecemos seu contato', array(), $GLOBALS['language']);
         echo json_encode($result);
     }
 
     public function subscription() {
-<<<<<<< HEAD
 //        $this->is_ip_hacker();
 //        $this->load->model('class/system_config');
 //        $GLOBALS['sistem_config'] = $this->system_config->load();
@@ -85,39 +69,33 @@ class Welcome extends CI_Controller {
 //        $GLOBALS['language'] = $param['language'];
 //        $datas = $this->input->post();
 //        //TODO: insert email in database
-        
-        $datas = $this->input->post();
-        $result['success']= true;
-        $result['message'] = "Subscripção realiszada com sucesso";
-=======
-        $this->is_ip_hacker();
-        $this->load->model('class/system_config');
-        $GLOBALS['sistem_config'] = $this->system_config->load();
-        $this->load->library('Gmail');
-        $language = $this->input->get();
-        if (isset($language['language']))
-            $param['language'] = $language['language'];
-        else
-            $param['language'] = $GLOBALS['sistem_config']->LANGUAGE;
-        $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
-        $GLOBALS['language'] = $param['language'];
-        $datas = $this->input->post();
-        //TODO: insert email in database
 
->>>>>>> 525c5d9c2a80abb8737f4cca694cfd83b4c79ee5
-        echo json_encode($result);
+        $datas = $this->input->post();
+        $datas['email'] = 'josergm86@gmail.com';
+        
+        
+        //TODO: insert email in database
+        try {
+            $this->load->model("Subscriptions_model");
+            $this->Subscriptions_model->save($datas['email']);
+        } catch (Exception $exc) {
+            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
+            return;
+        }
+
+        Response::ResponseOK();
     }
 
     public function contact_us() {
         $datas = $this->input->post();
-        $datas["email"]    = "josergm86@gmail.com";
+        $datas["email"] = "josergm86@gmail.com";
         $datas["username"] = "77 77";
-        $datas["message"]  = "7 7 7 7";
-        $datas["company"]  = "7777";
-        $datas["phone"]    = "7 777";
-        
-        
-        
+        $datas["message"] = "7 7 7 7";
+        $datas["company"] = "7777";
+        $datas["phone"] = "7 777";
+
+
+
         try {
             $this->load->library("gmail");
             $this->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
