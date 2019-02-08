@@ -73,17 +73,19 @@ class Welcome extends CI_Controller {
         $datas = $this->input->post();
         $datas['email'] = 'josergm86@gmail.com';
         
-        
         //TODO: insert email in database
         try {
             $this->load->model("Subscriptions_model");
-            $this->Subscriptions_model->save($datas['email']);
-        } catch (Exception $exc) {
-            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
-            return;
+            $this->Subscriptions_model->save($datas ['email']);
+        } catch (\Error $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Db_Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), 2)->toJson();
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
 
-        Response::ResponseOK();
+        Response::ResponseOK()->toJson();
     }
 
     public function contact_us() {
@@ -99,9 +101,12 @@ class Welcome extends CI_Controller {
         try {
             $this->load->library("gmail");
             $this->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
-        } catch (\Exception $exc) {
-            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
-            return;
+        } catch (\Error $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Db_Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), 2)->toJson();
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
 
         Response::ResponseOK()->toJson();

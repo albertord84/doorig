@@ -11,13 +11,15 @@ namespace business {
      */
     class ErrorCodes {
 
-        const EMAIL_NOT_FOUND = 1;
-        const WRONG_PASSWORD = 2;
-        const EMAIL_ALREADY_EXIST = 3;
-        const CLIENT_DATA_NOT_FOUND = 4;
-        const DB_ERROR = 5;
-        const CLIENT_ID_NOT_FOUND = 6;
-        const GMAIL_ERROR_SEND = 7;
+        const EMAIL_NOT_FOUND = 21;
+        const WRONG_PASSWORD = 22;
+        const EMAIL_ALREADY_EXIST = 23;
+        const CLIENT_DATA_NOT_FOUND = 24;
+        const DB_ERROR = 25;
+        const CLIENT_ID_NOT_FOUND = 26;
+        const GMAIL_ERROR_SEND = 27;
+        const VERIFICATION_CODE_DONOT_MATCH = 28;
+        const VALIDATION_TOKEN_NOT_FOUND = 28;
 
         public static $Messages = array(
             ErrorCodes::EMAIL_NOT_FOUND => "Email não encontrado",
@@ -26,6 +28,8 @@ namespace business {
             ErrorCodes::CLIENT_DATA_NOT_FOUND => "Os dados do cliente não foram encontrados",
             ErrorCodes::CLIENT_ID_NOT_FOUND => "Id de cliente não encontrado",
             ErrorCodes::DB_ERROR => "Database error",
+            ErrorCodes::VERIFICATION_CODE_DONOT_MATCH => "Codigo de verificação não coinside com o enviado",
+            ErrorCodes::VALIDATION_TOKEN_NOT_FOUND => "Codigo de validação não encontrado",
             ErrorCodes::GMAIL_ERROR_SEND => "Error sending email"
         );
 

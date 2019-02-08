@@ -5,7 +5,9 @@ ini_set('xdebug.var_display_max_children', 256);
 ini_set('xdebug.var_display_max_data', 1024);
 
 use business\Response\Response;
+use business\Response\ResponseLoginToken;
 use business\Client;
+use business\ErrorCodes;
 
 class Signin extends CI_Controller {
 
@@ -14,13 +16,14 @@ class Signin extends CI_Controller {
 
         require_once config_item('business-client-class');
         require_once config_item('business-response-class');
+        require_once config_item('business-response-login-token-class');
     }
 
     //----------LOGIN FUNCTIONS--------------------------
 
     public function login_view() {
-        $param["footer"] = $this->load->view('footer', '' , true);
-        $this->load->view('login',$param);
+        $param["footer"] = $this->load->view('footer', '', true);
+        $this->load->view('login', $param);
     }
 
     public function pass_reset() {
@@ -52,6 +55,26 @@ class Signin extends CI_Controller {
         }
 
         Response::ResponseOK()->toJson();
+    }
+
+    public function dashboard_confirm_login_token() {
+        $datas = $this->input->post();
+        $datas["login_token"] = "OK";
+
+        try {
+            // Generate MD5 token 	
+            $Client = new Client();
+            $Client->load_data_by_login_token($datas["login_token"]);
+            $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "ok");
+        } catch (\Error $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Db_Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
+        }
+
+        return Response::ResponseOK()->toJson();
     }
 
     //---------------SIGNIN FUNCTIONS-----------------------------
@@ -100,10 +123,26 @@ class Signin extends CI_Controller {
     // Step 2 {
     public function request_secure_code_by_email() {
         try {
-            
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            //1. Jose: Generar codigo aqui, copialo de donde lo tenias en el otro sistema
+            $verification_code = "77777";
+            $client_id = 1; // Cogelo de la seccion o deja un objeto cliente ya cargado en la seccion
+            //2. Salvar codigo
+            $Client = new Client();
+            $Client->load_data($client_id);
+            $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
+
+            //3. Send code by email
+            $this->load->library("gmail");
+            $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);
+        } catch (\Error $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Db_Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
+
+        return Response::ResponseOK()->toJson();
     }
 
     public function request_secure_code_by_sms() {
@@ -115,9 +154,34 @@ class Signin extends CI_Controller {
     // Step 3 {
     public function confirm_secure_code() {
         $datas = $this->input->post();
-        //implementar aqui el resto		
+        $datas['verification_code'] = '77777';
 
-        $this->redirect_to_dasboard();
+        try {
+            //1. Check secure code is ok!
+            $client_id = 1;
+            $Client = new Client();
+            $Client->load_data($client_id);
+            if ($Client->confirm_secure_code($datas['verification_code'])) {
+                //2. Generate MD5 redirection token 	
+                $key = $client_id . time();
+                $login_token = md5($key);
+
+                //3. Save MD5 to validate login from dashboard
+                $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+            }
+            else {
+                throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);
+            }
+        } catch (\Error $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Db_Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
+        }
+
+        $Response = new ResponseLoginToken($login_token);
+        return $Response->toJson();
     }
 
     //---------------SECUNDARY FUNCTIONS-----------------------------

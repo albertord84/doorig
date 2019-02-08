@@ -79,4 +79,25 @@ class Gmail {
         return true;
     }
 
+    public function send_link_purchase_step_email($useremail, $username, $purchase_access_token) {
+        $this->CI->email->to($useremail, $username);
+        $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+        $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+        
+        $this->CI->email->Subject = T('Verification Code Step: ' . $username);
+        
+        $lang = $GLOBALS['sistem_config']->LANGUAGE;
+        //$test = "http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&purchase_access_token=$purchase_access_token";
+        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&purchase_access_token=$purchase_access_token");
+        $this->CI->email->message($body);
+        
+        $this->CI->email->AltBody = 'Verification Code';
+        
+        if (!$this->CI->email->send()) {
+            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 
+        }
+        
+        return true;
+    }
+
 }

@@ -79,6 +79,21 @@ namespace business {
             $this->fill_data($data);
         }
 
+        /**
+         * Get client data
+         * @param int $email
+         * @return DataSet  
+         */
+        public function load_data_by_login_token(string $login_token) {
+            $ci = &get_instance();
+            $data = $ci->Clients_model->get_by_login_token($login_token);
+            if ($data == null) {
+                throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
+            }
+            
+            $this->fill_data($data);
+        }
+
         private function fill_data(\stdClass $data = NULL) {
             if ($data) {
                 $this->Id = $data->id;
@@ -99,12 +114,21 @@ namespace business {
             }
         }
 
-        public function insert($name, $email, $password, $status_id = 1, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
+        public function insert($email, $name, $password, $status_id = 1, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
             if (Client::exist($email, ClientStatus::ACTIVE)) {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
             }
             $ci = &get_instance();
-            $client_id = $ci->Clients_model->save($name, $email, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            $client_id = $ci->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            return $client_id;
+        }
+
+        public function update($id, $email = NULL, $name = NULL, $password = NULL, $status_id = NULL, $node_id = NULL, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
+            if (($email != NULL) && (Client::exist($email, ClientStatus::ACTIVE))) { // Whether I want to change the email, I check the new email do not exist
+                throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
+            }
+            $ci = &get_instance();
+            $client_id = $ci->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             return $client_id;
         }
 
@@ -133,6 +157,18 @@ namespace business {
          */
         public function check_pass($password) {
             if ($this->Password === $password) {
+                return TRUE;
+            }
+            return FALSE;
+        }
+
+        /**
+         * 
+         * @param type $password
+         * @return boolean
+         */
+        public function confirm_secure_code($Verification_code) {
+            if ($this->Verification_code === $Verification_code) {
                 return TRUE;
             }
             return FALSE;
