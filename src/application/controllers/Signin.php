@@ -21,7 +21,8 @@ class Signin extends CI_Controller {
     //----------LOGIN FUNCTIONS--------------------------
 
     public function login_view() {
-        $this->load->view('login');
+        $param["footer"] = $this->load->view('footer', '' , true);
+        $this->load->view('login',$param);
     }
 
     public function pass_reset() {

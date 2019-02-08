@@ -1,8 +1,7 @@
-$(document).ready(function(){    
-    
+$(document).ready(function(){
     $("#contact_btn").click(function(){
-        name=validate_empty('#contact_name');
-        email=validate_element('#contact_email',"^[a-zA-Z0-9\._-]+@([a-zA-Z0-9-]{2,}[.])*[a-zA-Z]{2,}$");
+        email=validate_element('#contact_email',email_regular_expression);
+        name=validate_not_empty('#contact_name');
         message=validate_not_empty('#contact_message');
           if(name && email && message){
             //var l = Ladda.create(this);  l.start(); l.start();
@@ -17,8 +16,8 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
-                    if(response['success']){                        
-                        modal_alert_message(response['message']);                        
+                    if(response['success']){
+                        modal_success_message(response['message']);                        
                     } else
                         modal_alert_message(response['message']);    
                     //l.stop();
