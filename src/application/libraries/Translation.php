@@ -1,16 +1,21 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class Translation{
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Translation {
+
     protected $ci;
-    
-    function __construct(){
-      $this->ci = & get_instance();
-    }
-   
-    function T($token,$array_params){ 
+
+    function __construct() {
+        $this->ci = & get_instance();
         $this->ci->load->model('Translation_model');
-        return $this->ci->Translation_model->get_text_by_token('COMO FUNCIONA');        
     }
+
+    function T($token, $lang) {
+        return $this->ci->Translation_model->get_text_by_token($token, $lang);
+    }
+
 }
 
 ?> 
