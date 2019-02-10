@@ -75,7 +75,7 @@ namespace business {
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_NOT_FOUND);
             }
-            
+
             $this->fill_data($data);
         }
 
@@ -90,7 +90,7 @@ namespace business {
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
             }
-            
+
             $this->fill_data($data);
         }
 
@@ -192,8 +192,8 @@ namespace business {
          * @throws Exception
          */
         static function do_login(string $email, string $password) {
+            $Client = new Client();
             try {
-                $Client = new Client();
                 $Client->load_data_by_email($email);
                 if ($Client->check_pass($password) == FALSE) {
                     throw ErrorCodes::getException(ErrorCodes::WRONG_PASSWORD);
@@ -201,12 +201,19 @@ namespace business {
             } catch (Exception $exc) {
                 echo $exc->getTraceAsString();
             }
+            return $Client;
         }
 
-        static function exist(string $email, int $status) {
-            $Client = new Client();
-            $Client->load_data_by_email($email);
-            return $Client->Status_id == $status;
+        static function exist(string $email, int $status = FALSE) {
+            try {
+                $Client = new Client();
+                $Client->load_data_by_email($email);
+                return $status? $Client->Status_id == $status : TRUE;
+            } catch (\Exception $exc) {
+                //echo $exc->getTraceAsString();
+            }
+            
+            return FALSE;
         }
 
     }
