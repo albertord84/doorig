@@ -67,7 +67,6 @@ class Signin extends CI_Controller {
 
     public function dashboard_confirm_login_token() {
         $datas = $this->input->post();
-        $datas["login_token"] = "OK";
 
         try {
             // Generate MD5 token 	
