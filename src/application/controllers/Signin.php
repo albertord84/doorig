@@ -37,7 +37,7 @@ class Signin extends CI_Controller {
 
     public function signin_view() {
         $this->load->library('session');
-        //$this->redirect_to_dasboard();
+        $this->load->view('signin', $param);
     }
 
     public function do_login() {

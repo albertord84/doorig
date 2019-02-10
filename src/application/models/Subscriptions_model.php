@@ -25,8 +25,9 @@ class Subscriptions_model extends CI_Model {
     }
 
     public function save($email) {
-        $data['email'] = $email;
         try {
+            $data['email'] = $email;
+            $data['date'] = time();
             return $this->db->insert('subscriptions', $data);
         } catch (\Error $e) {
             if ($this->db->error()['code'] != 0) {
@@ -37,6 +38,20 @@ class Subscriptions_model extends CI_Model {
         } catch (\Exception $e) {
             throw $e;
         }
+    }
+
+    public function exist(string $email) {
+        try {
+            $this->db->select('*');
+            $this->db->from('subscriptions');
+            $this->db->where('subscriptions.email', $email);
+            $result = $this->db->get()->row_array();
+            return count($result) ? TRUE : FALSE;
+        } catch (\Exception $exc) {
+            //echo $exc->getTraceAsString();
+        }
+
+        return FALSE;
     }
 
 }

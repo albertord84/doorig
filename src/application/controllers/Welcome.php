@@ -29,54 +29,13 @@ class Welcome extends CI_Controller {
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('faq', $param);
     }
-
-    public function message() {
-//        $this->is_ip_hacker();
-//        $this->load->model('class/system_config');
-//        $GLOBALS['sistem_config'] = $this->system_config->load();
-//        $this->load->library('Gmail');
-//        $language = $this->input->get();
-//        if(isset($language['language']))
-//            $param['language'] = $language['language'];
-//        else
-//            $param['language'] = $GLOBALS['sistem_config']->LANGUAGE;
-//        $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
-//        $GLOBALS['language'] = $param['language'];
-//        $datas = $this->input->post();
-//        $result = $this->gmail->send_client_contact_form($datas['name'], $datas['email'], $datas['message'], $datas['company'], $datas['telf']);
-//        if ($result['success']) {
-//            $result['message'] = $this->T('Mensagem enviada, agradecemos seu contato', array(), $GLOBALS['language']);
-//        }
-//        echo json_encode($result);
-
-        $datas = $this->input->post();
-        $result['success'] = true;
-        $result['message'] = "Mensagem enviada, agradecemos seu contato"; //$this->T('Mensagem enviada, agradecemos seu contato', array(), $GLOBALS['language']);
-        echo json_encode($result);
-    }
-
+    
     public function subscription() {
-//        $this->is_ip_hacker();
-//        $this->load->model('class/system_config');
-//        $GLOBALS['sistem_config'] = $this->system_config->load();
-//        $this->load->library('Gmail');
-//        $language = $this->input->get();
-//        if (isset($language['language']))
-//            $param['language'] = $language['language'];
-//        else
-//            $param['language'] = $GLOBALS['sistem_config']->LANGUAGE;
-//        $param['SERVER_NAME'] = $GLOBALS['sistem_config']->SERVER_NAME;
-//        $GLOBALS['language'] = $param['language'];
-//        $datas = $this->input->post();
-//        //TODO: insert email in database
-
         $datas = $this->input->post();
-        $datas['email'] = 'josergm86@gmail.com';
-        
-        //TODO: insert email in database
         try {
+            //1. Passar al negocio
             $this->load->model("Subscriptions_model");
-            $this->Subscriptions_model->save($datas ['email']);
+            $this->Subscriptions_model->save($datas['subscription_email']);
         } catch (\Error $e) {
             return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Db_Exception $e) {
@@ -84,20 +43,11 @@ class Welcome extends CI_Controller {
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
-
-        Response::ResponseOK()->toJson();
+        Response::ResponseOK(T("Subscrição realizada com sucesso."))->toJson();
     }
 
     public function contact_us() {
-        $datas = $this->input->post();
-        $datas["email"] = "josergm86@gmail.com";
-        $datas["username"] = "77 77";
-        $datas["message"] = "7 7 7 7";
-        $datas["company"] = "7777";
-        $datas["phone"] = "7 777";
-
-
-
+        $datas = $this->input->post();        
         try {
             $this->load->library("gmail");
             $this->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
@@ -108,8 +58,7 @@ class Welcome extends CI_Controller {
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
-
-        Response::ResponseOK()->toJson();
+        Response::ResponseOK(T("Mensagem enviada com sucesso."))->toJson();
     }
 
     public function test_gmail() {

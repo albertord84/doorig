@@ -665,16 +665,16 @@
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <div class="form-sec">
-                                <form name="contact_form" class="default-form contact-form" method="post">
+                                <form id="contact_form" class="default-form contact-form" method="post">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_name" type="text" placeholder="Seu nome" required="">
+                                                <input id="contact_name" type="text" placeholder="Seu nome" >
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_email" type="email" placeholder="Email" required="">
+                                                <input id="contact_email" type="email" placeholder="Email" autocomplete="">
                                             </div>                  
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -689,7 +689,7 @@
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <textarea id="contact_message" class="form-control textarea required" placeholder="Mensagem"></textarea>
+                                                <textarea id="contact_message" class="form-control textarea" placeholder="Mensagem"></textarea>
                                             </div>
                                             <div class="form-group text-center">
                                                 <button id="contact_btn" type="button" class="thm-btn bg-clr2">Enviar agora</button>

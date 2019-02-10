@@ -6,17 +6,17 @@ $(document).ready(function(){
           if(name && email && message){
             //var l = Ladda.create(this);  l.start(); l.start();
             $.ajax({
-                url : base_url+'index.php/welcome/message',
-                data :{ 'name':$("#contact_name").val(),
+                url : base_url+'index.php/welcome/contact_us',
+                data :{ 'username':$("#contact_name").val(),
                         'company':$("#contact_job").val(),
                         'email':$("#contact_email").val(),
-                        'telf':$("#contact_phone").val(),
+                        'phone':$("#contact_phone").val(),
                         'message':$("#contact_message").val()
                     },
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
-                    if(response['success']){
+                    if(response.code===0){
                         modal_success_message(response['message']);                        
                     } else
                         modal_alert_message(response['message']);    
