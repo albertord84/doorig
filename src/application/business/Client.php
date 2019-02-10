@@ -204,7 +204,7 @@ namespace business {
             return $Client;
         }
 
-        static function exist(string $email, int $status = FALSE) {
+        static function exist(string $email, int $status = 0) {
             try {
                 $Client = new Client();
                 $Client->load_data_by_email($email);
