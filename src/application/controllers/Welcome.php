@@ -6,6 +6,7 @@ ini_set('xdebug.var_display_max_data', 1024);
 
 use business\Response\Response;
 use business\Client;
+use business\Visitor;
 
 class Welcome extends CI_Controller {
 
@@ -13,6 +14,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
 
         require_once config_item('business-client-class');
+        require_once config_item('business-visitor-class');
         require_once config_item('business-response-class');
     }
 
@@ -32,10 +34,10 @@ class Welcome extends CI_Controller {
     
     public function subscription() {
         $datas = $this->input->post();
+        $datas['subscription_email'] = "777@7.7";
         try {
             //1. Passar al negocio
-            $this->load->model("Subscriptions_model");
-            $this->Subscriptions_model->save($datas['subscription_email']);
+            Visitor::new_subscription($datas['subscription_email']);
         } catch (\Error $e) {
             return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Db_Exception $e) {
