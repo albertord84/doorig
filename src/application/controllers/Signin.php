@@ -69,10 +69,6 @@ class Signin extends CI_Controller {
             $Client = new Client();
             $Client->load_data_by_login_token($datas["login_token"]);
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "ok");
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -116,10 +112,6 @@ class Signin extends CI_Controller {
             $datas["node_id"] = "1";
             $Client = new Client();
             $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -141,10 +133,6 @@ class Signin extends CI_Controller {
             //3. Send code by email
             $this->load->library("gmail");
             $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -178,10 +166,6 @@ class Signin extends CI_Controller {
             } else {
                 throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);
             }
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }

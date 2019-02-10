@@ -20,9 +20,8 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $this->load->library('session');
-
+        //$GLOBALS['language'] = $param['language'];
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
-        $GLOBALS['language'] = $param['language'];
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('home', $param);
     }
@@ -31,16 +30,11 @@ class Welcome extends CI_Controller {
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('faq', $param);
     }
-    
+
     public function subscription() {
         $datas = $this->input->post();
         try {
-            //1. Passar al negocio
             Visitor::new_subscription($datas['subscription_email']);
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage("1"), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage("2"), 2)->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage($e->getCode()), $e->getCode())->toJson();
         }
@@ -48,14 +42,9 @@ class Welcome extends CI_Controller {
     }
 
     public function contact_us() {
-        $datas = $this->input->post();        
+        $datas = $this->input->post();
         try {
-            $this->load->library("gmail");
-            $this->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
-        } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
-        } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 2)->toJson();
+            Visitor::send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
