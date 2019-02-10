@@ -46,15 +46,23 @@ class Signin extends CI_Controller {
             $datas["email"] = "777@7.7";
             $datas["password"] = "7777";
 
-
+            //1. Login client
             $Client = new Client();
-            Client::do_login($datas["email"], $datas["password"]);
+            $Client = Client::do_login($datas["email"], $datas["password"]);
+
+            //2. Generate MD5 redirection token 	
+            $key = $Client->Id . time();
+            $login_token = md5($key);
+
+            //3. Save MD5 to validate login from dashboard
+            $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
         }
 
-        Response::ResponseOK()->toJson();
+        $Response = new ResponseLoginToken($login_token);
+        return $Response->toJson();
     }
 
     public function dashboard_confirm_login_token() {
@@ -108,7 +116,7 @@ class Signin extends CI_Controller {
             $datas["status_id"] = "1";
             $datas["node_id"] = "1";
             $Client = new Client();
-            $Client->Insert($datas["name"], $datas["email"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
+            $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
         } catch (\Error $e) {
             return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
         } catch (\Db_Exception $e) {
@@ -120,7 +128,7 @@ class Signin extends CI_Controller {
         return Response::ResponseOK()->toJson();
     }
 
-    // Step 2 {
+    // Step 2 
     public function request_secure_code_by_email() {
         try {
             //1. Jose: Generar codigo aqui, copialo de donde lo tenias en el otro sistema
@@ -168,8 +176,7 @@ class Signin extends CI_Controller {
 
                 //3. Save MD5 to validate login from dashboard
                 $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
-            }
-            else {
+            } else {
                 throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);
             }
         } catch (\Error $e) {

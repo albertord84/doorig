@@ -1,12 +1,12 @@
 <?php
 //Funciones a implementar en el controler del proyecto doorig
 
-class Welcome extends CIControler{
+class Welcome extends CIControler {
 
 	public function signin(){
 		$datas = $this->input->post();
 		//implementar aqui el resto
-		$datas["name"]
+		$datas["name"];
 		//retornar respuesta padronizada em json
 		echo json_encode($response);
 	}
@@ -32,7 +32,7 @@ class Welcome extends CIControler{
 		$this->redirect_to_dasboard();
 	}
 	
-	public login(datas=NULL){
+	public function login($datas=NULL) {
 		if(!datas)
 			$datas = $this->input->post(); //email e password			
 		//implementar aqui el resto
