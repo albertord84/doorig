@@ -171,7 +171,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <input id="phone" class="fone" type="tel" placeholder="Telefone* " required="">
-                                            </div>                                                    
+                                            </div>
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">

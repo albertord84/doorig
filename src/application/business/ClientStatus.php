@@ -12,6 +12,7 @@ namespace business {
    */
   class ClientStatus {
 
+    const BEGINNER = 0;
     const ACTIVE = 1;
     const CANCELED = 2;
     const DONT_DISTURB = 3;

@@ -55,7 +55,7 @@ class Clients_model extends CI_Model {
         $this->db->delete('clients', array('id' => $id));
     }
 
-    function update($id, $name = NULL, $email = NULL, $password = NULL, $status_id = NULL, $node_id = NULL, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
+    function update($id, $email = NULL, $name = NULL, $password = NULL, $status_id = NULL, $node_id = NULL, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
 
         if ($name)
             $this->name = $name;
@@ -81,7 +81,7 @@ class Clients_model extends CI_Model {
             $this->utm_campain = $utm_campain;
         if ($login_token)
             $this->login_token = $login_token;
-
+        
         try {
             $this->db->update('clients', $this, array('id' => $id));
         } catch (\Error $e) {
@@ -91,6 +91,7 @@ class Clients_model extends CI_Model {
                 throw $e;
             }
         }
+        return $id;
     }
 
     function get_by_id($id) {
@@ -105,11 +106,8 @@ class Clients_model extends CI_Model {
     }
 
     function get_by_email(string $email) {
-
         $this->db->where('email', $email);
-
         $query = $this->db->get('clients');
-
         return $query->last_row();
     }
 

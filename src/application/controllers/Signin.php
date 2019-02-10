@@ -8,6 +8,7 @@ use business\Response\Response;
 use business\Response\ResponseLoginToken;
 use business\Client;
 use business\ErrorCodes;
+use business\ClientStatus;
 
 class Signin extends CI_Controller {
 
@@ -15,6 +16,7 @@ class Signin extends CI_Controller {
         parent::__construct();
 
         require_once config_item('business-client-class');
+        require_once config_item('business-client-status-class');
         require_once config_item('business-response-class');
         require_once config_item('business-response-login-token-class');
     }
@@ -86,7 +88,7 @@ class Signin extends CI_Controller {
     // Step 1 {
     public function signin_step1() {
         try {
-            //$this->load->library('input');
+            $this->session->sess_destroy();
             $datas = $this->input->post();
             //1. Validate Signin Data
             //$this->load->library('form_validation');
@@ -103,15 +105,12 @@ class Signin extends CI_Controller {
             //return;
             //}
             //2. Save Signin Data
-            $datas["name"] = "777";
-            $datas["email"] = "777@7.7";
-            $datas["phone"] = "777 77";
-            $datas["password"] = "7777";
-            $datas["password-rep"] = "7777";
-            $datas["status_id"] = "1";
+            $datas["status_id"] = ClientStatus::BEGINNER;
             $datas["node_id"] = "1";
             $Client = new Client();
-            $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
+            $client_id = $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
+            $Client->load_data($client_id);
+            $this->session->set_userdata('client', $Client);            
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -122,17 +121,21 @@ class Signin extends CI_Controller {
     // Step 2 
     public function request_secure_code_by_email() {
         try {
-            //1. Jose: Generar codigo aqui, copialo de donde lo tenias en el otro sistema
-            $verification_code = "77777";
-            $client_id = 1; // Cogelo de la seccion o deja un objeto cliente ya cargado en la seccion
-            //2. Salvar codigo
-            $Client = new Client();
-            $Client->load_data($client_id);
-            $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
+            if(isset($this->session->userdata('client'))){
+                $verification_code = mt_rand(1000, 9999);
+                $client_id = $this->session->userdata('client')->Id;
 
-            //3. Send code by email
-            $this->load->library("gmail");
-            $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);
+                //2. Salvar codigo
+                $Client = new Client();
+                $Client->load_data($client_id);
+                $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
+
+                //3. Send code by email
+                $this->load->library("gmail");
+                $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);                
+            }else{
+                return Response::ResponseFAIL(T("Violação de acesso"))->toJson();
+            }
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -141,15 +144,33 @@ class Signin extends CI_Controller {
     }
 
     public function request_secure_code_by_sms() {
-        //implementar aqui el resto
-        //retornar success ou error
-        echo json_encode($response);
+        try {
+            if(isset($this->session->userdata('client'))){
+                $verification_code = mt_rand(1000, 9999);
+                $client_id = $this->session->userdata('client')->Id;
+
+                //2. Salvar codigo
+                $Client = new Client();
+                $Client->load_data($client_id);
+                $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
+
+                //3. Send code by email
+                $this->load->library("sms");
+                $this->sms->send_link_purchase_step_sms($Client->Phone, $Client->Name, $verification_code);                
+            }else{
+                return Response::ResponseFAIL(T("Violação de acesso"))->toJson();
+            }
+        } catch (\Exception $e) {
+            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
+        }
+
+        return Response::ResponseOK()->toJson();
     }
 
     // Step 3 {
     public function confirm_secure_code() {
-        $datas = $this->input->post();
         $datas['verification_code'] = '77777';
+        $datas = $this->input->post();
 
         try {
             //1. Check secure code is ok!

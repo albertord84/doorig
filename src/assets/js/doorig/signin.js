@@ -11,49 +11,93 @@ $(document).ready(function(){
     
     //----------------SIGN IN FUNCTIONS------------------------------    
     $("#btn-sigin-steep-1").click(function () {
-        if(js_validate_datas_sigin_steep_1())
-            if(send_datas_sigin_steep_1()){            
-                $('.sigin-painel-steep-1').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
-                $('.sigin-painel-steep-2').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
-            }
+        if(js_validate_datas_sigin_steep_1()){
+            $.ajax({
+                url : base_url+'index.php/signin/signin_step1',
+                data :{ 'name':$("#name").val(),
+                        'email':$("#email").val(),
+                        'phone':$("#phone").val(),
+                        'password':$("#password").val(),
+                        'password-rep':$("#password-rep").val()
+                    },
+                type : 'POST',
+                dataType : 'json',
+                success : function(response){
+                    if(response.code===0){
+                        $('.sigin-painel-steep-1').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
+                        $('.sigin-painel-steep-2').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
+                    } else
+                        modal_alert_message(response.message);
+                    //l.stop();                    
+                },
+                error : function(xhr, status) {
+                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
+                    //l.stop();                                    
+                }
+            });
+        }
     });
     
-    function js_validate_datas_sigin_steep_1(){
-        //data validation
+    function js_validate_datas_sigin_steep_1(){//data validation        
         var nome = validate_element("#name", complete_name_regular_expression);
         var email = validate_element("#email", email_regular_expression);
         var password = validate_not_empty("#password");
-        var password_rep = validate_not_empty("#password-rep");
-        if(nome && email && phone && password && password_rep)
-            if(password === password_rep)
-                return true;
+        var password_rep = validate_equals("#password","#password-rep");        
+        var user_term = $("#user-term").is(':checked'); 
+        if(nome && email && phone && password)
+            if(password_rep)
+                if(user_term)
+                    return true;
+                else
+                    modal_alert_message('Deve ler e concordar com os Termos de Uso.');
             else
-                modal_alert_message('As senhas não coincidem.');
+                modal_alert_message('As senhas não coincidem.');        
         else
             modal_alert_message('Erro nos dados fornecidos, por favor, confira.');
         return false;
     }
-    
-    function send_datas_sigin_steep_1(){
-        return true;
-    }
-    
-    
+       
     
     $("#btn-sigin-steep-2a").click(function () {
-        if(js_validate_datas_sigin_steep_1())
-            if(send_datas_sigin_steep_1()){            
-                $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
-                $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
+        $.ajax({
+            url : base_url+'index.php/signin/request_secure_code_by_email',
+            data :{},
+            type : 'POST',
+            dataType : 'json',
+            success : function(response){
+                if(response.code===0){
+                    $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
+                    $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
+                } else
+                    modal_alert_message(response.message);
+                //l.stop();                    
+            },
+            error : function(xhr, status) {
+                modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
+                //l.stop();                                    
             }
+        });
     });
     
     $("#btn-sigin-steep-2b").click(function () {
-        if(js_validate_datas_sigin_steep_1())
-            if(send_datas_sigin_steep_1()){            
-                $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
-                $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
+        $.ajax({
+            url : base_url+'index.php/signin/request_secure_code_by_sms',
+            data :{},
+            type : 'POST',
+            dataType : 'json',
+            success : function(response){
+                if(response.code===0){
+                    $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
+                    $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
+                } else
+                    modal_alert_message(response.message);
+                //l.stop();                    
+            },
+            error : function(xhr, status) {
+                modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
+                //l.stop();                                    
             }
+        });
     });
     
     $("#btn-sigin-steep-3").click(function () {

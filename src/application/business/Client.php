@@ -60,7 +60,6 @@ namespace business {
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::CLIENT_ID_NOT_FOUND);
             }
-
             $this->fill_data($data);
         }
 
@@ -90,7 +89,6 @@ namespace business {
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
             }
-
             $this->fill_data($data);
         }
 
@@ -114,12 +112,17 @@ namespace business {
             }
         }
 
-        public function insert($email, $name, $password, $status_id = 1, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
+        public function insert($email, $name, $password, $status_id = 0, $node_id = 1, $phone = NULL, $verification_code = NULL, $init_date = NULL, $last_access = NULL, $utm_source = NULL, $utm_campain = NULL, $login_token = NULL) {
             if (Client::exist($email, ClientStatus::ACTIVE)) {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
+            } else
+            if (Client::exist($email, ClientStatus::BEGINNER)) {
+                $this->load_data_by_email($email);
+                $client_id = $this->update($this->Id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, time(), $last_access, $utm_source, $utm_campain, $login_token);
+            } else {
+                $ci = &get_instance();
+                $client_id = $ci->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             }
-            $ci = &get_instance();
-            $client_id = $ci->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             return $client_id;
         }
 
@@ -208,11 +211,11 @@ namespace business {
             try {
                 $Client = new Client();
                 $Client->load_data_by_email($email);
-                return $status? $Client->Status_id == $status : TRUE;
+                return $status ? $Client->Status_id == $status : TRUE;
             } catch (\Exception $exc) {
                 //echo $exc->getTraceAsString();
             }
-            
+
             return FALSE;
         }
 
