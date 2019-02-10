@@ -1,5 +1,13 @@
 $(document).ready(function(){
-    var URL_DASHBOARD = "http://localhost/dashboard/src/";
+    
+    function init(){
+        $("#name").val("Jose Ramon");
+        $("#email").val("josergm86@gmail.com");
+        $("#phone").val("(21) 96591-3089");
+        $("#password").val("cba");
+        $("#password-rep").val("cba");
+    }
+    init();
     
     //----------------SIGN IN FUNCTIONS------------------------------    
     $("#btn-sigin-steep-1").click(function () {
@@ -13,7 +21,7 @@ $(document).ready(function(){
     function js_validate_datas_sigin_steep_1(){
         //data validation
         var nome = validate_element("#name", complete_name_regular_expression);
-        var email = validate_element("$email", email_regular_expression);
+        var email = validate_element("#email", email_regular_expression);
         var password = validate_not_empty("#password");
         var password_rep = validate_not_empty("#password-rep");
         if(nome && email && phone && password && password_rep)
@@ -29,6 +37,8 @@ $(document).ready(function(){
     function send_datas_sigin_steep_1(){
         return true;
     }
+    
+    
     
     $("#btn-sigin-steep-2a").click(function () {
         if(js_validate_datas_sigin_steep_1())
