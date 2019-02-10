@@ -35,11 +35,6 @@ class Signin extends CI_Controller {
         //enviar email a $datas["email"] con link para vista de trocar senha	
     }
 
-    public function signin_view() {
-        $this->load->library('session');
-        $this->load->view('signin', $param);
-    }
-
     public function do_login() {
         try {
             $datas = $this->input->post();
@@ -80,12 +75,16 @@ class Signin extends CI_Controller {
         return Response::ResponseOK()->toJson();
     }
 
-    //---------------SIGNIN FUNCTIONS-----------------------------
+    //---------------SIGNIN FUNCTIONS-----------------------------    
+    public function signin_view() {
+        $this->load->library('session');
+        $param["footer"] = $this->load->view('footer', '', true);
+        $this->load->view('signin', $param);
+    }
+    
     // Step 1 {
     public function signin_step1() {
         try {
-
-
             //$this->load->library('input');
             $datas = $this->input->post();
             //1. Validate Signin Data

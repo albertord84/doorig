@@ -53,8 +53,6 @@ class Clients extends CI_Controller {
 
     public function ajaxgrid() {
 
-
-
         $pages = $_POST['page'];
 
         $rows = $_POST['rows'];

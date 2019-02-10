@@ -20,9 +20,8 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $this->load->library('session');
-
+        //$GLOBALS['language'] = $param['language'];
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
-        $GLOBALS['language'] = $param['language'];
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('home', $param);
     }
@@ -34,11 +33,10 @@ class Welcome extends CI_Controller {
 
     public function subscription() {
         $datas = $this->input->post();
-        $datas['subscription_email'] = "777@7.7";
         try {
             Visitor::new_subscription($datas['subscription_email']);
         } catch (\Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
+            return Response::ResponseFAIL($e->getMessage($e->getCode()), $e->getCode())->toJson();
         }
         Response::ResponseOK(T("Subscrição realizada com sucesso."))->toJson();
     }
