@@ -34,16 +34,15 @@ class Welcome extends CI_Controller {
     
     public function subscription() {
         $datas = $this->input->post();
-        $datas['subscription_email'] = "777@7.7";
         try {
             //1. Passar al negocio
             Visitor::new_subscription($datas['subscription_email']);
         } catch (\Error $e) {
-            return Response::ResponseFAIL($e->getMessage(), 1)->toJson();
+            return Response::ResponseFAIL($e->getMessage("1"), 1)->toJson();
         } catch (\Db_Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), 2)->toJson();
+            return Response::ResponseFAIL($e->getMessage("2"), 2)->toJson();
         } catch (\Exception $e) {
-            return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
+            return Response::ResponseFAIL($e->getMessage($e->getCode()), $e->getCode())->toJson();
         }
         Response::ResponseOK(T("Subscrição realizada com sucesso."))->toJson();
     }

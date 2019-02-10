@@ -27,7 +27,6 @@ class Subscriptions_model extends CI_Model {
     public function save($email) {
         try {
             $data['email'] = $email;
-            $data['date'] = time();
             return $this->db->insert('subscriptions', $data);
         } catch (\Error $e) {
             if ($this->db->error()['code'] != 0) {
