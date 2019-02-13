@@ -135,7 +135,7 @@
                                             <span class="border"></span>
                                         </div>
                                     </div>                                                                                                
-                                    <form name="login-form-1" class="default-form contact-form m-top-35" method="post">
+                                    <form id="login-form-1" class="default-form contact-form m-top-35" >
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="form-group">
@@ -179,7 +179,7 @@
                                             <span class="border"></span>
                                         </div>
                                     </div>                                                                                                
-                                    <form name="login-form-2" class="default-form contact-form m-top-35" method="post" >
+                                    <form id="login-form-2" class="default-form contact-form m-top-35" method="post" >
                                         <div class="row">                                        
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="form-group">

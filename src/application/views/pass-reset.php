@@ -28,6 +28,11 @@
         
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <!--<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>-->
+        
+        <script type="text/javascript"> 
+            var base_url = "<?php echo base_url();?>";
+            var login_token = "<?php echo $login_token;?>";
+        </script>
     </head>
 
 <body>
@@ -141,7 +146,7 @@
                                         <span class="border"></span>
                                     </div>
                                 </div>                                                                                                
-                                <form name="login-form-1" class="default-form contact-form m-top-35" method="post" >
+                                <form id="pass-reset-form-1" class="default-form contact-form m-top-35" method="post" >
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
@@ -205,7 +210,7 @@
                                     <h5>Notícias e promoções?</h5>
                                 </div>
                                 <p>Subscreva-se e receba nossas notícias e novidades em primeira mão!</p>
-                                <form name="contact_form" class="default-form contact-form" method="post">
+                                <form id="contact_form" class="default-form contact-form" method="post">
                                     <div class="form-group">
                                         <input type="email" name="email" placeholder="Seu email" required="">
                                     </div>
@@ -289,7 +294,8 @@
             <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
             
             <!-- system scripts -->
-            <script src="<?php echo base_url().'assets/'?>js/doorig/login.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
     </div>
 </body>
 

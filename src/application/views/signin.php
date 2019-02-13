@@ -156,7 +156,7 @@
                                 </div>
                                 
                                 <!-- Sign in form -->
-                                <form name="signin-form1" class="default-form contact-form m-top-35" method="post" >
+                                <form id="signin-form1" class="default-form contact-form m-top-35" method="post" >
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12" >
                                             <div class="form-group">
@@ -232,7 +232,7 @@
                                         </div>
                                         <br>
                                     </div>
-                                <form name="signin-form2" class="default-form contact-form" method="post">
+                                <form id="signin-form2" class="default-form contact-form" method="post">
                                     <div class="row">
                                         <div class="col-md-12 col-md-12 col-xs-12 text-center m-top-35">
                                             <h4>Como receber o Código de Verificação?</h4>
@@ -282,7 +282,7 @@
                                     </div>
                                     <br>
                                 </div>
-                                <form name="signin-form3" class="default-form contact-form" method="post">
+                                <form id="signin-form3" class="default-form contact-form" method="post">
                                     <div class="row">                                        
                                         <div class="col-md-12 col-md-12 col-xs-12 text-center m-top-35">
                                             <h4>Insira o código recebido</h4>
@@ -327,7 +327,7 @@
                                     </div>
                                     <br>
                                 </div>
-                                <form name="signin-form2" class="default-form contact-form" method="post">
+                                <form id="signin-form2" class="default-form contact-form" method="post">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-2 col-sm-12 col-xs-12"></div>
