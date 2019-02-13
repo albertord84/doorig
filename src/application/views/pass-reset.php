@@ -154,7 +154,7 @@
                                             </div>                 
                                         </div>                                     
                                         <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
+                                            <button id="change_pass_btn" type="button" class="thm-btn bg-clr2">Enviar</button>
                                         </div>                            
                                     </div>
                                 </form>

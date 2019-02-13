@@ -14,7 +14,7 @@ $(document).ready(function(){
                 dataType : 'json',
                 success : function(response){
                     if(response.code===0){
-                        $(location).attr('href', URL_DASHBOARD+"/dashboard/src/?access_token="+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
                     //l.stop();
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var email = validate_element("#recovery_email", email_regular_expression);
         if(email){
             $.ajax({
-                url : base_url+'index.php/signin/password_recovery',
+                url : base_url+'index.php/signin/password_recovery_send_link',
                 data :{ 
                         'email':$("#recovery_email").val()
                     },
@@ -50,7 +50,36 @@ $(document).ready(function(){
                 error : function(xhr, status) {
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
                     //l.stop();
-                    $("#subscription_email").val("");
+                }
+            });
+        }
+        else
+            modal_alert_message('Erro nos dados fornecidos.');
+        return false;
+    });
+    
+    $("#change_pass_btn").click(function () {
+        var password = validate_not_empty("#password");
+        var password_rep = validate_equals("#password","#password-rep");   
+        if(password && password_rep){
+            $.ajax({
+                url : base_url+'index.php/signin/password_update',
+                data :{ 
+                        'password':$("#password").val(),
+                        'password-rep':$("#password-rep").val()
+                    },
+                type : 'POST',
+                dataType : 'json',
+                success : function(response){
+                    if(response.code===0){
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
+                    } else
+                        modal_alert_message(response.message);
+                    //l.stop();
+                },
+                error : function(xhr, status) {
+                    modal_alert_message(T('Erro enviando dados, tente depois...'));
+                    //l.stop();
                 }
             });
         }
@@ -173,14 +202,14 @@ $(document).ready(function(){
                 dataType : 'json',
                 success : function(response){
                     if(response.code===0){
-                        $(location).attr('href', URL_DASHBOARD+"/dashboard/src/?access_token="+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
-                    //l.stop();                    
+                    //l.stop();
                 },
                 error : function(xhr, status) {
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();                                    
+                    //l.stop();
                 }
             });
         }else{

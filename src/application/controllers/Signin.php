@@ -32,13 +32,13 @@ class Signin extends CI_Controller {
             //1. Login client
             $Client = new Client();
             $Client->load_data_by_login_token($login_token);
-            
+
             $this->load->view('pass-reset');
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
         }
-        
+
         // TODO: Jose retornar pagina de error
     }
 
@@ -56,12 +56,15 @@ class Signin extends CI_Controller {
 
             //3. Save MD5 to validate login from dashboard
             $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+
+            //4. Load node url of client
+            $Client->load_node_data();
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             return;
         }
 
-        $Response = new ResponseLoginToken($login_token);
+        $Response = new ResponseLoginToken($login_token, $Client->Node->URL);
         return $Response->toJson();
     }
 
@@ -69,6 +72,7 @@ class Signin extends CI_Controller {
         try {
             $datas = $this->input->post();
 
+            //$datas["email"] = "albertord84@gmail.com";
             //1. buscar cliente dado email em $datas["email"]
             $Client = new Client();
             $Client->load_data_by_email($datas["email"]);
@@ -98,11 +102,29 @@ class Signin extends CI_Controller {
     public function password_update() {
         $datas = $this->input->post(); // $datas["password"]  y $datas["password-rep"]
 
+        $datas["login_token"] = "5bf84e61e027eaeebfae011bdfd20425";
 
-        $client_id = $this->input->get("client_id"); //desencriptar client_id
-        //2. cargar cliente by id
-        //actualizar en la bd
-        //response ok con access token y url
+        try {
+            //1. Load client
+            $Client = new Client();
+            $Client->load_data_by_login_token($datas["login_token"]);
+
+            //2. Generate MD5 redirection token 	
+            $key = $Client->Id . time();
+            $login_token = md5($key);
+
+            //3. Save MD5 to validate login from dashboard
+            $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+
+            //4. Load node url of client
+            $Client->load_node_data();
+        } catch (Exception $exc) {
+            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
+            return;
+        }
+
+        $Response = new ResponseLoginToken($login_token, $Client->Node->URL);
+        return $Response->toJson();
     }
 
     public function dashboard_confirm_login_token() {
