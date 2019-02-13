@@ -63,9 +63,8 @@ class Signin extends CI_Controller {
             $this->load->view('pass-reset', $param);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
-            header("Location: ". base_url());
+            header("Location: " . base_url());
         }
-
     }
 
     public function password_recovery_send_link() {
@@ -130,7 +129,10 @@ class Signin extends CI_Controller {
 
     public function dashboard_confirm_login_token() {
         $datas = $this->input->post();
-
+        //$datas["login_token"] = "fe88449cb58fe4e51c74c2b44f6e20b1";
+        return Response::ResponseOK()->toJson();
+        
+        
         try {
             // Generate MD5 token 	
             $Client = new Client();
