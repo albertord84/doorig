@@ -14,7 +14,6 @@ class Signin extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
         require_once config_item('business-client-class');
         require_once config_item('business-client-status-class');
         require_once config_item('business-response-class');
@@ -22,7 +21,6 @@ class Signin extends CI_Controller {
     }
 
     //----------LOGIN FUNCTIONS--------------------------
-
     public function login_view() {
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('login', $param);
@@ -87,7 +85,6 @@ class Signin extends CI_Controller {
     // Step 1 {
     public function signin_step1() {
         try {
-            $this->session->sess_destroy();
             $datas = $this->input->post();
             //1. Validate Signin Data
             //$this->load->library('form_validation');
@@ -108,8 +105,7 @@ class Signin extends CI_Controller {
             $datas["node_id"] = "1";
             $Client = new Client();
             $client_id = $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-            $Client->load_data($client_id);
-            $this->session->set_userdata('client', $Client);            
+            $this->session->set_userdata('client_id', $client_id);            
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -117,12 +113,12 @@ class Signin extends CI_Controller {
         return Response::ResponseOK()->toJson();
     }
 
-    // Step 2 
+    // Step 2.1
     public function request_secure_code_by_email() {
         try {
-            if(isset($this->session->userdata('client'))){
+            if($this->session->userdata('client_id')){
                 $verification_code = mt_rand(1000, 9999);
-                $client_id = $this->session->userdata('client')->Id;
+                $client_id = $this->session->userdata('client_id');
 
                 //2. Salvar codigo
                 $Client = new Client();
@@ -141,21 +137,27 @@ class Signin extends CI_Controller {
 
         return Response::ResponseOK()->toJson();
     }
-
+    
+    // Step 2.2
     public function request_secure_code_by_sms() {
         try {
-            if(isset($this->session->userdata('client'))){
+            if($this->session->userdata('client_id')){
                 $verification_code = mt_rand(1000, 9999);
-                $client_id = $this->session->userdata('client')->Id;
-
+                $client_id = $this->session->userdata('client_id');
                 //2. Salvar codigo
                 $Client = new Client();
                 $Client->load_data($client_id);
                 $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
 
                 //3. Send code by email
+                $tlf = $Client->Phone;
                 $this->load->library("sms");
-                $this->sms->send_link_purchase_step_sms($Client->Phone, $Client->Name, $verification_code);                
+                $phone_country_code="+55";                
+                $phone_ddd = substr($tlf,1,2);                
+                $phone_number = substr($tlf,5);
+                $phone_number = str_replace("-","",$phone_number);                
+                $message_code = T("Para validar sua conta use o codigo ").$verification_code;
+                $this->sms->send_link_purchase_step_sms($phone_country_code,$phone_ddd,$phone_number, $message_code);                
             }else{
                 return Response::ResponseFAIL(T("Violação de acesso"))->toJson();
             }
@@ -168,12 +170,10 @@ class Signin extends CI_Controller {
 
     // Step 3 {
     public function confirm_secure_code() {
-        $datas['verification_code'] = '77777';
         $datas = $this->input->post();
-
         try {
             //1. Check secure code is ok!
-            $client_id = 1;
+            $client_id = $this->session->userdata('client_id');
             $Client = new Client();
             $Client->load_data($client_id);
             if ($Client->confirm_secure_code($datas['verification_code'])) {
@@ -183,6 +183,9 @@ class Signin extends CI_Controller {
 
                 //3. Save MD5 to validate login from dashboard
                 $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+                
+                //4. Load node url of client
+                
             } else {
                 throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);
             }

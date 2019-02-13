@@ -275,7 +275,7 @@
                                         <div class="col-md-3 col-sm-12 col-xs-12"></div>
                                         <div class="col-md-6 col-sm-12 col-xs-12 text-center">
                                             <div class="form-group m-top-20 pd-20">
-                                                <input type="text" name="name" placeholder="Código" required="">
+                                                <input id="verification_code" type="text" placeholder="Código" required="">
                                             </div>                                                                                            
                                             <div class="form-group m-top-20">
                                                 <button id="btn-sigin-steep-3" type="button" class="thm-btn bg-clr2">Enviar</button>

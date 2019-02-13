@@ -101,11 +101,31 @@ $(document).ready(function(){
     });
     
     $("#btn-sigin-steep-3").click(function () {
-        if(js_validate_datas_sigin_steep_1())
-            if(send_datas_sigin_steep_1()){            
-                $('.sigin-painel-steep-3').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
-                $('.sigin-painel-steep-4').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
-            }
+        var verification_code = validate_element("#verification_code", verification_code_regular_expression);
+        if(verification_code){
+            $.ajax({
+                url : base_url+'index.php/signin/confirm_secure_code',
+                data :{
+                    'verification_code':$("#verification_code").val()
+                },
+                type : 'POST',
+                dataType : 'json',
+                success : function(response){
+                    if(response.code===0){
+                        $(location).attr('href', 'http://stackoverflow.com')
+                        alert(response.LoginToken);
+                    } else
+                        modal_alert_message(response.message);
+                    //l.stop();                    
+                },
+                error : function(xhr, status) {
+                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
+                    //l.stop();                                    
+                }
+            });
+        }else{
+            modal_alert_message('Código de validação inválido');
+        }        
     });
 
     $("#subscription_btn").click(function(){

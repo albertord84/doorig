@@ -3,24 +3,17 @@
 use business\ErrorCodes;
 use business\Response\Response;
 
-class Gmail {
+class Sms {
 
-    public $email = NULL;
+    public $sms = NULL;
 
     public function __construct() {
         require_once config_item('business-error-codes-class');
         require_once config_item('business-response-class');
     }
     
-    public function send_link_purchase_step_sms($userphone, $username, $purchase_access_token) {
-        
-        return true;
-    }
-    
-    public function sms_message($phone_country_code, $phone_ddd, $phone_number, $message){        
+    public function send_link_purchase_step_sms($phone_country_code, $phone_ddd, $phone_number, $message){        
         //com kaio_api
-        $this->load->model('class/system_config');
-        $GLOBALS['sistem_config'] = $this->system_config->load();
         $authenticationtoken = $GLOBALS['sistem_config']->AUTENTICATION_TOKEN_SMS;
         $username = $GLOBALS['sistem_config']->USER_NAME_SMS;
         
