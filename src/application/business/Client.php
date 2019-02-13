@@ -3,6 +3,7 @@
 namespace business {
 
     require_once config_item('business-class');
+    require_once config_item('business-node-class');
     require_once config_item('business-client-status-class');
     require_once config_item('business-error-codes-class');
 
@@ -36,6 +37,7 @@ namespace business {
         public $Utm_source;
         public $Utm_campain;
         public $Login_token;
+        public $Node;
 
         /**
          * 
@@ -44,9 +46,11 @@ namespace business {
          */
         function __construct() {
             parent::__construct();
+            
+            $this->Node = new Node($this);
 
-            $ci = &get_instance();
-            $ci->load->model('Clients_model');
+
+            $this->CI->load->model('Clients_model');
         }
 
         /**
@@ -55,8 +59,7 @@ namespace business {
          * @return DataSet  
          */
         public function load_data(int $id) {
-            $ci = &get_instance();
-            $data = $ci->Clients_model->get_by_id($id);
+            $data = $this->CI->Clients_model->get_by_id($id);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::CLIENT_ID_NOT_FOUND);
             }
@@ -69,8 +72,7 @@ namespace business {
          * @return DataSet  
          */
         public function load_data_by_email(string $email) {
-            $ci = &get_instance();
-            $data = $ci->Clients_model->get_by_email($email);
+            $data = $this->CI->Clients_model->get_by_email($email);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_NOT_FOUND);
             }
@@ -84,12 +86,19 @@ namespace business {
          * @return DataSet  
          */
         public function load_data_by_login_token(string $login_token) {
-            $ci = &get_instance();
-            $data = $ci->Clients_model->get_by_login_token($login_token);
+            $data = $this->CI->Clients_model->get_by_login_token($login_token);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
             }
             $this->fill_data($data);
+        }
+
+        /**
+         * Load node data object
+         * @throws type
+         */
+        public function load_node_data() {
+            $this->Node->load_data();
         }
 
         private function fill_data(\stdClass $data = NULL) {
@@ -120,8 +129,7 @@ namespace business {
                 $this->load_data_by_email($email);
                 $client_id = $this->update($this->Id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, time(), $last_access, $utm_source, $utm_campain, $login_token);
             } else {
-                $ci = &get_instance();
-                $client_id = $ci->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+                $client_id = $this->CI->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             }
             return $client_id;
         }
@@ -130,8 +138,7 @@ namespace business {
             if (($email != NULL) && (Client::exist($email, ClientStatus::ACTIVE))) { // Whether I want to change the email, I check the new email do not exist
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
             }
-            $ci = &get_instance();
-            $client_id = $ci->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            $client_id = $this->CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             return $client_id;
         }
 
@@ -143,11 +150,10 @@ namespace business {
          * 
          */
         public function set_client_status($id = NULL, $status_id = NULL) {
-            $ci = &get_instance();
             try {
                 $id = $id ? $id : $this->id;
                 $status_id = $status_id ? $status_id : $this->status_id;
-                $result = $ci->Clients_model->update($id, NULL, NULL, NULL, $status_id);
+                $result = $this->Clients_model->update($id, NULL, NULL, NULL, $status_id);
             } catch (\Exception $exc) {
                 echo $exc->getTraceAsString();
             }
@@ -184,8 +190,7 @@ namespace business {
          * @return type
          */
         static function get_clients() {
-            $ci = &get_instance();
-            return $ci->Clients_model->get_all();
+            return $this->Clients_model->get_all();
         }
 
         /**
