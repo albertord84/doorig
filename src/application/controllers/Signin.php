@@ -27,10 +27,6 @@ class Signin extends CI_Controller {
         $this->load->view('login', $param);
     }
 
-    public function pass_reset_view() {
-        $this->load->view('pass-reset');
-    }
-
     public function do_login() {
         try {
             $datas = $this->input->post();
@@ -68,6 +64,10 @@ class Signin extends CI_Controller {
         
         //4. retornar response ok
         
+    }
+    
+    public function pass_reset_view() {
+        $this->load->view('pass-reset');
     }
     
     public function password_update() {
