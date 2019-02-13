@@ -1,16 +1,16 @@
+var verification_code_regular_expression = "^[0-9]{4}$";
 var email_regular_expression = "^[a-zA-Z0-9\._-]+@([a-zA-Z0-9-]{2,}[.])*[a-zA-Z]{2,}$";
-var complete_name_regular_expression = "^[a-zA-Z0-9áÁéÉíÍóÓúÚàÀèÈìÌòÒùÙãÃõÕâÂêÊôÔûÛñ\._]{2,150}$";
-
+var complete_name_regular_expression = "^[a-z A-Z0-9áÁéÉíÍóÓúÚàÀèÈìÌòÒùÙãÃõÕâÂêÊôÔûÛñ\._]{2,150}$";
 
 function validate_element(element_selector,pattern){
-        if(!$(element_selector).val().match(pattern)){
-            $(element_selector).css("border", "1px solid red");
-            return false;
-        } else{
-            $(element_selector).css("border", "1px solid gray");
-            return true;
-        }
-    } 
+    if(!$(element_selector).val().match(pattern)){
+        $(element_selector).css("border", "1px solid red");
+        return false;
+    } else{
+        $(element_selector).css("border", "1px solid gray");
+        return true;
+    }
+}
 
 function modal_alert_message(text_message){
     $('#modal_alert_message').modal('show');
@@ -25,6 +25,16 @@ function modal_success_message(text_message){
 function validate_not_empty(element_selector){
     if($(element_selector).val().trim()==""){
         $(element_selector).css("border", "1px solid red");
+        return false;
+    } else{
+        $(element_selector).css("border", "1px solid gray");
+        return true;
+    }
+}
+
+function validate_equals(element_selector, element_selector2){
+    if($(element_selector).val().trim()!==$(element_selector2).val().trim()){
+        $(element_selector2).css("border", "1px solid red");
         return false;
     } else{
         $(element_selector).css("border", "1px solid gray");
