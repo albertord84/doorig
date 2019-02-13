@@ -102,8 +102,6 @@ class Signin extends CI_Controller {
     public function password_update() {
         $datas = $this->input->post(); // $datas["password"]  y $datas["password-rep"]
 
-        $datas["login_token"] = "5bf84e61e027eaeebfae011bdfd20425";
-
         try {
             //1. Load client
             $Client = new Client();
