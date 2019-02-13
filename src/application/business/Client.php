@@ -139,6 +139,7 @@ namespace business {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
             }
             $client_id = $this->CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            $this->load_data($client_id);
             return $client_id;
         }
 

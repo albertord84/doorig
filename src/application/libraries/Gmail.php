@@ -79,19 +79,39 @@ class Gmail {
         return true;
     }
 
-    public function send_link_purchase_step_email($useremail, $username, $purchase_access_token) {
+    public function send_link_purchase_step_email($useremail, $username, $verification_code) {
         $this->CI->email->to($useremail, $username);
         $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
         $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
         
-        $this->CI->email->Subject = T('Verification Code Step: ' . $username);
+        $this->CI->email->Subject = T('Verification Code Step: ') . $username;
         
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        //$test = "http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&purchase_access_token=$purchase_access_token";
-        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&purchase_access_token=$purchase_access_token");
+        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $this->CI->email->message($body);
         
-        $this->CI->email->AltBody = 'Verification Code';
+        $this->CI->email->AltBody = T('Verification Code');
+        
+        if (!$this->CI->email->send()) {
+            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 
+        }
+        
+        return true;
+    }
+
+    public function send_link_recovery_password_email($useremail, $username, $link_recovery_password) {
+        $this->CI->email->to($useremail, $username);
+        $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+        $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+                
+        $link_recovery_password = urlencode($link_recovery_password);
+        $this->CI->email->Subject = T('Recovery password link: ') . $link_recovery_password;
+        
+        $lang = $GLOBALS['sistem_config']->LANGUAGE;
+        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
+        $this->CI->email->message($body);
+        
+        $this->CI->email->AltBody = T('Recovery password link: ');
         
         if (!$this->CI->email->send()) {
             throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 

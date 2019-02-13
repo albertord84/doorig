@@ -16,7 +16,7 @@ namespace business\Response {
         public $LoginToken;
         public $DashboardUrl;
 
-        function __construct(string $LoginToken, string $DashboardUrl, int $code = 0, string $message = "") {
+        function __construct(string $LoginToken, string $DashboardUrl = "", int $code = 0, string $message = "") {
             parent::__construct($code, $message);
 
             $this->LoginToken = $LoginToken;
