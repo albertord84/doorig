@@ -1,10 +1,11 @@
 $(document).ready(function(){
     $("#contact_btn").click(function(){
+        //$(this).children("i").css({"display":"none","visibility":"hidden"}); return false;
         email=validate_element('#contact_email',email_regular_expression);
         name=validate_not_empty('#contact_name');
         message=validate_not_empty('#contact_message');
           if(name && email && message){
-            //var l = Ladda.create(this);  l.start(); l.start();
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/welcome/contact_us',
                 data :{ 'username':$("#contact_name").val(),
@@ -16,11 +17,11 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         modal_success_message(response['message']);                        
                     } else
                         modal_alert_message(response['message']);    
-                    //l.stop();
                     $("#contact_name").val("");
                     $("#contact_job").val("");
                     $("#contact_email").val("");
@@ -28,8 +29,8 @@ $(document).ready(function(){
                     $("#contact_message").val(""); 
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();                    
                     $("#contact_name").val("");
                     $("#contact_job").val("");
                     $("#contact_email").val("");

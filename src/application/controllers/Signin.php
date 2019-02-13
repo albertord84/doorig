@@ -197,10 +197,7 @@ class Signin extends CI_Controller {
         $datas = $this->input->post();
         try {
             //1. Check secure code is ok!
-            $client_id = $this->session->userdata('client_id');
-            
-            $client_id = 1;
-            $datas['verification_code'] = '77777';
+            $client_id = $this->session->userdata('client_id');            
             $Client = new Client();
             $Client->load_data($client_id);
             if ($Client->confirm_secure_code($datas['verification_code'])) {

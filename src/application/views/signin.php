@@ -202,7 +202,10 @@
                                             </div>                                        
                                         </div>                                        
                                         <div class="form-group text-center">
-                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
+                                            <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">
+                                                <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                Seguinte
+                                            </button>
                                         </div>                            
                                     </div>
                                 </form>
@@ -239,12 +242,18 @@
                                         <div class="col-md-2 col-sm-12 col-xs-12"></div>
                                         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
                                             <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-2a" style="width:150px" type="button" class="thm-btn bg-clr2">Email</button>
+                                                <button id="btn-sigin-steep-2a" style="width:150px" type="button" class="thm-btn bg-clr2">
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                    Email
+                                                </button>
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
                                             <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-2b" style="width:150px" type="button" class="thm-btn bg-clr2">SMS</button>
+                                                <button id="btn-sigin-steep-2b" style="width:150px" type="button" class="thm-btn bg-clr2">
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                    SMS
+                                                </button>
                                             </div>                  
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12"></div>                                                                  
@@ -286,7 +295,10 @@
                                                 <input id="verification_code" type="text" placeholder="Código" required="">
                                             </div>                                                                                            
                                             <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-3" type="button" class="thm-btn bg-clr2">Enviar</button>
+                                                <button id="btn-sigin-steep-3" type="button" class="thm-btn bg-clr2">
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                    Enviar
+                                                </button>
                                             </div>                  
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12"></div>                                                                  
@@ -294,7 +306,7 @@
                                 </form>
                             </div>
                             <!-- STEEP 4 -->
-                            <div class="form-sec sigin-painel-steep-4" style="display:none; border:1px;border-color:silver">
+<!--                            <div class="form-sec sigin-painel-steep-4" style="display:none; border:1px;border-color:silver">
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
                                         <h2>Cadastro satisfatório</h2>
@@ -330,14 +342,17 @@
                                                     <p style="font-size:1em">Seu cadastro foi realizado com sucesso. Em breve sera redirecionado para seu Dashboard, onde poderá contratar os módulos desejados por você.</p>
                                                 </div>
                                                 <div class="form-group text-center m-top-20">
-                                                    <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Finalizar</button>
+                                                    <button id="" type="button" class="thm-btn bg-clr2">
+                                                        <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                        Finalizar
+                                                    </button>
                                                 </div> 
                                             </div>
                                             <div class="col-md-2 col-sm-12 col-xs-12"></div>
                                         </div>                                                                                                 
                                     </div>
                                 </form>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
                     </div>

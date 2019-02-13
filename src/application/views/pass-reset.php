@@ -154,7 +154,10 @@
                                             </div>                 
                                         </div>                                     
                                         <div class="form-group text-center">
-                                            <button id="change_pass_btn" type="button" class="thm-btn bg-clr2">Enviar</button>
+                                            <button id="change_pass_btn" type="button" class="thm-btn bg-clr2">
+                                                <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                Enviar
+                                            </button>
                                         </div>                            
                                     </div>
                                 </form>

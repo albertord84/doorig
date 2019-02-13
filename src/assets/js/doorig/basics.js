@@ -7,19 +7,9 @@ function validate_element(element_selector,pattern){
         $(element_selector).css("border", "1px solid red");
         return false;
     } else{
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector).css("border", "1px solid #d9d9d9");
         return true;
     }
-}
-
-function modal_alert_message(text_message){
-    $('#modal_alert_message').modal('show');
-    $('#alert_message_text').text(text_message);        
-}
-
-function modal_success_message(text_message){
-    $('#modal_success_message').modal('show');
-    $('#success_message_text').text(text_message);        
 }
 
 function validate_not_empty(element_selector){
@@ -27,30 +17,19 @@ function validate_not_empty(element_selector){
         $(element_selector).css("border", "1px solid red");
         return false;
     } else{
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector).css("border", "1px solid #d9d9d9");
         return true;
     }
 }
 
 function validate_equals(element_selector, element_selector2){
-    if($(element_selector).val().trim()!==$(element_selector2).val().trim()){
+    if($(element_selector2).val().trim()=="" || $(element_selector).val().trim()!==$(element_selector2).val().trim()){
         $(element_selector2).css("border", "1px solid red");
         return false;
     } else{
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector2).css("border", "1px solid #d9d9d9");
         return true;
     }
-}
-
-function getUrlVars(){
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for (var i = 0; i < hashes.length; i++){
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
 }
 
 function validate_cpf(element_selector, pattern) {
@@ -92,7 +71,7 @@ function validate_cpf(element_selector, pattern) {
             $(element_selector).css("border", "1px solid red");
             return false;
         }            
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector).css("border", "1px solid #d9d9d9");
         return true;
     }else{
         $(element_selector).css("border", "1px solid red");
@@ -105,7 +84,7 @@ function validate_month(element_selector, pattern) {
         $(element_selector).css("border", "1px solid red");
         return false;
     } else {
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector).css("border", "1px solid #d9d9d9");
         return true;
     }
 }
@@ -115,7 +94,7 @@ function validate_year(element_selector, pattern) {
         $(element_selector).css("border", "1px solid red");
         return false;
     } else {
-        $(element_selector).css("border", "1px solid gray");
+        $(element_selector).css("border", "1px solid #d9d9d9");
         return true;
     }
 }
@@ -128,43 +107,43 @@ function validate_date(month, year) {
     return true;
 }
 
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++){
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 function set_global_var(str, value) {
     switch (str) {
         case 'pk':
             pk = value;
-            break;
-        case 'early_client_canceled':
-            early_client_canceled = value;
-            break;
-        case 'need_delete':
-            need_delete = value;
-            break;
-        case 'login':
-            login = value;
-            break;
-        case 'pass':
-            pass = value;
-            break;
-        case 'datas':
-            datas = value;
-            break;
-        case 'email':
-            email = value;
-            break;
-        case 'flag':
-            flag = value;
-            break;
-        case 'insta_profile_datas':
-            insta_profile_datas = value;
-            break;
-        case 'cupao_number_checked':
-            cupao_number_checked = value;
-            break;
-        case 'registration_code':
-            registration_code = value;
-            break;            
+            break;                 
     }
 }
+
+function spinner_start(handle){
+    $(handle).children("i").css({"display":"inline-block","visibility":"visible"});
+}
+
+function spinner_stop(handle){
+    $(handle).children("i").css({"display":"none","visibility":"hidden"});
+}
+
+function modal_alert_message(text_message){
+    $('#modal_alert_message').modal('show');
+    $('#alert_message_text').text(text_message);        
+}
+
+function modal_success_message(text_message){
+    $('#modal_success_message').modal('show');
+    $('#success_message_text').text(text_message);        
+}
+
 
 $(document).ready(function(){  
     

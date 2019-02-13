@@ -4,6 +4,7 @@ $(document).ready(function(){
         var email = validate_element("#login_email", email_regular_expression);
         var password = validate_not_empty("#login_pass");
         if(email && password){
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/do_login',
                 data :{ 
@@ -13,15 +14,15 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
                     } else
-                        modal_alert_message(response.message);
-                    //l.stop();
+                        modal_alert_message(response.message);                    
                 },
                 error : function(xhr, status) {
-                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();
+                    spinner_stop(btn);
+                    modal_alert_message(T('Erro enviando a mensagem, tente depois...'));                    
                 }
             });
         }
@@ -33,6 +34,7 @@ $(document).ready(function(){
     $("#request_recovery_pass_btn").click(function () {
         var email = validate_element("#recovery_email", email_regular_expression);
         if(email){
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/password_recovery_send_link',
                 data :{ 
@@ -41,15 +43,15 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         modal_success_message(response.message);
                     } else
                         modal_alert_message(response.message);
-                    //l.stop();
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();
                 }
             });
         }
@@ -62,6 +64,7 @@ $(document).ready(function(){
         var password = validate_not_empty("#password");
         var password_rep = validate_equals("#password","#password-rep");   
         if(password && password_rep){
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/password_update',
                 data :{ 
@@ -71,15 +74,15 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
-                    //l.stop();
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando dados, tente depois...'));
-                    //l.stop();
                 }
             });
         }
@@ -103,6 +106,7 @@ $(document).ready(function(){
     //----------------SIGN IN FUNCTIONS------------------------------    
     $("#btn-sigin-steep-1").click(function () {
         if(js_validate_datas_sigin_steep_1()){
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/signin_step1',
                 data :{ 'name':$("#name").val(),
@@ -114,16 +118,16 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         $('.sigin-painel-steep-1').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
                         $('.sigin-painel-steep-2').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
                     } else
                         modal_alert_message(response.message);
-                    //l.stop();                    
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();                                    
                 }
             });
         }
@@ -132,6 +136,7 @@ $(document).ready(function(){
     function js_validate_datas_sigin_steep_1(){//data validation        
         var nome = validate_element("#name", complete_name_regular_expression);
         var email = validate_element("#email", email_regular_expression);
+        var phone = validate_not_empty("#phone");
         var password = validate_not_empty("#password");
         var password_rep = validate_equals("#password","#password-rep");        
         var user_term = $("#user-term").is(':checked'); 
@@ -149,43 +154,45 @@ $(document).ready(function(){
     }
     
     $("#btn-sigin-steep-2a").click(function () {
+        var btn =this; spinner_start(btn);
         $.ajax({
             url : base_url+'index.php/signin/request_secure_code_by_email',
             data :{},
             type : 'POST',
             dataType : 'json',
             success : function(response){
+                spinner_stop(btn);
                 if(response.code===0){
                     $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
                     $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
                 } else
                     modal_alert_message(response.message);
-                //l.stop();                    
             },
             error : function(xhr, status) {
+                spinner_stop(btn);
                 modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                //l.stop();                                    
             }
         });
     });
     
     $("#btn-sigin-steep-2b").click(function () {
+        var btn =this; spinner_start(btn);
         $.ajax({
             url : base_url+'index.php/signin/request_secure_code_by_sms',
             data :{},
             type : 'POST',
             dataType : 'json',
             success : function(response){
+                spinner_stop(btn);
                 if(response.code===0){
                     $('.sigin-painel-steep-2').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
                     $('.sigin-painel-steep-3').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
                 } else
                     modal_alert_message(response.message);
-                //l.stop();                    
             },
             error : function(xhr, status) {
+                spinner_stop(btn);
                 modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                //l.stop();                                    
             }
         });
     });
@@ -193,6 +200,7 @@ $(document).ready(function(){
     $("#btn-sigin-steep-3").click(function () {
         var verification_code = validate_element("#verification_code", verification_code_regular_expression);
         if(verification_code){
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/confirm_secure_code',
                 data :{
@@ -201,15 +209,15 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){
                         $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
-                    //l.stop();
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();
                 }
             });
         }else{
@@ -220,7 +228,7 @@ $(document).ready(function(){
     $("#subscription_btn").click(function(){
         email=validate_element('#subscription_email', email_regular_expression);
         if(email){
-            //var l = Ladda.create(this);  l.start(); l.start();
+            var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/welcome/subscription',
                 data :{ 
@@ -229,16 +237,16 @@ $(document).ready(function(){
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
+                    spinner_stop(btn);
                     if(response.code===0){                        
                         modal_success_message(response['message']);                        
                         $("#subscription_email").val("");
                     } else
                         modal_alert_message(response['message']);    
-                    //l.stop();
                 },
                 error : function(xhr, status) {
+                    spinner_stop(btn);
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
-                    //l.stop();
                     $("#subscription_email").val("");
                 }
             });
@@ -254,15 +262,5 @@ $(document).ready(function(){
     $('.sigin-painel-steep-3').width($('.sigin-painel-steep-1').width());
     $('.sigin-painel-steep-4').width($('.sigin-painel-steep-1').width());
     $('.form-forget-pass').height($('.form-login').height());   
-
-        
-//    function init(){
-//        $("#name").val("Jose Ramon");
-//        $("#email").val("josergm86@gmail.com");
-//        $("#phone").val("(21) 96591-3089");
-//        $("#password").val("cba");
-//        $("#password-rep").val("cba");
-//    }
-//    init();
     
  }); 

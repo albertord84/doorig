@@ -162,8 +162,11 @@
                                                     <a href="<?php echo base_url()?>index.php/signin/signin_view#lnk_sigin_section"><spam>Ainda não é usuário?</a>
                                                 </div>                 
                                             </div>
-                                            <div class="form-group text-center">
-                                                <button id="login_btn" type="button" class="thm-btn bg-clr2">Entrar</button>
+                                            <div class="form-group text-center">                                                
+                                                <button id="login_btn" type="button" class="thm-btn bg-clr2">
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                    Entrar
+                                                </button>
                                             </div>                            
                                         </div>
                                     </form>
@@ -194,7 +197,10 @@
                                                 </div>                 
                                             </div>
                                             <div class="form-group text-center">
-                                                <button id="request_recovery_pass_btn" type="button" class="thm-btn bg-clr2">Solicitar</button>
+                                                <button id="request_recovery_pass_btn" type="button" class="thm-btn bg-clr2">
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
+                                                    Solicitar
+                                                </button>
                                             </div>                            
                                         </div>
                                     </form>

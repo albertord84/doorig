@@ -9834,3 +9834,10 @@ border-top: 1px solid #3d4447;
     display: none;
   }
 }
+
+
+.myspinner{
+    font-size:18px;
+    display:none;
+    visibility:hidden
+}

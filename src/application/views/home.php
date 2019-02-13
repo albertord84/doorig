@@ -19,21 +19,7 @@
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
         
         <script type="text/javascript"> var base_url = "<?php echo base_url();?>";</script>
-        <style>
-            .loader {
-                border: 16px solid #f3f3f3; /* Light grey */
-                border-top: 16px solid #3498db; /* Blue */
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                animation: spin 2s linear infinite;
-              }
-
-              @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-              }
-        </style>
+        
     </head>
 
     <body>
@@ -49,27 +35,6 @@
             </div>
             <!-- End Preloader -->  
 
-            <!--Start Top bar area -->  
-            <!--<section class="top-bar-area">
-                <div class="container clearfix">
-                    <div class="left-side">
-                        <div class="top-info">
-                            <h6>Levamos sua marca a outro nível</h6>
-                        </div>
-                    </div>
-                    <div class="right-side clearfix">
-                        <div class="top-right">
-                            <h6>Siga-nos</h6>
-                        </div>
-                        <ul class="social-links" style="top:80px">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/doorigisyoursolution/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>-->
-            <!--End Top bar area --> 
-            
             <!--Start header area-->
             <header class="header-area">
                 <div class="container">
@@ -412,135 +377,11 @@
                 </div>
             </section>
             <!--End about sec-->
-
-            <!--Start contact area-->
-<!--            <section class="contact-area">
-                <div class="container">
-                    <div class="row">
-                        Start heading item
-                        <div class="col-md-10 col-sm-8 col-xs-12">
-                            <div class="heading-text text-left">
-                                <h1>check our latest plan for your  perfect business. </h1>
-                            </div>
-                        </div>
-                        End single item
-
-                        Start btn item
-                        <div class="col-md-2 col-sm-4 col-xs-12">
-                            <div class="btn-cont text-right">
-                                <a href="contact.html" class="thm-btn bg-clr2">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
-            <!--End contact area-->
-
-            <!--Start service style 2-->
-<!--            <section class="service-section style2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="sec-title text-center">
-                                <h2>our awsome services</h2>
-                                <span class="border"></span>
-                                <p>Lorem ipsum dolor  amet mi ultricies interdum pede eu vestibulum vulputate maurimtum <br>commod rhoncus consectetuer reduce producet</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-1.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-car-directions"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Car Loan Provied</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-2.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-crawling-baby-silhouette"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Childens Planing</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-3.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-money"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Mutual Funds</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-4.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-seo-performance-marketing-graphic"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Marketing Strateccies</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-5.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-gmo"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Market Recharch</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="service-block text-left">
-                                <div class="icon-area">
-                                    <div class="icon-box">
-                                        <figure><img src="<?php echo base_url().'assets/'?>images/services/services-6.jpg" alt="services-1"></figure>
-                                        <i class="flaticon-support"></i>
-                                    </div>
-                                    <div class="service-det">
-                                        <a href="services-details.html"><h5>Life Time Support</h5></a>
-                                        <p>Adipiscing laoreet dui sed sceleri enas pellentesque ac justo. Lectu feltrumn Placerat arcu dolor laoreet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
-            <!--End service style 2-->
-
+         
             <!--Start fact counter area-->
             <section class="fact-counter-area">
                 <div class="container">
                     <div class="row">
-                        <!--Start single item-->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="single-item text-left">
                                 <h1><span class="timer" data-from="1" data-to="3500" data-speed="5000" data-refresh-interval="50">3500</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
@@ -548,8 +389,6 @@
                                 <h3>Business Platform</h3>
                             </div>
                         </div>
-                        <!--End single item-->
-                        <!--Start single item-->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="single-item text-left">
                                 <h1><span class="timer" data-from="1" data-to="20" data-speed="5000" data-refresh-interval="50">20</span><i class="text-m">M</i></h1>
@@ -557,8 +396,6 @@
                                 <h3>Happy Client With Us</h3>
                             </div>
                         </div>
-                        <!--End single item-->
-                        <!--Start single item-->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="single-item text-left">
                                 <h1><span class="timer" data-from="1" data-to="4780" data-speed="5000" data-refresh-interval="50">4780</span></h1>
@@ -566,8 +403,6 @@
                                 <h3>Total Project Done</h3>
                             </div>
                         </div>
-                        <!--End single item-->
-                        <!--Start single item-->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="single-item text-left">
                                 <h1><span class="timer" data-from="1" data-to="3500" data-speed="5000" data-refresh-interval="50">3500</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
@@ -575,7 +410,6 @@
                                 <h3>Provided Services</h3>
                             </div>
                         </div>
-                        <!--End single item-->            
                     </div>
                 </div>
             </section>
@@ -708,7 +542,7 @@
                                             </div>
                                             <div class="form-group text-center">
                                                 <button id="contact_btn" type="button" class="thm-btn bg-clr2">
-                                                    <div class="loader"></div> 
+                                                    <i class="fa fa-spinner fa-spin myspinner"></i>
                                                     Enviar agora
                                                 </button>
                                             </div>                            

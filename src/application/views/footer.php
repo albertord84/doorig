@@ -38,8 +38,6 @@
 </div>
 
 
-
-
 <!--Start footer area-->  
 <footer class="footer-area">
     <div class="container">
@@ -78,8 +76,11 @@
                         <div class="form-group">
                             <input id="subscription_email" type="email" name="email" placeholder="Seu email">
                         </div>
-                        <div class="form-group">
-                            <button id="subscription_btn" type="button" class="thm-btn bg-clr4">Subscrever</button>
+                        <div class="form-group text-center">
+                            <button id="subscription_btn" type="button" class="thm-btn bg-clr4">
+                                <i class="fa fa-spinner fa-spin myspinner"></i>
+                                Subscrever
+                            </button>
                         </div>
                     </form>               
                 </div>
