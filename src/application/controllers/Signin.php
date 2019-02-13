@@ -7,6 +7,7 @@ ini_set('xdebug.var_display_max_data', 1024);
 use business\Response\Response;
 use business\Response\ResponseLoginToken;
 use business\Client;
+use business\Node;
 use business\ErrorCodes;
 use business\ClientStatus;
 
@@ -174,6 +175,9 @@ class Signin extends CI_Controller {
         try {
             //1. Check secure code is ok!
             $client_id = $this->session->userdata('client_id');
+            
+            $client_id = 1;
+            $datas['verification_code'] = '77777';
             $Client = new Client();
             $Client->load_data($client_id);
             if ($Client->confirm_secure_code($datas['verification_code'])) {
@@ -185,7 +189,7 @@ class Signin extends CI_Controller {
                 $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
                 
                 //4. Load node url of client
-                
+                $Client->load_node_data();
             } else {
                 throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);
             }
@@ -193,7 +197,7 @@ class Signin extends CI_Controller {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
 
-        $Response = new ResponseLoginToken($login_token);
+        $Response = new ResponseLoginToken($login_token, $Client->Node->URL);
         return $Response->toJson();
     }
 

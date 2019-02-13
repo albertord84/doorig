@@ -14,12 +14,14 @@ namespace business\Response {
         public $code = 0;
         public $message = "";
         public $LoginToken;
+        public $DashboardUrl;
 
-        function __construct(string $LoginToken, int $code = 0, string $message = "") {
+        function __construct(string $LoginToken, string $DashboardUrl, int $code = 0, string $message = "") {
             parent::__construct($code, $message);
 
             $this->LoginToken = $LoginToken;
-            $this->output_array += array('LoginToken' => $this->LoginToken);
+            $this->DashboardUrl = $DashboardUrl;
+            $this->output_array += array('LoginToken' => $LoginToken, 'DashboardUrl' => $DashboardUrl);
         }
 
         public function toJson() {
