@@ -16,7 +16,7 @@ $(document).ready(function(){
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);                    
                 },
@@ -30,6 +30,13 @@ $(document).ready(function(){
             modal_alert_message('Erro nos dados fornecidos.');
         return false;
     });
+    
+    $('#login-form-1').keypress(function (e) {
+        if (e.which == 13) {
+            $("#login_btn").click();
+            return false;
+        }
+    }); 
     
     $("#request_recovery_pass_btn").click(function () {
         var email = validate_element("#recovery_email", email_regular_expression);
@@ -60,23 +67,32 @@ $(document).ready(function(){
         return false;
     });
     
+    $('#login-form-2').keypress(function (e) {
+        if (e.which == 13) {
+            $("#request_recovery_pass_btn").click();
+            return false;
+        }
+    });
+        
     $("#change_pass_btn").click(function () {
         var password = validate_not_empty("#password");
-        var password_rep = validate_equals("#password","#password-rep");   
+        var password_rep = validate_equals("#password","#password-rep");
+        alert(login_token);
         if(password && password_rep){
             var btn =this; spinner_start(btn);
             $.ajax({
                 url : base_url+'index.php/signin/password_update',
                 data :{ 
                         'password':$("#password").val(),
-                        'password-rep':$("#password-rep").val()
+                        'password-rep':$("#password-rep").val(),
+                        'login_token':login_token
                     },
                 type : 'POST',
                 dataType : 'json',
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
                 },
@@ -91,6 +107,13 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#pass-reset-form-1').keypress(function (e) {
+        if (e.which == 13) {
+            $("#change_pass_btn").click();
+            return false;
+        }
+    });
+
     $("#lnk-forget-pass").click(function () {                   
         $('.form-login').css({'display':'none','visibility': 'hidden','opacity': '0','transition':'visibility 0s, opacity 0.5s linear'});  
         $('.form-forget-pass').css({'display':'block','visibility': 'visible', 'opacity': '1'});            
@@ -103,6 +126,7 @@ $(document).ready(function(){
         return 0;
     });
     
+     
     //----------------SIGN IN FUNCTIONS------------------------------    
     $("#btn-sigin-steep-1").click(function () {
         if(js_validate_datas_sigin_steep_1()){
@@ -130,6 +154,13 @@ $(document).ready(function(){
                     modal_alert_message(T('Erro enviando a mensagem, tente depois...'));
                 }
             });
+        }
+    });
+    
+    $('#signin-form1').keypress(function (e) {
+        if (e.which == 13) {
+            $("#btn-sigin-steep-1").click();
+            return false;
         }
     });
     
@@ -211,7 +242,7 @@ $(document).ready(function(){
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/?access_token="+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
                 },
@@ -223,6 +254,13 @@ $(document).ready(function(){
         }else{
             modal_alert_message('Código de validação inválido');
         }        
+    });
+    
+    $('#signin-form3').keypress(function (e) {
+        if (e.which == 13) {
+            $("#btn-sigin-steep-3").click();
+            return false;
+        }
     });
 
     $("#subscription_btn").click(function(){
@@ -253,7 +291,14 @@ $(document).ready(function(){
         } else{
             modal_alert_message(T('Alguns dados incorretos'));            
         }                             
-    });        
+    });  
+    
+    $('#subscription_form').keypress(function (e) {
+        if (e.which == 13) {
+            $("#subscription_btn").click();
+            return false;
+        }
+    });
         
     $('.sigin-painel-steep-2').height($('.sigin-painel-steep-1').height());
     $('.sigin-painel-steep-3').height($('.sigin-painel-steep-1').height());

@@ -383,31 +383,31 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single-item text-left">
-                                <h1><span class="timer" data-from="1" data-to="3500" data-speed="5000" data-refresh-interval="50">3500</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
+                            <div class="single-item text-center">
+                                <h1><span class="timer" data-from="1" data-to="3500" data-speed="5000" data-refresh-interval="50">3559</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
                                 <span class="border"></span>
-                                <h3>Business Platform</h3>
+                                <h3>Clientes satisfeitos</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single-item text-left">
+                            <div class="single-item text-center">
                                 <h1><span class="timer" data-from="1" data-to="20" data-speed="5000" data-refresh-interval="50">20</span><i class="text-m">M</i></h1>
                                 <span class="border"></span>
-                                <h3>Happy Client With Us</h3>
+                                <h3>Seguidores captados</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single-item text-left">
-                                <h1><span class="timer" data-from="1" data-to="4780" data-speed="5000" data-refresh-interval="50">4780</span></h1>
+                            <div class="single-item text-center">
+                                <h1><span class="timer" data-from="1" data-to="3651" data-speed="5000" data-refresh-interval="50">3651</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
                                 <span class="border"></span>
-                                <h3>Total Project Done</h3>
+                                <h3>Usuários registrados</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="single-item text-left">
-                                <h1><span class="timer" data-from="1" data-to="3500" data-speed="5000" data-refresh-interval="50">3500</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
+                            <div class="single-item text-center">
+                                <h1><span class="timer" data-from="1" data-to="5500" data-speed="5000" data-refresh-interval="50">5500</span><i class="fa fa-plus" aria-hidden="true"></i></h1>
                                 <span class="border"></span>
-                                <h3>Provided Services</h3>
+                                <h3>Avaliações positivas</h3>
                             </div>
                         </div>
                     </div>
