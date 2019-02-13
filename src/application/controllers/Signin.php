@@ -26,21 +26,14 @@ class Signin extends CI_Controller {
         $this->load->view('login', $param);
     }
 
-    public function pass_reset() {
+    public function pass_reset_view() {
         $this->load->view('pass-reset');
-    }
-
-    public function password_recovery() {
-        $datas = $this->input->post();
-        //enviar email a $datas["email"] con link para vista de trocar senha	
     }
 
     public function do_login() {
         try {
             $datas = $this->input->post();
-            $datas["email"] = "777@7.7";
-            $datas["password"] = "7777";
-
+            
             //1. Login client
             $Client = new Client();
             $Client = Client::do_login($datas["email"], $datas["password"]);
@@ -58,6 +51,36 @@ class Signin extends CI_Controller {
 
         $Response = new ResponseLoginToken($login_token);
         return $Response->toJson();
+    }
+    
+    public function password_recovery_send_link() {
+        $datas = $this->input->post();
+        
+        //1. buscar cliente dado email em $datas["email"]
+        
+        //2. crear url de pagina de recuperacion
+        //encriptar client_id que se pueda desencriptar
+        $ecnrip = 1;
+        $url= base_url()."index.php/signin/pass_reset_view/".$TOKEN;
+        
+        //3. enviar email
+        
+        //4. retornar response ok
+        
+    }
+    
+    public function password_update() {
+        $datas = $this->input->post(); // $datas["password"]  y $datas["password-rep"]
+        
+        
+        $client_id = $this->input->get("client_id"); //desencriptar client_id
+        
+        
+        //2. cargar cliente by id
+        
+        //actualizar en la bd
+        
+        //response ok con access token y url
     }
 
     public function dashboard_confirm_login_token() {

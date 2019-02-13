@@ -188,10 +188,18 @@
                                                 <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
                                             </div>
                                         </div>                                        -->
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group text-right">
-                                                <input id="user-term" type="checkbox" checked="" required=""> Li e aceito os <a href="<?php echo base_url().'assets/'?>use-terms/TERMOS DE USO.pdf" target="blank">Termos de uso</a>.
-                                            </div>                 
+                                                                              
+                                        <div class="">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group text-left">
+                                                    <a href="<?php echo base_url()?>index.php/signin/login_view#lnk_login_section"><spam>Voltar ao Login?</a>
+                                                </div>                 
+                                            </div>                                        
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group text-right">
+                                                    <input id="user-term" type="checkbox" checked="" required=""> Li e aceito os <a href="<?php echo base_url().'assets/'?>use-terms/TERMOS DE USO.pdf" target="blank">Termos de uso</a>.
+                                                </div>                 
+                                            </div>                                        
                                         </div>                                        
                                         <div class="form-group text-center">
                                             <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
@@ -224,7 +232,7 @@
                                 <form name="signin-form2" class="default-form contact-form" method="post">
                                     <div class="row">
                                         <div class="col-md-12 col-md-12 col-xs-12 text-center m-top-35">
-                                            <h4>Onde receber o Código de verificação?</h4>
+                                            <h4>Como receber o Código de Verificação?</h4>
                                         </div>                                        
                                     </div>
                                     <div class="row">                                        
@@ -236,7 +244,7 @@
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
                                             <div class="form-group m-top-20">
-                                                <button id="btn-sigin-steep-2b" style="width:150px" type="button" class="thm-btn bg-clr2">Telefone</button>
+                                                <button id="btn-sigin-steep-2b" style="width:150px" type="button" class="thm-btn bg-clr2">SMS</button>
                                             </div>                  
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12"></div>                                                                  

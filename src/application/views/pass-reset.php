@@ -43,28 +43,6 @@
           </div>
           <!-- End Preloader -->  
 
-
-        <!--Start Top bar area -->  
-        <!--<section class="top-bar-area n-on-show-in-moviles">
-            <div class="container clearfix">
-                <div class="left-side">
-                    <div class="top-info">
-                        <h6>Levamos sua marca a outro nível</h6>
-                    </div>
-                </div>
-                div class="right-side clearfix">
-                    <div class="top-right">
-                        <h6>Siga-nos</h6>
-                    </div>
-                    <ul class="social-links" style="top:80px">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/doorigisyoursolution/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>-->
-        <!--End Top bar area --> 
-
         <!--Start header area-->
         <header class="header-area n-on-show-in-moviles">
             <div class="container">
@@ -104,7 +82,6 @@
             </div>
         </header>  
         <!--End header area--> 
-
 
         <!--Start mainmenu area-->
         <section class="mainmenu-area stick">
@@ -151,7 +128,7 @@
 
         <!--Start service style 2-->                
             <section class="consltation-area">
-                <A name="lnk_login_section"></A>
+                <A name="lnk_pass_reset_section"></A>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-md-6 col-xs-12"></div>
@@ -168,19 +145,14 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="password" name="pass" placeholder="Senha" required="">
+                                                <input id="password" type="password" placeholder="Senha" required="">
                                             </div>                 
                                         </div>                                                                                                                     
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="password" name="pass" placeholder="Comfirmar Senha" required="">
+                                                <input id="password-rep" type="password" placeholder="Comfirmar Senha" required="">
                                             </div>                 
-                                        </div>
-                                        <!--<div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group text-center">
-                                                <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
-                                            </div>
-                                        </div>-->                                        
+                                        </div>                                     
                                         <div class="form-group text-center">
                                             <button id="btn-sigin-steep-1" type="button" class="thm-btn bg-clr2">Seguinte</button>
                                         </div>                            
