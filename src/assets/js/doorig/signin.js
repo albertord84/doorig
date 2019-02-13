@@ -77,7 +77,6 @@ $(document).ready(function(){
     $("#change_pass_btn").click(function () {
         var password = validate_not_empty("#password");
         var password_rep = validate_equals("#password","#password-rep");
-        alert(login_token);
         if(password && password_rep){
             var btn =this; spinner_start(btn);
             $.ajax({
