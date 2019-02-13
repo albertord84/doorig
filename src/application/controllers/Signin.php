@@ -27,14 +27,25 @@ class Signin extends CI_Controller {
         $this->load->view('login', $param);
     }
 
-    public function pass_reset_view() {
-        $this->load->view('pass-reset');
+    public function pass_reset_view($login_token) {
+        try {
+            //1. Login client
+            $Client = new Client();
+            $Client->load_data_by_login_token($login_token);
+            
+            $this->load->view('pass-reset');
+        } catch (Exception $exc) {
+            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
+            return;
+        }
+        
+        // TODO: Jose retornar pagina de error
     }
 
     public function do_login() {
         try {
             $datas = $this->input->post();
-            
+
             //1. Login client
             $Client = new Client();
             $Client = Client::do_login($datas["email"], $datas["password"]);
@@ -53,34 +64,44 @@ class Signin extends CI_Controller {
         $Response = new ResponseLoginToken($login_token);
         return $Response->toJson();
     }
-    
+
     public function password_recovery_send_link() {
-        $datas = $this->input->post();
-        
-        //1. buscar cliente dado email em $datas["email"]
-        
-        //2. crear url de pagina de recuperacion
-        //encriptar client_id que se pueda desencriptar
-        $ecnrip = 1;
-        $url= base_url()."index.php/signin/pass_reset_view/".$TOKEN;
-        
-        //3. enviar email
-        
-        //4. retornar response ok
-        
+        try {
+            $datas = $this->input->post();
+
+            //1. buscar cliente dado email em $datas["email"]
+            $Client = new Client();
+            $Client->load_data_by_email($datas["email"]);
+
+            //2. Generate MD5 redirection token 	
+            $key = $Client->Id . time();
+            $login_token = md5($key);
+
+            //3. crear url de pagina de recuperacion
+            $url = base_url() . "index.php/signin/pass_reset_view/" . $login_token;
+
+            //4. Save MD5 to validate $login_token
+            $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+
+            //5. enviar email
+            $this->load->library("gmail");
+            $this->gmail->send_link_recovery_password_email($Client->Email, $Client->Name, $url);
+        } catch (Exception $exc) {
+            Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
+            return;
+        }
+
+        $Response = new ResponseLoginToken($login_token);
+        return $Response->toJson();
     }
-    
+
     public function password_update() {
         $datas = $this->input->post(); // $datas["password"]  y $datas["password-rep"]
-        
-        
+
+
         $client_id = $this->input->get("client_id"); //desencriptar client_id
-        
-        
         //2. cargar cliente by id
-        
         //actualizar en la bd
-        
         //response ok con access token y url
     }
 
@@ -105,7 +126,7 @@ class Signin extends CI_Controller {
         $param["footer"] = $this->load->view('footer', '', true);
         $this->load->view('signin', $param);
     }
-    
+
     // Step 1 {
     public function signin_step1() {
         try {
@@ -129,7 +150,7 @@ class Signin extends CI_Controller {
             $datas["node_id"] = "1";
             $Client = new Client();
             $client_id = $Client->Insert($datas["email"], $datas["name"], $datas["password"], $datas["status_id"], $datas["node_id"], $datas["phone"]);
-            $this->session->set_userdata('client_id', $client_id);            
+            $this->session->set_userdata('client_id', $client_id);
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
@@ -140,7 +161,7 @@ class Signin extends CI_Controller {
     // Step 2.1
     public function request_secure_code_by_email() {
         try {
-            if($this->session->userdata('client_id')){
+            if ($this->session->userdata('client_id')) {
                 $verification_code = mt_rand(1000, 9999);
                 $client_id = $this->session->userdata('client_id');
 
@@ -151,8 +172,8 @@ class Signin extends CI_Controller {
 
                 //3. Send code by email
                 $this->load->library("gmail");
-                $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);                
-            }else{
+                $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);
+            } else {
                 return Response::ResponseFAIL(T("Violação de acesso"))->toJson();
             }
         } catch (\Exception $e) {
@@ -161,11 +182,11 @@ class Signin extends CI_Controller {
 
         return Response::ResponseOK()->toJson();
     }
-    
+
     // Step 2.2
     public function request_secure_code_by_sms() {
         try {
-            if($this->session->userdata('client_id')){
+            if ($this->session->userdata('client_id')) {
                 $verification_code = mt_rand(1000, 9999);
                 $client_id = $this->session->userdata('client_id');
                 //2. Salvar codigo
@@ -176,13 +197,13 @@ class Signin extends CI_Controller {
                 //3. Send code by email
                 $tlf = $Client->Phone;
                 $this->load->library("sms");
-                $phone_country_code="+55";                
-                $phone_ddd = substr($tlf,1,2);                
-                $phone_number = substr($tlf,5);
-                $phone_number = str_replace("-","",$phone_number);                
-                $message_code = T("Para validar sua conta use o codigo ").$verification_code;
-                $this->sms->send_link_purchase_step_sms($phone_country_code,$phone_ddd,$phone_number, $message_code);                
-            }else{
+                $phone_country_code = "+55";
+                $phone_ddd = substr($tlf, 1, 2);
+                $phone_number = substr($tlf, 5);
+                $phone_number = str_replace("-", "", $phone_number);
+                $message_code = T("Para validar sua conta use o codigo ") . $verification_code;
+                $this->sms->send_link_purchase_step_sms($phone_country_code, $phone_ddd, $phone_number, $message_code);
+            } else {
                 return Response::ResponseFAIL(T("Violação de acesso"))->toJson();
             }
         } catch (\Exception $e) {
@@ -198,9 +219,7 @@ class Signin extends CI_Controller {
         try {
             //1. Check secure code is ok!
             $client_id = $this->session->userdata('client_id');
-            
-            $client_id = 1;
-            $datas['verification_code'] = '77777';
+
             $Client = new Client();
             $Client->load_data($client_id);
             if ($Client->confirm_secure_code($datas['verification_code'])) {
@@ -209,8 +228,8 @@ class Signin extends CI_Controller {
                 $login_token = md5($key);
 
                 //3. Save MD5 to validate login from dashboard
-                $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
-                
+                $Client->update($client_id, NULL, NULL, ClientStatus::ACTIVE, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+
                 //4. Load node url of client
                 $Client->load_node_data();
             } else {

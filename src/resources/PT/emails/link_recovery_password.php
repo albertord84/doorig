@@ -6,15 +6,13 @@
     </head>
     <body>
         <div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;">
-            <h1>DOORIG Confirmação de conta!</h1>
+            <h1>DOORIG Redefinição de senha!</h1>
             <!--  <div align="center">
                 <a href="https://github.com/PHPMailer/PHPMailer/"><img src="images/phpmailer.png" height="90" width="340" alt="PHPMailer rocks"></a>
               </div>-->
             <p>Olá, <strong><?php echo $_GET["username"]; ?></strong>:</p>
-            <p>Você acaba de fazer o primeiro passo para se cadastrar no sistema <a href="https://doorig.com/">Doorig</a>, parabéns! :D</p>
-            <p>Seu email cadastrado no nosso sistema é: <strong><?php echo $_GET["useremail"]; ?></strong></p>
-            <p>Por favor, utilize o seguinte código de 4 dígitos para continuar o seu cadastro:</p>
-            <h1><strong><?php echo $_GET["purchase_access_token"]; ?></strong></h1>
+            <p>Por favor, utilize o seguinte link para redefinir a sua senha:</p>
+            <h1><strong><?php echo $_GET["link_recovery_password"]; ?></strong></h1>
             
             <p>Se tiver qualquer dúvida, por favor nos escreva!</p>
             <p>Obrigado por usar os nossos serviços,</p>
