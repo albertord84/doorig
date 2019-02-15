@@ -24,6 +24,7 @@ class Signin extends CI_Controller {
     //----------LOGIN FUNCTIONS--------------------------
     public function login_view() {
         $param["footer"] = $this->load->view('footer', '', true);
+        $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('login', $param);
     }
 
@@ -60,6 +61,8 @@ class Signin extends CI_Controller {
             $Client->load_data_by_login_token($login_token);
 
             $param["login_token"] = $login_token;
+            $param["footer"] = $this->load->view('footer', '', true);
+            $param["modals"] = $this->load->view('modals', '', true);
             $this->load->view('pass-reset', $param);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
@@ -149,6 +152,7 @@ class Signin extends CI_Controller {
     public function signin_view() {
         $this->load->library('session');
         $param["footer"] = $this->load->view('footer', '', true);
+        $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('signin', $param);
     }
 

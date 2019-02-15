@@ -23,11 +23,13 @@ class Welcome extends CI_Controller {
         //$GLOBALS['language'] = $param['language'];
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
+        $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('home', $param);
     }
 
     public function faqs_view() {
         $param["footer"] = $this->load->view('footer', '', true);
+        $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('faq', $param);
     }
 
