@@ -30,8 +30,7 @@ namespace business {
         function __construct(Client &$client) {
             parent::__construct();
 
-            $ci = &get_instance();
-            $ci->load->model("Nodes_model");
+            $this->CI->load->model("Nodes_model");
 
             $this->Client = $client;
         }
