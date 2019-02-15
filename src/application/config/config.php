@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 date_default_timezone_set('America/Sao_Paulo'); 
 
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -29,7 +30,6 @@ date_default_timezone_set('America/Sao_Paulo');
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http');
 $config['base_url'] .= '://' . $_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),'' , $_SERVER['SCRIPT_NAME']);
-
 
 /*
 |--------------------------------------------------------------------------
@@ -143,7 +143,7 @@ $config['subclass_prefix'] = 'MY_';
 |	autoloading (application/config/autoload.php)
 */
 #$config['composer_autoload'] = FALSE;
-$config['composer_autoload'] = __DIR__ . '/../../vendor/autoload.php';
+$config['composer_autoload'] = getcwd() . '/application/third_party/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -429,7 +429,7 @@ $config['standardize_newlines'] = FALSE;
 |          for backwards compatibility purposes!
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -518,3 +518,6 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+$config['useragent'] = 'PHPMailer';

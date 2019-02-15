@@ -90,13 +90,13 @@ button:focus{
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 a{
   -webkit-transition: all 0.5s ease-in;
@@ -127,26 +127,26 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 p{
   font-family: 'Roboto', sans-serif;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   color: #888888;
 }
 button, input, select, textarea {
     font-family: 'Roboto', sans-serif;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 button{
   border: none;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 .thm-btn {
   font-size: 14px;
   font-weight: 600;
   padding: 12px 30px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   position: relative;
   -webkit-transition: all 0.5s ease 0s;
@@ -394,7 +394,7 @@ button{
   font-size: 25px;
   font-weight: 700;
   line-height: 40px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   margin: 0 0 1px;
 }
 .sec-title .border{
@@ -907,7 +907,7 @@ select:focus {
   color: #222222;
   font-size: 16px;
   font-weight: 500;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   margin: -2px 0 5px;
 }
 .header-contact-info ul li .text-holder p {
@@ -2559,7 +2559,7 @@ select:focus {
   padding: 10px 20px;
   width: 100%;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   border: 1px solid #d9d9d9;
   -webkit-transition: all 500ms ease;
@@ -2837,7 +2837,7 @@ select:focus {
   font-size: 25px;
   font-weight: 500;
   line-height: 40px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   margin: 0 0 1px;
 }
 
@@ -2973,7 +2973,7 @@ select:focus {
     font-size: 40px;
     font-weight: 700;
     line-height: 50px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     margin: 0 0 1px;
 }
 .skill-sec .left-content-area .sec-title p{
@@ -3005,7 +3005,7 @@ select:focus {
   color: #212121;
   font-family: "Poppins";
   font-weight: 500;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 .skill-sec .left-content-area .barfiller .tip {
   padding: 2px 6px;
@@ -4830,7 +4830,7 @@ select:focus {
   padding: 13px 18px;
   margin-right: 2px;
   border: 1px solid #d9d9d9;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
           transition: all 500ms ease;
      -moz-transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
@@ -5138,7 +5138,7 @@ select:focus {
     display: block;
     font-size: 16px;
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     border: 1px solid #e5e5e5;
     padding: 17px 30px;
     -webkit-transition: all 500ms ease 0s;
@@ -5339,7 +5339,7 @@ select:focus {
     display: block;
     font-size: 14px;
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     border: 1px solid #e3e3e3;
     background: transparent;
     padding: 10px 30px;
@@ -5417,7 +5417,7 @@ select:focus {
     display: block;
     font-size: 14px;
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     border: 1px solid #e3e3e3;
     background: transparent;
     padding: 10px 30px;
@@ -5852,7 +5852,7 @@ select:focus {
   color: #707070;
   line-height: 26px;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 .blog-details.style-two .left-side .item p{
@@ -6089,7 +6089,7 @@ select:focus {
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   margin: 0 0 1px;
   font-family: "Roboto", sans-serif;
 }
@@ -6149,7 +6149,7 @@ select:focus {
   padding: 10px 20px;
   width: 100%;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   border: 1px solid #d9d9d9;
   -webkit-transition: all 500ms ease;
@@ -6226,7 +6226,7 @@ select:focus {
   padding: 10px 20px;
   width: 100%;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   border: 1px solid #d9d9d9;
   -webkit-transition: all 500ms ease;
@@ -6471,7 +6471,7 @@ select:focus {
   font-size: 16px;
   margin-right: 35px;
   transition: all 0.5s ease-out;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 .error-page.style-two .error-text .error-btn i {
@@ -6628,7 +6628,7 @@ select:focus {
     color: #ffffff;
     font-size: 22px;
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     position: relative;
 }
 .single-footer-widget .title h5:before{
@@ -6735,7 +6735,7 @@ select:focus {
     background: #fff;
     border: 1px solid#30333a;
     box-shadow: none;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     font-family: 'Roboto', sans-serif;
     transition: all 500ms ease;
 }
@@ -6784,7 +6784,7 @@ select:focus {
     color: #363636;
     font-size: 22px;
     font-weight: 500;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     position: relative;
     font-family: "Poppins", sans-serif;
 }
@@ -7119,7 +7119,7 @@ select:focus {
   color: #ffffff;
   padding-bottom: 10px;
   display: inline-block;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: "Poppins"
 }
 .page-title .title-manu li{
@@ -7130,7 +7130,7 @@ select:focus {
   margin-left: 5px;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 .page-title .title-manu li:nth-child(1){
   margin-left: 0px;
@@ -7259,7 +7259,7 @@ select:focus {
   padding: 10px 20px;
   width: 100%;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   border: 1px solid #d9d9d9;
   -webkit-transition: all 500ms ease;
@@ -7525,7 +7525,7 @@ select:focus {
   padding: 10px 20px;
   width: 100%;
   font-weight: 400;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   border: 1px solid #d9d9d9;
   -webkit-transition: all 500ms ease;
@@ -7703,7 +7703,7 @@ select:focus {
   display: block;
   font-size: 14px;
   font-weight: 500;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   border: none;
   padding: 17px 30px;
   -webkit-transition: all 500ms ease 0s;
@@ -9355,7 +9355,7 @@ select:focus {
   padding: 13px 18px;
   margin-right: 2px;
   border: 1px solid #d9d9d9;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
@@ -9390,7 +9390,7 @@ select:focus {
   background: transparent;
   border: 1px solid #3f3f3f;
   box-shadow: none;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-family: 'Roboto', sans-serif;
   transition: all 500ms ease;
   border-radius: 25px;
@@ -9833,4 +9833,11 @@ border-top: 1px solid #3d4447;
   .non-show-in-moviles {
     display: none;
   }
+}
+
+
+.myspinner{
+    font-size:18px;
+    display:none;
+    visibility:hidden
 }
