@@ -16,7 +16,7 @@ $(document).ready(function(){
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);                    
                 },
@@ -91,7 +91,7 @@ $(document).ready(function(){
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
                 },
@@ -241,7 +241,7 @@ $(document).ready(function(){
                 success : function(response){
                     spinner_stop(btn);
                     if(response.code===0){
-                        $(location).attr('href', response.DashboardUrl+"/dashboard/src/index.php/welcome/index/"+response.LoginToken);
+                        $(location).attr('href', response.DashboardUrl+"welcome/index/"+response.LoginToken);
                     } else
                         modal_alert_message(response.message);
                 },
