@@ -42,10 +42,10 @@ namespace business {
                 if ($exc->getCode() == 0) {
                     throw new \Db_Exception($this->db->error(), $e);
                 } else {
-                    throw $e;
+                    throw $exc;
                 }
             } catch (\Exception $exc) {
-                throw $e;
+                throw $exc;
             }
             return FALSE;
         }

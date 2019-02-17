@@ -26,6 +26,7 @@ class Subscriptions_model extends CI_Model {
 
     public function save($email) {
         try {
+            if ($this->exist($email)) throw new Exception (T("O email informado já existe."), 25);
             $data['email'] = $email;
             return $this->db->insert('subscriptions', $data);
         } catch (\Error $e) {
