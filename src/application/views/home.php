@@ -518,22 +518,22 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_name" type="text" placeholder="Seu nome" >
+                                                <input id="contact_name" type="text" placeholder="Seu nome *" >
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_email" type="email" placeholder="Email" autocomplete="">
+                                                <input id="contact_email" type="email" placeholder="Email *" autocomplete="">
                                             </div>                  
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_phone" class="fone" type="tel" placeholder="Telefone (opcional)" >
+                                                <input id="contact_phone" class="fone" type="tel" placeholder="Telefone" >
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="contact_job" type="tel" placeholder="Profissão (opcional)" >
+                                                <input id="contact_job" type="tel" placeholder="Profissão" >
                                             </div>                 
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">

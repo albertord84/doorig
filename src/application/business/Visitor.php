@@ -59,7 +59,7 @@ namespace business {
             try {
                 $ci = &get_instance();
                 $ci->load->library("gmail");
-                $ci->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
+                $ci->gmail->send_contact_us($useremail, $username, $message, $company, $phone);
                 return TRUE;
             } catch (\Exception $exc) {
                 throw $e;
