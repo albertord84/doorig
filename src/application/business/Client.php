@@ -50,7 +50,8 @@ namespace business {
             $this->Node = new Node($this);
 
 
-            $this->CI->load->model('Clients_model');
+            $CI = &get_instance();
+            $CI->load->model('Clients_model');
         }
 
         /**
@@ -59,7 +60,8 @@ namespace business {
          * @return DataSet  
          */
         public function load_data(int $id) {
-            $data = $this->CI->Clients_model->get_by_id($id);
+            $CI = &get_instance();
+            $data = $CI->Clients_model->get_by_id($id);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::CLIENT_ID_NOT_FOUND);
             }
@@ -72,7 +74,8 @@ namespace business {
          * @return DataSet  
          */
         public function load_data_by_email(string $email) {
-            $data = $this->CI->Clients_model->get_by_email($email);
+            $CI = &get_instance();
+            $data = $CI->Clients_model->get_by_email($email);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_NOT_FOUND);
             }
@@ -86,7 +89,8 @@ namespace business {
          * @return DataSet  
          */
         public function load_data_by_login_token(string $login_token) {
-            $data = $this->CI->Clients_model->get_by_login_token($login_token);
+            $CI = &get_instance();
+            $data = $CI->Clients_model->get_by_login_token($login_token);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
             }
@@ -129,7 +133,8 @@ namespace business {
                 $this->load_data_by_email($email);
                 $client_id = $this->update($this->Id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, time(), $last_access, $utm_source, $utm_campain, $login_token);
             } else {
-                $client_id = $this->CI->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+                $CI = &get_instance();
+                $client_id = $CI->Clients_model->save($email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             }
             return $client_id;
         }
@@ -138,7 +143,8 @@ namespace business {
             if (($email != NULL) && (Client::exist($email, ClientStatus::ACTIVE))) { // Whether I want to change the email, I check the new email do not exist
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
             }
-            $client_id = $this->CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            $CI = &get_instance();
+            $client_id = $CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
             $this->load_data($client_id);
             return $client_id;
         }
