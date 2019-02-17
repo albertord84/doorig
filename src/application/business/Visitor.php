@@ -42,10 +42,10 @@ namespace business {
                 if ($exc->getCode() == 0) {
                     throw new \Db_Exception($this->db->error(), $e);
                 } else {
-                    throw $e;
+                    throw $exc;
                 }
             } catch (\Exception $exc) {
-                throw $e;
+                throw $exc;
             }
             return FALSE;
         }
@@ -59,7 +59,7 @@ namespace business {
             try {
                 $ci = &get_instance();
                 $ci->load->library("gmail");
-                $ci->gmail->send_contact_us($datas["email"], $datas["username"], $datas["message"], $datas["company"], $datas["phone"]);
+                $ci->gmail->send_contact_us($useremail, $username, $message, $company, $phone);
                 return TRUE;
             } catch (\Exception $exc) {
                 throw $e;

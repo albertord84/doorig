@@ -30,7 +30,8 @@ namespace business {
         function __construct(Client &$client) {
             parent::__construct();
 
-            $this->CI->load->model("Nodes_model");
+            $CI = &get_instance();
+            $CI->load->model("Nodes_model");
 
             $this->Client = $client;
         }
@@ -40,7 +41,8 @@ namespace business {
          * @throws Exception
          */
         public function load_data() {
-            $data = $this->CI->Nodes_model->get_by_id($this->Client->Node_id);
+            $CI = &get_instance();
+            $data = $CI->Nodes_model->get_by_id($this->Client->Node_id);
             if ($data == null) {
                 throw ErrorCodes::getException(ErrorCodes::CLIENT_DATA_NOT_FOUND);
             }
