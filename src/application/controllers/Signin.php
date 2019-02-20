@@ -36,18 +36,18 @@ class Signin extends CI_Controller {
         try {
             $datas = $this->input->post();
 
-//1. Login client
+            //1. Login client
             $Client = new Client();
             $Client = Client::do_login($datas["email"], $datas["password"]);
 
-//2. Generate MD5 redirection token 	
+            //2. Generate MD5 redirection token 	
             $key = $Client->Id . time();
             $login_token = md5($key);
 
-//3. Save MD5 to validate login from dashboard
+            //3. Save MD5 to validate login from dashboard
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
 
-//4. Load node url of client
+            //4. Load node url of client
             $Client->load_node_data();
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
@@ -60,7 +60,7 @@ class Signin extends CI_Controller {
 
     public function pass_reset_view($login_token) {
         try {
-//1. Login client
+            //1. Login client
             $Client = new Client();
             $Client->load_data_by_login_token($login_token);
 
