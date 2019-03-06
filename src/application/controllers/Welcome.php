@@ -12,7 +12,6 @@ class Welcome extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
         require_once config_item('business-client-class');
         require_once config_item('business-visitor-class');
         require_once config_item('business-response-class');
@@ -35,7 +34,6 @@ class Welcome extends CI_Controller {
 
     public function subscription() {
         $datas = $this->input->post();
-//        $datas['subscription_email'] = "albertord84@gmail.com";
         try {
             Visitor::new_subscription($datas['subscription_email']);
         } catch (\Exception $e) {
