@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="accord-content">
                                         <p>Primeiro você deve assinar um de nossos planos em www.doorig.com, feito isso, você deve selecionar os perfis de referência e locais que deseja captar seus seguidores. Nossa ferramenta começa a seguir essa base de usuários. Esses usuários irão ver a sua conta e uma % irá segui-lo de volta, em torno de 48h a ferramenta começa a desseguir esses perfis e a partir daí ela entra num ciclo, seguindo novos e desseguindo antigos quase que simultaneamente.
-‌                                           <br>Indicamos que o assinante teste, pelo menos, o 1º mês pois o resultado vem ao longo dos dias. Ao ativar a Dumbu, os usuários vão interagindo com sua conta e seguindo de volta, afinal eles são pessoas reais interessadas no seu conteúdo. Você pode assinar e testar por 2 dias sem pagar nada, acesse www.doorig.com.
+‌                                           <br>Indicamos que o assinante teste, pelo menos, o 1º mês pois o resultado vem ao longo dos dias. Ao ativar o módulo de Mais Vissibilidade, os usuários vão interagindo com sua conta e seguindo de volta, afinal eles são pessoas reais interessadas no seu conteúdo. Você pode assinar e testar por 2 dias sem pagar nada, acesse www.doorig.com.
                                         </p>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                     <div class="accord-content">
                                         <p>
                                             Não se preocupe, a verificação da conta é uma medida de segurança e autenticação, normalmente você só precisará fazer uma vez, e é bem rápido, leva poucos segundos.
-                                            Acesse sua conta na Dumbu e clique no botão para ativar a conta, no topo do painel. O Instagram irá solicitar um código, siga o processo e adicione o código que for enviado por SMS ou e-mail em sua conta do Instagram. Tente ativar sua conta pelo site www.instagram.com. Se tiver qualquer dúvida é só nos escrever
+                                            Acesse o módulo Mais Vissibilidade e clique no botão para ativar a conta, no topo do painel. O Instagram irá solicitar um código, siga o processo e adicione o código que for enviado por SMS ou e-mail em sua conta do Instagram. Tente ativar sua conta pelo site www.instagram.com. Se tiver qualquer dúvida é só nos escrever
                                         </p>
                                     </div>
                                 </div>
@@ -193,8 +193,8 @@
                                     </div>
                                     <div class="accord-content">
                                         <p>
-                                            SEGUIR SEMPRE: A Dumbu nunca deixará de seguir perfis adicionados nesta lista.
-                                            NUNCA SEGUIR: Os perfis que adicionar nesta lista nunca serão seguidos pela Dumbu.
+                                            SEGUIR SEMPRE: A Doorig nunca deixará de seguir perfis adicionados nesta lista.
+                                            NUNCA SEGUIR: Os perfis que adicionar nesta lista nunca serão seguidos pela Doorig.
                                         </p>
                                     </div>
                                 </div>
@@ -205,7 +205,7 @@
                                     </div>
                                     <div class="accord-content">
                                         <p>
-                                            Nosso sistema é 100% criptografado e protegido. A Dumbu tem o compromisso com a privacidade e a segurança de seus clientes durante todo o processo de navegação e compra pelo site. Os dados cadastrais dos clientes não são vendidos, trocados ou divulgados para terceiros, exceto quando essas informações são necessárias para o processo de cobrança.
+                                            Nosso sistema é 100% criptografado e protegido. A Doorig tem o compromisso com a privacidade e a segurança de seus clientes durante todo o processo de navegação e compra pelo site. Os dados cadastrais dos clientes não são vendidos, trocados ou divulgados para terceiros, exceto quando essas informações são necessárias para o processo de cobrança.
                                             Para que estes dados permaneçam intactos, nós desaconselhamos expressamente a divulgação de sua senha a terceiros, mesmo a amigos e parentes. 
                                         </p>
                                     </div>
