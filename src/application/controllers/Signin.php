@@ -36,18 +36,18 @@ class Signin extends CI_Controller {
         try {
             $datas = $this->input->post();
 
-//1. Login client
+            //1. Login client
             $Client = new Client();
             $Client = Client::do_login($datas["email"], $datas["password"]);
 
-//2. Generate MD5 redirection token 	
+            //2. Generate MD5 redirection token 	
             $key = $Client->Id . time();
             $login_token = md5($key);
 
-//3. Save MD5 to validate login from dashboard
+            //3. Save MD5 to validate login from dashboard
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
 
-//4. Load node url of client
+            //4. Load node url of client
             $Client->load_node_data();
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
@@ -60,7 +60,7 @@ class Signin extends CI_Controller {
 
     public function pass_reset_view($login_token) {
         try {
-//1. Login client
+            //1. Login client
             $Client = new Client();
             $Client->load_data_by_login_token($login_token);
 
@@ -77,22 +77,17 @@ class Signin extends CI_Controller {
     public function password_recovery_send_link() {
         try {
             $datas = $this->input->post();
-
-//1. buscar cliente dado email em $datas["email"]
+            //1. buscar cliente dado email em $datas["email"]
             $Client = new Client();
             $Client->load_data_by_email($datas["email"]);
-
-//2. Generate MD5 redirection token 	
+            //2. Generate MD5 redirection token 	
             $key = $Client->Id . time();
             $login_token = md5($key);
-
-//3. crear url de pagina de recuperacion
+            //3. crear url de pagina de recuperacion
             $url = base_url() . "index.php/signin/pass_reset_view/" . $login_token;
-
-//4. Save MD5 to validate $login_token
+            //4. Save MD5 to validate $login_token
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
-
-//5. enviar email
+            //5. enviar email
             $this->load->library("gmail");
             $this->gmail->send_link_recovery_password_email($Client->Email, $Client->Name, $url);
         } catch (Exception $exc) {
