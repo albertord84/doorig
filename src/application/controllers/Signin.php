@@ -147,7 +147,7 @@ class Signin extends CI_Controller {
         }
     }
 
-//---------------SIGNIN FUNCTIONS-----------------------------    
+    //---------------SIGNIN FUNCTIONS-----------------------------    
     public function signin_view() {
         $this->load->library('session');
         $param["footer"] = $this->load->view('footer', '', true);
@@ -155,25 +155,25 @@ class Signin extends CI_Controller {
         $this->load->view('signin', $param);
     }
 
-// Step 1 {
+    // Step 1
     public function signin_step1() {
         try {
             $datas = $this->input->post();
-//1. Validate Signin Data
-//$this->load->library('form_validation');
-//$this->form_validation->set_rules();
-//$this->form_validation->set_rules('name', 'Name', 'required');
-//$this->form_validation->set_rules('email', 'Email', 'required');
-//$this->form_validation->set_rules('phone', 'Phone', 'required');
-//$this->form_validation->set_rules('password', 'Password', 'required');
-//$this->form_validation->set_rules('password-rep', 'Password Confirmation', 'required');
-//if ($this->form_validation->run() == FALSE) {
-// Returnd erros
-// $this->form_validation->validation_errors();
-//echo json_encode($response);
-//return;
-//}
-//2. Save Signin Data
+            //1. Validate Signin Data
+            //$this->load->library('form_validation');
+            //$this->form_validation->set_rules();
+            //$this->form_validation->set_rules('name', 'Name', 'required');
+            //$this->form_validation->set_rules('email', 'Email', 'required');
+            //$this->form_validation->set_rules('phone', 'Phone', 'required');
+            //$this->form_validation->set_rules('password', 'Password', 'required');
+            //$this->form_validation->set_rules('password-rep', 'Password Confirmation', 'required');
+            //if ($this->form_validation->run() == FALSE) {
+            // Returnd erros
+            // $this->form_validation->validation_errors();
+            //echo json_encode($response);
+            //return;
+            //}
+            //2. Save Signin Data
             $datas["status_id"] = ClientStatus::BEGINNER;
             $datas["node_id"] = "1";
             $Client = new Client();
@@ -182,23 +182,21 @@ class Signin extends CI_Controller {
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
         }
-// Retur Response   
+        // Retur Response   
         return Response::ResponseOK()->toJson();
     }
 
-// Step 2.1
+    // Step 2.1
     public function request_secure_code_by_email() {
         try {
             if ($this->session->userdata('client_id')) {
                 $verification_code = mt_rand(1000, 9999);
                 $client_id = $this->session->userdata('client_id');
-
-//2. Salvar codigo
+                //2. Salvar codigo
                 $Client = new Client();
                 $Client->load_data($client_id);
                 $Client->update($client_id, NULL, NULL, NULL, NULL, NULL, NULL, $verification_code);
-
-//3. Send code by email
+                //3. Send code by email
                 $this->load->library("gmail");
                 $this->gmail->send_link_purchase_step_email($Client->Email, $Client->Name, $verification_code);
             } else {
@@ -241,23 +239,23 @@ class Signin extends CI_Controller {
         return Response::ResponseOK()->toJson();
     }
 
-// Step 3 {
+    // Step 3 {
     public function confirm_secure_code() {
         $datas = $this->input->post();
         try {
-//1. Check secure code is ok!
+            //1. Check secure code is ok!
             $client_id = $this->session->userdata('client_id');
             $Client = new Client();
             $Client->load_data($client_id);
             if ($Client->confirm_secure_code($datas['verification_code'])) {
-//2. Generate MD5 redirection token 	
+                //2. Generate MD5 redirection token 	
                 $key = $client_id . time();
                 $login_token = md5($key);
 
-//3. Save MD5 to validate login from dashboard
+                //3. Save MD5 to validate login from dashboard
                 $Client->update($client_id, NULL, NULL, NULL, ClientStatus::ACTIVE, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
 
-//4. Load node url of client
+                //4. Load node url of client
                 $Client->load_node_data();
             } else {
                 throw ErrorCodes::getException(ErrorCodes::VERIFICATION_CODE_DONOT_MATCH);

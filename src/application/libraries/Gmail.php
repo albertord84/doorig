@@ -87,7 +87,8 @@ class Gmail {
         $this->CI->email->Subject = T('Verification Code Step: ') . $username;
         
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+        $url = "https://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
+        $body = @file_get_contents($url);
         $this->CI->email->message($body);
         
         $this->CI->email->AltBody = T('Verification Code');
