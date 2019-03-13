@@ -54,19 +54,9 @@ class Welcome extends CI_Controller {
         Response::ResponseOK(T("Mensagem enviada com sucesso."))->toJson();
     }
 
-    public function test_gmail() {
-        $this->load->library('email');
-        $this->email->to($to);
-        $this->load->library('gmail');
-        $this->gmail->send_test_email('albertord84@gmail.com');
-    }
-    
     public function get_doorig_info() {
         $datas = $this->input->post();
         $client_id = $datas["client_id"];
-        
-        //$client_id = 1;
-        
         $Client = new Client();
         $Client->load_data($client_id);
         unset($Client->Password);
@@ -74,9 +64,7 @@ class Welcome extends CI_Controller {
         unset($Client->Node);
         unset($Client->Proxy_id);
         unset($Client->Verification_code);
-        
         $array_object = object_to_array($Client);
-        
         $Response = new ResponseArrayObject($array_object, 0, "Doorig Client Info!");
         $Response->toJson();
     }
