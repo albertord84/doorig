@@ -160,7 +160,7 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12" >
                                             <div class="form-group">
-                                                <input id="name" type="text" placeholder="Seu nome *" required="">
+                                                <input id="name" type="text" autofocus="" placeholder="Seu nome *" required="">
                                             </div>                                                    
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
