@@ -140,7 +140,7 @@ class Signin extends CI_Controller {
             $Client->load_data_by_login_token($datas["login_token"]);
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "ok");
 
-            $Response = new ResponseClientId($Client->Id);
+            $Response = new ResponseClientId($Client->Id, true);
             return $Response->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
@@ -242,6 +242,7 @@ class Signin extends CI_Controller {
     // Step 3 {
     public function confirm_secure_code() {
         $datas = $this->input->post();
+        //$datas['verification_code'] = 1231;
         try {
             //1. Check secure code is ok!
             $client_id = $this->session->userdata('client_id');

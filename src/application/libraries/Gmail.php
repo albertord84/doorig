@@ -10,7 +10,7 @@ class Gmail {
     public function __construct() {
         require_once config_item('business-error-codes-class');
         require_once config_item('business-response-class');
-        
+
         $this->CI = & get_instance();
         $this->CI->load->library('email');
         $this->CI->email->from($GLOBALS['sistem_config']->SYSTEM_EMAIL, $GLOBALS['sistem_config']->SYSTEM_USER_LOGIN);
@@ -57,25 +57,25 @@ class Gmail {
         $this->CI->email->to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
         $this->CI->email->reply_to($useremail, $username);
         $this->CI->email->cc($useremail, $username);
-        
+
         $username = urlencode($username);
         $message = urlencode($message);
         $company = urlencode($company);
         $phone = urlencode($phone);
-        
-        $this->CI->email->Subject = T('Contact Us: ' . $username);
-        
+
+        $this->CI->email->subject(T('Contact Us: ' . $username));
+
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        //$test = "http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/contact_form.php?username=$username&message=$message&instapass=$company&phone=$phone";
-        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
+        $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
+        $body = @file_get_contents($url);
         $this->CI->email->message($body);
-        
-        $this->CI->email->AltBody = 'Contact Us';
-        
+
+        $this->CI->email->set_alt_message('Contact Us');
+
         if (!$this->CI->email->send()) {
-            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 
+            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND);
         }
-        
+
         return true;
     }
 
@@ -83,20 +83,20 @@ class Gmail {
         $this->CI->email->to($useremail, $username);
         $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
         $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
-        
-        $this->CI->email->Subject = T('Verification Code Step: ') . $username;
-        
+
+        $this->CI->email->subject(T('Verification Code Step: ') . $username);
+
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $url = "https://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
+        $url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $body = @file_get_contents($url);
         $this->CI->email->message($body);
-        
-        $this->CI->email->AltBody = T('Verification Code');
-        
+
+        $this->CI->email->set_alt_message(T('Verification Code'));
+
         if (!$this->CI->email->send()) {
-            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 
+            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND);
         }
-        
+
         return true;
     }
 
@@ -104,20 +104,21 @@ class Gmail {
         $this->CI->email->to($useremail, $username);
         $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL);
         $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
-                
+
         $link_recovery_password = urlencode($link_recovery_password);
-        $this->CI->email->Subject = T('Recovery password link: ') . $link_recovery_password;
-        
+        $this->CI->email->subject(T('Recovery password link: ') . $link_recovery_password);
+
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $body = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . "/resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
+        $url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
+        $body = @file_get_contents($url);
         $this->CI->email->message($body);
-        
-        $this->CI->email->AltBody = T('Recovery password link: ');
-        
+
+        $this->CI->email->set_alt_message(T('Recovery password link: '));
+
         if (!$this->CI->email->send()) {
-            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND); 
+            throw ErrorCodes::getException(ErrorCodes::GMAIL_ERROR_SEND);
         }
-        
+
         return true;
     }
 
