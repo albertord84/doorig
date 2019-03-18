@@ -608,6 +608,7 @@
             <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/doorig/talkme_painel.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/home.js"></script>
         </div>
     </body>
 </html>

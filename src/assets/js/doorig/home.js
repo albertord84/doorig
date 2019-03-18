@@ -1,4 +1,5 @@
-$(document).ready(function(){   
-    //$("div.tp-leftarrow.tparrows.metis")[0].click();
-    //$(".tp-dottedoverlay yes").click();
- }); 
+$(document).ready(function () {
+    setTimeout(function () {
+        $("div.tp-leftarrow.tparrows.metis")[0].click();
+    }, 100);
+}); 
