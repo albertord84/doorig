@@ -15,7 +15,9 @@ class Gmail {
         $this->CI->load->library('email');
         $this->CI->email->from($GLOBALS['sistem_config']->SYSTEM_EMAIL, $GLOBALS['sistem_config']->SYSTEM_USER_LOGIN);
         $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL, $GLOBALS['sistem_config']->ATENDENT_USER_LOGIN);
-        $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+	$this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+
+
     }
 
     public function send_test_email($useremail, $username = NULL, $subject = NULL, $mail = NULL) {
@@ -65,9 +67,9 @@ class Gmail {
 
         $this->CI->email->subject(T('Contact Us: ' . $username));
 
-        $lang = $GLOBALS['sistem_config']->LANGUAGE;
+	$lang = $GLOBALS['sistem_config']->LANGUAGE;
         $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
-        $body = @file_get_contents($url);
+        $body = file_get_contents($url, false, $arrContextOption);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message('Contact Us');
@@ -87,8 +89,13 @@ class Gmail {
         $this->CI->email->subject(T('Verification Code Step: ') . $username);
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
-        $body = @file_get_contents($url);
+	$url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+	//var_dump($url);
+	$url = str_replace('https:', 'http:', $url);
+	$url = str_replace(" ", "%20", $url);
+	//var_dump($url);
+	$body = @file_get_contents($url);
+	//var_dump($body);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Verification Code'));
