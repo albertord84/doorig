@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ssh  albertord84@162.249.2.205 -p 7822
 
 
@@ -43,6 +42,43 @@ git push origin new_branch #< pushes to the server
 git config credential.helper store
 
 
-// Web Driver
-java -Dwebdriver.gecko.driver="/var/www/html/testdriver/geckodriver" -jar /var/www/html/testdriver/selenium-server-standalone-3.0.0-beta3.jar
->>>>>>> refs/remotes/origin/develop
+// Enable doorig.local
+1. [Edit] /etc/hosts
+[Add Line] 127.0.0.2 doorig.local
+
+2. [Edit and Add Lines] /opt/lampp/etc/httpd.conf [Or] /opt/lampp/etc/extra/httpd-vhost.conf
+<Directory "/opt/lampp/htdocs">
+    AllowOverride All
+    Options All
+    Require all granted
+</Directory>
+
+<VirtualHost localhost:80>
+    DocumentRoot "/opt/lampp/htdocs"
+    ServerName localhost
+    DirectoryIndex index.php
+    ServerName localhost
+    ServerAlias localhost
+    Options All
+    ErrorLog "logs/localhost-error_log"
+    CustomLog "logs/localhost-access_log" common
+</VirtualHost>
+
+<Directory "/opt/lampp/htdocs/doorig/src">
+    AllowOverride All
+    Options All
+    Require all granted
+</Directory>
+
+<VirtualHost doorig.local:80>
+    DocumentRoot "/opt/lampp/htdocs/doorig/src"
+    ServerName doorig.local
+    DirectoryIndex index.php
+    ServerName doorig.local
+    ServerAlias doorig.local
+    Options All
+    ErrorLog "logs/local.doorig.com-error_log"
+    CustomLog "logs/local.doorig.com-access_log" common
+</VirtualHost>
+
+3. [Restart] /opt/lampp/lampp restart

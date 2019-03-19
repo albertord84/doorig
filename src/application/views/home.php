@@ -137,7 +137,7 @@
                                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <h1 class="text-left">Seja bem-vindo.<br>Você tem a solução aqui!</h1>
                                 </div>
-
+                                
                                 <div class="tp-caption" 
                                     data-paddingbottom="[0,0,0,0]"
                                     data-paddingleft="[0,0,0,0]"
@@ -173,7 +173,7 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <div class="btns-box">
+                                    <div style="z-index: 200" class="btns-box">
                                         <a href="#lnk_contact_us" class="thm-btn bg-clr2">Contato</a>
                                         <a href="<?php echo base_url().'index.php/signin/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
@@ -608,6 +608,7 @@
             <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/doorig/talkme_painel.js"></script>
             <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/home.js"></script>
         </div>
     </body>
 </html>

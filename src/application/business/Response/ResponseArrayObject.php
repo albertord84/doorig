@@ -9,20 +9,17 @@ namespace business\Response {
      *
      * @author albertord
      */
-    class ResponseClientId extends Response {
+    class ResponseArrayObject extends Response {
 
         public $code = 0;
         public $message = "";
-        public $ClientId;
-        public $NewClient;
+        public $array_object;
 
-        function __construct(int $ClientId, bool $NewClient = false, int $code = 0, string $message = "") {
+        function __construct(array $array_object, int $code = 0, string $message = "") {
             parent::__construct($code, $message);
 
-            $this->ClientId = $ClientId;
-            $this->NewClient = $NewClient;
-            $this->output_array += array('ClientId' => $ClientId);
-            $this->output_array += array('NewClient' => $NewClient);
+            $this->array_object = $array_object;
+            $this->output_array += array('array_object' => $array_object);
         }
 
         public function toJson() {
