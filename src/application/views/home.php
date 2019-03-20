@@ -238,7 +238,7 @@
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
                                         <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
-                                        <a href="<?php echo base_url().'index.php/signin/login_view?l=1'?>" class="thm-btn bg-clr1">Cadastre-se</a>
+                                        <a href="<?php echo base_url().'index.php/signin/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
                             </li>                    
@@ -349,7 +349,8 @@
                                 <div class="img-wrapper">
                                     <img src="<?php echo base_url().'assets/'?>images/video-sec/video-img.jpg" alt="clients story">
                                     <div class="hover">
-                                        <a href="../../../www.youtube.com/watch46da.html?v=EfTUpvxEbqc" class="video-play video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>
+                                        <!--<a id="video_doorig" href="../../../www.youtube.com/watch46da.html?v=EfTUpvxEbqc" class="video-play video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>-->
+                                        <a id="video_doorig" href="" class="video-play-XXX video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -421,74 +422,75 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="sec-title text-center">
-                                <h2>Feedbacks de Clientes</h2>
+                                <h2>Depoimentos de Clientes</h2>
                                 <span class="border"></span>
                             </div>
                         </div>
                         <div class="testim-carousel">
-                           <div class="single-item text-center">
+                            <div id="depoimento1" class="single-item text-center">
                                 <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/leticiajural.jpg" alt="Client Photo">
+                                    <a href="https://www.instagram.com/leticiajural/" target="_blank" title="Ver no Instagram">
+                                        <img src="<?php echo base_url().'assets/'?>images/testmonial/leticiajural.jpg" alt="Client Photo">
+                                    </a>
                                 </div>
                                 <div class="text-holder">
-                                    <h5  style="text-transform:lowercase;">@leticiajural</h5>
+                                    <a href="https://www.instagram.com/leticiajural/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@leticiajural</h5>                                        
+                                    </a>
                                     <h6>Modelo e atriz</h6>
-                                    <p>"Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium..."</p>
-                                </div>
-                           </div> 
-
-                           <div class="single-item text-center">
-                                <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/testmonial-2.png" alt="Client Photo"> 
-                                </div>
-                                <div class="text-holder">
-                                    <h5>Bethany Kertzmann</h5>
-                                    <h6>Ceo of Hpi Group</h6>
-                                    <p>Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium</p>
-                                </div>
-                           </div> 
-                           <div class="single-item text-center">
-                                <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/testmonial-3.png" alt="Client Photo">
-                                </div>
-                                <div class="text-holder">
-                                    <h5>Thamina Hossen</h5>
-                                    <h6>Ceo of Hpi Group</h6>
-                                    <p>Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium</p>
-                                </div>
-                           </div> 
-
-                            <div class="single-item text-center">
-                                <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/testmonial-1.png" alt="Client Photo">    
-                                </div>
-                                <div class="text-holder">
-                                    <h5>Alexandrine Rath</h5>
-                                    <h6>Ceo of Hpi Group</h6>
-                                    <p>Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium</p>
+                                    <p class="text-justify">"Ótima ferramenta. Aumentei muito a visibilidade do meu perfil de Instagram. Super recomendo!!!"</p>
+                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
                                 </div>
                             </div> 
-                            <div class="single-item text-center">
-                                <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/testmonial-2.png" alt="Client Photo">    
+                            <div id="depoimento2" class="single-item text-center">
+                                <div class="img-holder">                                    
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
+                                    </a>
                                 </div>
                                 <div class="text-holder">
-                                    <h5>Bethany Kertzmann</h5>
-                                    <h6>Ceo of Hpi Group</h6>
-                                    <p>Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium</p>
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@shaketopnit</h5>                                        
+                                    </a>
+                                    <h6>Espaço Herbalife Nutrition</h6>
+                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
+                                        "</p>
+                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
                                 </div>
                             </div> 
-                            <div class="single-item text-center">
-                                <div class="img-holder">
-                                    <img src="<?php echo base_url().'assets/'?>images/testmonial/testmonial-3.png" alt="Client Photo">   
+                            <div id="depoimento3" class="single-item text-center">
+                                <div class="img-holder">                                    
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
+                                    </a>
                                 </div>
                                 <div class="text-holder">
-                                    <h5>Thamina Hossen</h5>
-                                    <h6>Ceo of Hpi Group</h6>
-                                    <p>Molestie rhoncus lorem diam vel, metus Consectetur mauris, cras adipiscing wisi urna vestibulum nam pretium</p>
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@shaketopnit</h5>                                        
+                                    </a>
+                                    <h6>Espaço Herbalife Nutrition</h6>
+                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
+                                        "</p>
+                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
                                 </div>
-                            </div>
-                        </div>
+                            </div> 
+                            <div id="depoimento4" class="single-item text-center">
+                                <div class="img-holder">                                    
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
+                                    </a>
+                                </div>
+                                <div class="text-holder">
+                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@shaketopnit</h5>                                        
+                                    </a>
+                                    <h6>Espaço Herbalife Nutrition</h6>
+                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
+                                        "</p>
+                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
+                                </div>
+                            </div> 
+                        
                     </div>
                 </div>
             </section>
