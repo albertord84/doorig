@@ -15,7 +15,9 @@ class Gmail {
         $this->CI->load->library('email');
         $this->CI->email->from($GLOBALS['sistem_config']->SYSTEM_EMAIL, $GLOBALS['sistem_config']->SYSTEM_USER_LOGIN);
         $this->CI->email->reply_to($GLOBALS['sistem_config']->ATENDENT_EMAIL, $GLOBALS['sistem_config']->ATENDENT_USER_LOGIN);
-        $this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+	$this->CI->email->cc($GLOBALS['sistem_config']->ATENDENT_EMAIL);
+
+
     }
 
     public function send_test_email($useremail, $username = NULL, $subject = NULL, $mail = NULL) {
@@ -65,7 +67,7 @@ class Gmail {
 
         $this->CI->email->subject(T('Contact Us: ' . $username));
 
-        $lang = $GLOBALS['sistem_config']->LANGUAGE;
+	$lang = $GLOBALS['sistem_config']->LANGUAGE;
         $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
