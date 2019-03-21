@@ -264,11 +264,11 @@
                                     <div class="icon-box">
                                         <i class="flaticon-team"></i>
                                     </div>
-                                    <a href="#"><h5>Maior visibilidade da sua marca </h5></a>
+                                    <a ><h5>Maior visibilidade da sua marca </h5></a>
                                     <p>Novos seguidores reais na sua conta.<br> Segmentações e filtros de qualidade.<br> Likes em postagens e comentários.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -278,11 +278,11 @@
                                     <div class="icon-box">
                                         <i class="flaticon-business-plan"></i>
                                     </div>
-                                    <a href="#"><h5>Agendamento de Postagens e Stories</h5></a>
+                                    <a ><h5>Agendamento de Postagens e Stories</h5></a>
                                     <p>Stories e postagens automatizadas nos horários desejados.<br> Edite suas fotos e videos antes de postar. <br><br></p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_posting" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>                       
@@ -306,11 +306,11 @@
                                     <div class="icon-box">
                                         <i class="flaticon-landing"></i>
                                     </div>
-                                    <a href="#"><h5>Marketing com Envio de Directs</h5></a>
+                                    <a ><h5>Marketing com Envio de Directs</h5></a>
                                     <p> Automatize o envio de Directs. Anuncie seus produtos e serviços. <br> Envie códigos promocionais ou cupom de desconto. </p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_directs" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -320,11 +320,11 @@
                                     <div class="icon-box">
                                         <i class="flaticon-website"></i>
                                     </div>
-                                    <a href="#"><h5>Deep-account-analisys e estatísticas</h5></a>
+                                    <a ><h5>Deep-account-analisys e estatísticas</h5></a>
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a href="#" id="painel_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_deep_analisys" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -427,7 +427,7 @@
                             </div>
                         </div>
                         <div class="testim-carousel">
-                            <div id="depoimento1" class="single-item text-center">
+                            <div id="depoimento1" class="single-item text-center" style="height: 400px">
                                 <div class="img-holder">
                                     <a href="https://www.instagram.com/leticiajural/" target="_blank" title="Ver no Instagram">
                                         <img src="<?php echo base_url().'assets/'?>images/testmonial/leticiajural.jpg" alt="Client Photo">
@@ -438,11 +438,11 @@
                                         <h5 >@leticiajural</h5>                                        
                                     </a>
                                     <h6>Modelo e atriz</h6>
-                                    <p class="text-justify">"Ótima ferramenta. Aumentei muito a visibilidade do meu perfil de Instagram. Super recomendo!!!"</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
+                                    <p class="text-justify">"... ótima ferramenta. Aumentei muito a visibilidade do meu perfil de Instagram. Super recomendo!!!"</p>
+                                    <br><a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
-                            <div id="depoimento2" class="single-item text-center">
+                            <div id="depoimento2" class="single-item text-center" style="height: 400px">
                                 <div class="img-holder">                                    
                                     <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
                                         <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
@@ -453,41 +453,39 @@
                                         <h5 >@shaketopnit</h5>                                        
                                     </a>
                                     <h6>Espaço Herbalife Nutrition</h6>
-                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
+                                    <p class="text-justify">"...o aumento de seguidores com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando consideravelmente o número de clientes...
                                         "</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
+                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
-                            <div id="depoimento3" class="single-item text-center">
+                            <div id="depoimento3" class="single-item text-center" style="height: 400px">
                                 <div class="img-holder">                                    
-                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
-                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
+                                    <a href="https://www.instagram.com/aerosushi/" target="_blank" title="Ver no Instagram">
+                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/9255e278df0a6eddbc59f660ef74cc0f/5D292766/t51.2885-19/s150x150/22157745_1848482942128571_5953164825075908608_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
                                     </a>
                                 </div>
                                 <div class="text-holder">
-                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
-                                        <h5 >@shaketopnit</h5>                                        
+                                    <a href="https://www.instagram.com/aerosushi/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@aerosushi</h5>                                        
                                     </a>
-                                    <h6>Espaço Herbalife Nutrition</h6>
-                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
-                                        "</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
+                                    <h6>Aero Sushi ✈️ Comida japonesa</h6>
+                                    <p class="text-justify">"... ganhei mais de 15 mil seguidores em menos de 6 meses graças a DOORIG. Meu negôcio decolou graças a essa ferramento e o Instagram..."</p>
+                                    <br><a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
-                            <div id="depoimento4" class="single-item text-center">
+                            <div id="depoimento4" class="single-item text-center" style="height: 400px">
                                 <div class="img-holder">                                    
-                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
-                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/354590cfed7330a40c494847cfb9e648/5D2AE1B4/t51.2885-19/s150x150/52612085_505110840019971_2827805793376534528_n.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
+                                    <a href="https://www.instagram.com/daylipadron/" target="_blank" title="Ver no Instagram">
+                                        <img src="https://instagram.fsdu8-1.fna.fbcdn.net/vp/ff15df9b3990b7c809a3714eeaf0b4f0/5D505509/t51.2885-19/s150x150/11356032_995508067147395_1070570798_a.jpg?_nc_ht=instagram.fsdu8-1.fna.fbcdn.net" alt="Client Photo">
                                     </a>
                                 </div>
                                 <div class="text-holder">
-                                    <a href="https://www.instagram.com/shaketopnit/" target="_blank" title="Ver no Instagram">
-                                        <h5 >@shaketopnit</h5>                                        
+                                    <a href="https://www.instagram.com/daylipadron/" target="_blank" title="Ver no Instagram">
+                                        <h5 >@daylipadron</h5>
                                     </a>
-                                    <h6>Espaço Herbalife Nutrition</h6>
-                                    <p class="text-justify">"O aumento de seguidores bem segmentados com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando substancialmente a quantidade de clientes. Obrigado DOORIG.
-                                        "</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais ...</a>                                      
+                                    <h6>Modelo</h6>
+                                    <p class="text-justify">"... uso DOORIG hace un tiempo y ha sido super útil para mi carrera como modelo y para mi negosio. Con ella he conseguido darme a conocer mucha más como modelo ..."</p>
+                                    <a  style="font-size: 0.9em; color:#0660a9;">Ver mais</a>                                      
                                 </div>
                             </div> 
                         
