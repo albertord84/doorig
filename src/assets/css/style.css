@@ -3704,7 +3704,7 @@ select:focus {
 }
 
 .client-sec .single-item:after {
-    content: "\f10d";
+    /*content: "\f10d";*/
     position: absolute;
     left: 39%;
     bottom: 73px;

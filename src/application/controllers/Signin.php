@@ -95,7 +95,7 @@ class Signin extends CI_Controller {
             return;
         }
 
-        $Response = new ResponseLoginToken($login_token, "", 0, "Confira as instruções enviadas ao email fornecido");
+        $Response = new ResponseLoginToken($login_token, "", $Client->Id, 0, "Confira as instruções enviadas ao email fornecido");
         return $Response->toJson();
     }
 

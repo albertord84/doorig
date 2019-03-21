@@ -69,7 +69,9 @@ class Gmail {
 
 	$lang = $GLOBALS['sistem_config']->LANGUAGE;
         $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
-        $body = file_get_contents($url, false, $arrContextOption);
+        $url = str_replace('https:', 'http:', $url);
+        $url = str_replace(" ", "%20", $url);
+        $body = @file_get_contents($url);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message('Contact Us');
@@ -89,13 +91,10 @@ class Gmail {
         $this->CI->email->subject(T('Verification Code Step: ') . $username);
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-	$url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
-	//var_dump($url);
-	$url = str_replace('https:', 'http:', $url);
-	$url = str_replace(" ", "%20", $url);
-	//var_dump($url);
-	$body = @file_get_contents($url);
-	//var_dump($body);
+        $url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+        $url = str_replace('https:', 'http:', $url);
+        $url = str_replace(" ", "%20", $url);
+        $body = @file_get_contents($url);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Verification Code'));
@@ -117,6 +116,8 @@ class Gmail {
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
         $url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
+        $url = str_replace('https:', 'http:', $url);
+        $url = str_replace(" ", "%20", $url);
         $body = @file_get_contents($url);
         $this->CI->email->message($body);
 
