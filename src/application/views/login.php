@@ -139,7 +139,7 @@
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="form-group">
-                                                    <input id="login_email" type="email"  placeholder="Email" autocomplete="on" required="">
+                                                    <input id="login_email" type="email" autofocus="" placeholder="Email" autocomplete="on" required="">
                                                 </div>                  
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -151,7 +151,7 @@
                                                 <div class="form-group text-center">
                                                     <div class="g-recaptcha" data-sitekey="6Le5foMUAAAAAPRkTpNhErFV6RuoqKcZ1LenIgmr"></div>
                                                 </div>
-                                            </div>                                        -->
+                                            </div>-->
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <div class="form-group text-left">
                                                     <a id="lnk-forget-pass" href="#lnk_login_section">Esqueceu sua senha?</a>

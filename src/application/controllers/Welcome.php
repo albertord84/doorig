@@ -19,6 +19,11 @@ class Welcome extends CI_Controller {
         require_once config_item('business-response-array-object-class');
     }
 
+    public function test() {
+        $this->load->library("gmail");
+        $this->gmail->send_link_purchase_step_email('albertord84@gmail.com', 'Alberto Reyes', '7777');
+    }
+
     public function index() {
         $this->load->library('session');
         //$GLOBALS['language'] = $param['language'];

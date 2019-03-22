@@ -184,7 +184,7 @@ namespace business {
          * @return boolean
          */
         public function confirm_secure_code($Verification_code) {
-            if ($this->Verification_code === $Verification_code) {
+            if ($this->Verification_code == $Verification_code) {
                 return TRUE;
             }
             return FALSE;
