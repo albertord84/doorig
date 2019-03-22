@@ -21,7 +21,9 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <!--<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>-->
         
-        <script type="text/javascript"> var base_url = "<?php echo base_url();?>";</script>
+        <script type="text/javascript"> 
+            var base_url = "<?php echo base_url();?>";
+        </script>
     </head>
 
     <body>
@@ -407,11 +409,11 @@
             
             <!-- system scripts -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/doorig/PT/internalization.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/doorig/mask.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/doorig/talkme_painel.js"></script>
-            <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/PT/internalization.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/mask.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/talkme_painel.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
+            <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
         </div>
     </body>
 </html>

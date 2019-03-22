@@ -34,6 +34,7 @@ class Welcome extends CI_Controller {
     }
 
     public function faqs_view() {
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('faq', $param);

@@ -27,6 +27,7 @@ class Signin extends CI_Controller {
 
 //----------LOGIN FUNCTIONS--------------------------
     public function login_view() {
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('login', $param);
@@ -63,7 +64,7 @@ class Signin extends CI_Controller {
             //1. Login client
             $Client = new Client();
             $Client->load_data_by_login_token($login_token);
-
+            $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
             $param["login_token"] = $login_token;
             $param["footer"] = $this->load->view('footer', '', true);
             $param["modals"] = $this->load->view('modals', '', true);
@@ -150,6 +151,7 @@ class Signin extends CI_Controller {
     //---------------SIGNIN FUNCTIONS-----------------------------    
     public function signin_view() {
         $this->load->library('session');
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
         $this->load->view('signin', $param);

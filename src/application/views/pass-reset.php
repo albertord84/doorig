@@ -220,8 +220,8 @@
         <!-- thm custom script -->
         <script src="<?php echo base_url().'assets/'?>js/custom.js"></script>
         <!-- system scripts -->
-        <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"></script>
-        <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"></script>
+        <script src="<?php echo base_url().'assets/'?>js/doorig/basics.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
+        <script src="<?php echo base_url().'assets/'?>js/doorig/signin.js"<?php echo '?'.$SCRIPT_VERSION;?>></script>
     </div>
 </body>
 
