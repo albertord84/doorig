@@ -182,7 +182,7 @@
                                         </div>                                        
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input id="password-rep" type="password" placeholder="Comfirmar Senha *" required="">
+                                                <input id="password-rep" type="password" placeholder="Confirmar Senha *" required="">
                                             </div>                 
                                         </div>                                        
 <!--                                        <div class="col-md-12 col-sm-12 col-xs-12">

@@ -2549,6 +2549,7 @@ select:focus {
 .consltation-area .form-group input[type="email"],
 .consltation-area .form-group input[type="tel"],
 .consltation-area .form-group input[type="password"],
+.consltation-area .form-group input[type="date"],
 /*.consltation-area .form-group input[type="checkbox"],*/
 .consltation-area .form-group select,
 .consltation-area .form-group textarea{

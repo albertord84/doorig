@@ -30,7 +30,7 @@ class Signin extends CI_Controller {
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('login', $param);
+        $this->load->view('user_views/login', $param);
     }
 
     public function do_login() {
@@ -68,7 +68,7 @@ class Signin extends CI_Controller {
             $param["login_token"] = $login_token;
             $param["footer"] = $this->load->view('footer', '', true);
             $param["modals"] = $this->load->view('modals', '', true);
-            $this->load->view('pass-reset', $param);
+            $this->load->view('user_views/pass-reset', $param);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             header("Location: " . base_url());
@@ -154,7 +154,7 @@ class Signin extends CI_Controller {
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('signin', $param);
+        $this->load->view('user_views/signin', $param);
     }
 
     // Step 1

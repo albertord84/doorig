@@ -164,7 +164,7 @@ function timeConverter(UNIX_timestamp,sep){
     var year = a.getFullYear();
     var month = a.getMonth()+1;
     var date = a.getDate();
-    var time = year+sep+month+sep+date;
+    var time = date+sep+month+sep+year;
     return time;
 }
 
