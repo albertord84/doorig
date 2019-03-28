@@ -14,12 +14,15 @@ namespace business\Response {
         public $code = 0;
         public $message = "";
         public $ClientId;
+        public $NewClient;
 
-        function __construct(int $ClientId, int $code = 0, string $message = "") {
+        function __construct(int $ClientId, bool $NewClient = false, int $code = 0, string $message = "") {
             parent::__construct($code, $message);
 
             $this->ClientId = $ClientId;
+            $this->NewClient = $NewClient;
             $this->output_array += array('ClientId' => $ClientId);
+            $this->output_array += array('NewClient' => $NewClient);
         }
 
         public function toJson() {

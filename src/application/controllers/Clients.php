@@ -24,7 +24,8 @@ class Clients extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('clients_view');
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
+        $this->load->view('clients_view',$param);
     }
 
     public function combogrid() {

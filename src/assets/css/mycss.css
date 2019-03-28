@@ -1,0 +1,7 @@
+.node-box{
+    background-color: aliceblue;
+    padding: 40px;
+    margin: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 3px
+}

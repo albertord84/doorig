@@ -27,9 +27,10 @@ class Signin extends CI_Controller {
 
 //----------LOGIN FUNCTIONS--------------------------
     public function login_view() {
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('login', $param);
+        $this->load->view('user_views/login', $param);
     }
 
     public function do_login() {
@@ -63,11 +64,11 @@ class Signin extends CI_Controller {
             //1. Login client
             $Client = new Client();
             $Client->load_data_by_login_token($login_token);
-
+            $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
             $param["login_token"] = $login_token;
             $param["footer"] = $this->load->view('footer', '', true);
             $param["modals"] = $this->load->view('modals', '', true);
-            $this->load->view('pass-reset', $param);
+            $this->load->view('user_views/pass-reset', $param);
         } catch (Exception $exc) {
             Response::ResponseFAIL($exc->getMessage(), $exc->getCode())->toJson();
             header("Location: " . base_url());
@@ -95,7 +96,7 @@ class Signin extends CI_Controller {
             return;
         }
 
-        $Response = new ResponseLoginToken($login_token, "", 0, "Confira as instruções enviadas ao email fornecido");
+        $Response = new ResponseLoginToken($login_token, "", $Client->Id, 0, "Confira as instruções enviadas ao email fornecido");
         return $Response->toJson();
     }
 
@@ -140,7 +141,7 @@ class Signin extends CI_Controller {
             $Client->load_data_by_login_token($datas["login_token"]);
             $Client->update($Client->Id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "ok");
 
-            $Response = new ResponseClientId($Client->Id);
+            $Response = new ResponseClientId($Client->Id, true);
             return $Response->toJson();
         } catch (\Exception $e) {
             return Response::ResponseFAIL($e->getMessage(), $e->getCode())->toJson();
@@ -150,9 +151,10 @@ class Signin extends CI_Controller {
     //---------------SIGNIN FUNCTIONS-----------------------------    
     public function signin_view() {
         $this->load->library('session');
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('signin', $param);
+        $this->load->view('user_views/signin', $param);
     }
 
     // Step 1
@@ -242,6 +244,7 @@ class Signin extends CI_Controller {
     // Step 3 {
     public function confirm_secure_code() {
         $datas = $this->input->post();
+        //$datas['verification_code'] = 1231;
         try {
             //1. Check secure code is ok!
             $client_id = $this->session->userdata('client_id');

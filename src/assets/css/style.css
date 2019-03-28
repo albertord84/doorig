@@ -1792,7 +1792,7 @@ select:focus {
     position: absolute;
     left: 0;
     top: 0;
-    pointer-events: none;
+    /*pointer-events: none;*/
  
     /* black overlay with 50% transparency */
     background: rgba(0, 0, 0, 0.3);
@@ -2549,6 +2549,7 @@ select:focus {
 .consltation-area .form-group input[type="email"],
 .consltation-area .form-group input[type="tel"],
 .consltation-area .form-group input[type="password"],
+.consltation-area .form-group input[type="date"],
 /*.consltation-area .form-group input[type="checkbox"],*/
 .consltation-area .form-group select,
 .consltation-area .form-group textarea{
@@ -3704,7 +3705,7 @@ select:focus {
 }
 
 .client-sec .single-item:after {
-    content: "\f10d";
+    /*content: "\f10d";*/
     position: absolute;
     left: 39%;
     bottom: 73px;

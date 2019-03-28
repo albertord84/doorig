@@ -21,17 +21,17 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $this->load->library('session');
-        //$GLOBALS['language'] = $param['language'];
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('home', $param);
+        $this->load->view('user_views/home', $param);
     }
 
     public function faqs_view() {
+        $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);
-        $this->load->view('faq', $param);
+        $this->load->view('user_views/faq', $param);
     }
 
     public function subscription() {
