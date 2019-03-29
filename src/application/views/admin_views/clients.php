@@ -142,7 +142,7 @@
                             <div class="col-md-1 col-xs-12">
                                 <div class="form-group text-center">     
                                     <label></label>
-                                    <button id="login_btn" type="button" class="thm-btn bg-clr2">
+                                    <button id="filter_btn" type="button" class="thm-btn bg-clr2">
                                         <i class="fa fa-spinner fa-spin myspinner"></i>
                                         Pesquisar
                                     </button>

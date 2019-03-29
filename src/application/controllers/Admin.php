@@ -32,7 +32,11 @@ class Admin extends CI_Controller {
         $this->load->library('session');
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer_admin"] = $this->load->view('admin_views/footer_admin', '', true);
-        $param["modals"] = $this->load->view('modals', '', true);
+        $param["modals"] = $this->load->view('modals', '', true); 
+        
+        $this->load->model('nodes_model');
+        $param["node_list"] = $this->nodes_model->get_all();        
+        
         $this->load->view('admin_views/nodes', $param);
     }
     
@@ -45,8 +49,14 @@ class Admin extends CI_Controller {
         $this->load->view('admin_views/clients', $param);
     }
     
-    
-    
-
+    public function run_filter(){
+      //$datas = $this->input->post();
+      
+      $this->load->model('clients_model');
+      $result = $this->clients_model->get_clients_by_filter('', '2019-03-21', '2019-03-23', -1); 
+      
+      $response = new ResponseArrayObject($result);      
+      return $response->toJson();
+    }
     
 }
