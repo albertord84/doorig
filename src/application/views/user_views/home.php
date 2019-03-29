@@ -137,7 +137,9 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <h1 class="text-left">Seja bem-vindo.<br>Você tem a solução aqui!</h1>
+                                    <h1 class="text-left">Seja bem-vindo.
+                                        <br>Você tem a solução aqui!
+                                    </h1>
                                 </div>
                                 
                                 <div class="tp-caption" 
@@ -178,8 +180,9 @@
                                     <div style="z-index: 200" class="btns-box">
                                         <a href="#lnk_contact_us" class="thm-btn bg-clr2">Contato</a>
                                         <a href="<?php echo base_url().'index.php/signin/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
-                                    </div> 
+                                    </div>                                    
                                 </div>
+                                
                             </li>
 
                             <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="<?php echo base_url().'assets/'?><?php echo base_url().'assets/'?>images/slides/doorig-3.jpg" data-title="Slide Title" data-transition="">

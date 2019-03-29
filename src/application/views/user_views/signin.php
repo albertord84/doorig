@@ -136,6 +136,7 @@
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
                                         <h2>Faça sua conta aqui!</h2>
+                                        <h3>Entre agora e teste gratis!!</h3>
                                         <span class="border"></span>
                                     </div>
                                 </div>
@@ -216,7 +217,8 @@
                             <div class="form-sec sigin-painel-steep-2" style="display:none; border:1px;border-color:silver">
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
-                                        <h2>Faça sua conta aqui!</h2>                                        
+                                        <h2>Faça sua conta aqui!</h2>
+                                        <h3  >Entre agora e teste gratis!!</h3>
                                         <span class="border"></span>
                                     </div>
                                 </div>
@@ -266,7 +268,8 @@
                             <div class="form-sec sigin-painel-steep-3" style="display:none; border:1px;border-color:silver">
                                 <div class="col-md-12">
                                     <div class="sec-title text-center">
-                                        <h2>Faça sua conta aqui!</h2>  
+                                        <h2>Faça sua conta aqui!</h2>
+                                        <h3  >Entre agora e teste gratis!!</h3>
                                         <span class="border"></span>
                                     </div>
                                 </div>
