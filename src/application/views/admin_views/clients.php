@@ -123,6 +123,7 @@
                                 <label>Status</label>
                                 <div class="form-group">
                                     <select id="status">
+                                        <option value="-1" selected="true">-Escolha-</option>
                                         <option value="0">Beginner</option>
                                         <option value="1">Active</option>
                                         <option value="2">Canceled</option>

@@ -53,7 +53,7 @@ class Admin extends CI_Controller {
       $token = (!empty($this->input->post('token'))) ? $this->input->post('token') : "";
       $init_date = (!empty($this->input->post('init_date'))) ? $this->input->post('init_date') : "";
       $last_date = (!empty($this->input->post('last_date'))) ? $this->input->post('last_date') : "";
-      $status = (!empty($this->input->post('status'))) ? intval($this->input->post('status')) : -1;
+      $status = intval($this->input->post('status'));
       
       $this->load->model('clients_model');
       $result = $this->clients_model->get_clients_by_filter($token, $init_date, $last_date, $status); 
