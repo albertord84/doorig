@@ -50,13 +50,28 @@ class Admin extends CI_Controller {
     }
     
     public function run_filter(){
-      //$datas = $this->input->post();
+      $token = (!empty($this->input->post('token'))) ? $this->input->post('token') : "";
+      $init_date = (!empty($this->input->post('init_date'))) ? $this->input->post('init_date') : "";
+      $last_date = (!empty($this->input->post('last_date'))) ? $this->input->post('last_date') : "";
+      $status = (!empty($this->input->post('status'))) ? intval($this->input->post('status')) : -1;
       
       $this->load->model('clients_model');
-      $result = $this->clients_model->get_clients_by_filter('', '2019-03-21', '2019-03-23', -1); 
+      $result = $this->clients_model->get_clients_by_filter($token, $init_date, $last_date, $status); 
       
       $response = new ResponseArrayObject($result);      
       return $response->toJson();
     }
     
+    public function test_filter(){
+      $token = "";
+      $init_date = "";
+      $last_date = "";
+      $status = 0;
+      
+      $this->load->model('clients_model');
+      $result = $this->clients_model->get_clients_by_filter($token, $init_date, $last_date, $status); 
+      
+      $response = new ResponseArrayObject($result);      
+      return $response->toJson();
+    }
 }

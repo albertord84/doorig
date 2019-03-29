@@ -123,9 +123,9 @@
                                 <label>Status</label>
                                 <div class="form-group">
                                     <select id="status">
-                                        <option>Active</option>
-                                        <option>Beginner</option>
-                                        <option>Delete</option>
+                                        <option value="0">Beginner</option>
+                                        <option value="1">Active</option>
+                                        <option value="2">Canceled</option>
                                     </select>
                                 </div>                  
                             </div>
