@@ -14,6 +14,8 @@
         <!-- master stylesheet -->
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css">
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/wizard.css">
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css">
+        
         
         <!-- Minified Bootstrap 3 CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -105,12 +107,21 @@
                                 </div>
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="<?php echo base_url()?>">Voltar</a></li>
+                                        <li class="dropdown"><a href="<?php echo base_url()?>">HOME</a></li>
+                                            <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
+                                            <li class="dropdown"><a href="<?php echo base_url() ?>#lnk_how_function">COMO FUNCIONA</a></li>
+                                            <li class="dropdown"><a href="<?php echo base_url() ?>#lnk_contact_us">CONTATO</a></li>                                            
+                                            <li id="0" class="dropdown non-show-in-moviles"><a href="<?php echo base_url().'index.php/signin/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </nav>
                             <!--End mainmenu-->
                         </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="free-consulation-button pull-right">
+                                <a class="thm-btn bg-clr1" href="<?php echo base_url().'index.php/signin/login_view#lnk_login_section'?>">ENTRAR <i class="fa fa-user" aria-hidden="true"></i></a>    
+                            </div>
+                        </div>                        
                     </div>
                 </div>
             </div>

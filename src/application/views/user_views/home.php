@@ -9,6 +9,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">	
         <!-- master stylesheet -->
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
         <!-- Minified Bootstrap 3 CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
         <!-- Responsive stylesheet -->
@@ -94,6 +96,7 @@
                                     </div>
                                     <div class="navbar-collapse collapse clearfix">
                                         <ul class="navigation clearfix">
+                                            <li class="dropdown"><a href="<?php echo base_url() ?>">HOME</a></li>
                                             <li class="dropdown"><a href="<?php echo base_url().'index.php/welcome/faqs_view'?>">FAQs</a></li>
                                             <li class="dropdown"><a href="#lnk_how_function">COMO FUNCIONA</a></li>
                                             <li class="dropdown"><a href="#lnk_contact_us">CONTATO</a></li>
@@ -273,7 +276,7 @@
                                     <p>Novos seguidores reais na sua conta.<br> Segmentações e filtros de qualidade.<br> Likes em postagens e comentários.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_visibility" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_visibility" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +290,7 @@
                                     <p>Stories e postagens automatizadas nos horários desejados.<br> Edite suas fotos e videos antes de postar. <br><br></p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_posting" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_posting" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>                       
@@ -315,7 +318,7 @@
                                     <p> Automatize o envio de Directs. Anuncie seus produtos e serviços. <br> Envie códigos promocionais ou cupom de desconto. </p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_directs" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_directs" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -329,7 +332,7 @@
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_deep_analisys" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_deep_analisys" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
                                 </div>
                             </div>
                         </div>
@@ -362,7 +365,7 @@
                        </div>
                        <div class="col-md-6 col-sm-12">
                             <div class="right-content-area"> 
-                                <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram . </h2></div>
+                                <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram. </h2></div>
                                 <p class="text-justify">Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line através da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de referência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </p>
 
                                 <div class="about-item">
@@ -444,7 +447,7 @@
                                     </a>
                                     <h6>Modelo e atriz</h6>
                                     <p class="text-justify">"... ótima ferramenta. Aumentei muito a visibilidade do meu perfil de Instagram. Super recomendo!!!"</p>
-                                    <br><a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
+                                    <br><a class="see_more" style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
                             <div id="depoimento2" class="single-item text-center" style="height: 400px">
@@ -460,7 +463,7 @@
                                     <h6>Espaço Herbalife Nutrition</h6>
                                     <p class="text-justify">"...o aumento de seguidores com a ferramenta posibilitou que meu negócio ficasse mais visível na minha cidade, aumentando consideravelmente o número de clientes...
                                         "</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
+                                    <a class="see_more" style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
                             <div id="depoimento3" class="single-item text-center" style="height: 400px">
@@ -475,7 +478,7 @@
                                     </a>
                                     <h6>Aero Sushi ✈️ Comida japonesa</h6>
                                     <p class="text-justify">"... ganhei mais de 15 mil seguidores em menos de 6 meses graças a DOORIG. Meu negôcio decolou graças a essa ferramento e o Instagram..."</p>
-                                    <br><a  style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
+                                    <br><a class="see_more" style="font-size: 0.9em; color:#0660a9">Ver mais</a>                                      
                                 </div>
                             </div> 
                             <div id="depoimento4" class="single-item text-center" style="height: 400px">
@@ -490,7 +493,7 @@
                                     </a>
                                     <h6>Modelo</h6>
                                     <p class="text-justify">"... uso DOORIG hace un tiempo y ha sido super útil para mi carrera como modelo y para mi negosio. Con ella he conseguido darme a conocer mucha más como modelo ..."</p>
-                                    <a  style="font-size: 0.9em; color:#0660a9;">Ver mais</a>                                      
+                                    <a class="see_more" style="font-size: 0.9em; color:#0660a9;">Ver mais</a>                                      
                                 </div>
                             </div> 
                         
