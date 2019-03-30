@@ -9,16 +9,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">	
         <!-- master stylesheet -->
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css"<?php echo '?'.$SCRIPT_VERSION;?>>       
+	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/mycss.css"<?php echo '?'.$SCRIPT_VERSION;?>>      
         <!-- Minified Bootstrap 3 CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
         <!-- Responsive stylesheet -->
         <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">        
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
-        <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">
+        <!--<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">-->
+        <!--<link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">-->
         
         <script type="text/javascript"> 
             var base_url = "<?php echo base_url();?>";
