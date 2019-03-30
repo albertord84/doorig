@@ -123,9 +123,10 @@
                                 <label>Status</label>
                                 <div class="form-group">
                                     <select id="status">
-                                        <option>Active</option>
-                                        <option>Beginner</option>
-                                        <option>Delete</option>
+                                        <option value="-1" selected="true">-Escolha-</option>
+                                        <option value="0">Beginner</option>
+                                        <option value="1">Active</option>
+                                        <option value="2">Canceled</option>
                                     </select>
                                 </div>                  
                             </div>
@@ -142,7 +143,7 @@
                             <div class="col-md-1 col-xs-12">
                                 <div class="form-group text-center">     
                                     <label></label>
-                                    <button id="login_btn" type="button" class="thm-btn bg-clr2">
+                                    <button id="filter_btn" type="button" class="thm-btn bg-clr2">
                                         <i class="fa fa-spinner fa-spin myspinner"></i>
                                         Pesquisar
                                     </button>
