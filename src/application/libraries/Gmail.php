@@ -91,7 +91,11 @@ class Gmail {
         $this->CI->email->subject(T('Verification Code Step: ') . $username);
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $url = base_url("resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+        
+        $a = base_url();
+        
+        $url = "http://localhost/doorig/src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
+        //$url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
         $body = @file_get_contents($url);
