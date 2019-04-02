@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
     public function email() {
         $this->load->view('email');
     }
-
+    
     public function index() {
         $this->load->library('session');
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
