@@ -17,10 +17,8 @@
         <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">        
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
         <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">        
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <!--<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>-->
         
         <script type="text/javascript"> 
             var base_url = "<?php echo base_url();?>";
