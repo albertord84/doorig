@@ -9,7 +9,7 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="single-footer-widget pd-bottom">
                     <div class="footer-logo">
-                        <a href="#lnk_home_start">
+                        <a href="<?php echo base_url()?>">
                             <img src="<?php echo base_url().'assets/'?>images/resources/logo-footer-white.png" width="65%" height="80%" alt="Awesome Footer Logo">
                         </a>
                     </div>

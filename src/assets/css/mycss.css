@@ -9,3 +9,33 @@
 .see_more{
     font-size: 3em
 }
+
+.myspinner{
+    font-size:18px;
+    display:none;
+    visibility:hidden
+}
+
+@media (min-width: 600px) {
+    .show-in-moviles {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+  .non-show-in-moviles {
+    display: none;
+  }
+  
+  .logo >a >img{
+      height: 50%;
+      width: 50%;      
+      margin: 0px
+  }
+  
+  .header-area{
+      height: 80px
+  }
+  
+}
