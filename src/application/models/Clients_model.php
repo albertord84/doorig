@@ -119,29 +119,37 @@ class Clients_model extends CI_Model {
     return $query->result();
   }
 
-  function get_clients_by_filter (string $token, string $init_date, string $last_date, int $status) {
+  function get_clients_by_filter (string $token, string $init_date, string $end_date, int $status) {
     // 1. Prepare the sql filter
-    $where = null;
-    $like = array('name' => $token, 'email' => $token);
-        
-    // 2. Inject the sql filter
-    //if (!empty($token)) $this->db->or_like($like);
-    if (!empty($token)) $where = sprintf("WHERE name LIKE %%%s");
+    $sql = null;
+    if (!empty($token)) $sql = "(name LIKE '%$token%' OR email LIKE '%$token%')";
     
-    if ($status != -1) $this->db->where('status_id', $status);
-    //if ($status != -1) $where[] = array('status_id' => $status);
-    
-    if (!empty($init_date) && !empty($last_date)) {
-      $wh = sprintf("last_access >= '%s' AND last_access <= '%s'", $init_date, $last_date);
-      $this->db->where($wh);
+    $wh = ($sql == null) ? "status_id=%d" : "AND status_id='%d'";    
+    if ($status != -1) {
+      $wh = sprintf($wh, $status);
+      $sql = sprintf("%s %s", $sql, $wh);
     }
-    if (!empty($init_date) && empty($last_date)) {
-      $this->db->where('last_access >=', $init_date);
+      
+    // REVISAR SUB-CONSULTA PARA LAS FECHAS!!!!
+    if (!empty($init_date) && !empty($end_date)) {
+      $wh = ($sql == null) ? "last_access >= '%s' AND last_access <= '%s'" : "AND last_access >= '%s' AND last_access <= '%s'";
+      $wh = sprintf($wh, $init_date, $end_date);
+      $sql = sprintf("%s %s", $sql, $wh);
+      //$this->db->where($sql);
     }
-    else if (empty($init_date) && !empty($last_date)) {
-      $this->db->where('last_access <=', $last_date);
+    if (!empty($init_date) && empty($end_date)) {
+      $wh = ($sql == null) ? "last_access >= '%s'" : "AND last_access >= '%s'";
+      $wh = sprintf($wh, $init_date);
+      $sql = sprintf("%s %s", $sql, $wh);
+      //$this->db->where('last_access >=', $init_date);
+    }
+    else if (empty($init_date) && !empty($end_date)) {
+      $wh = ($sql == null) ? "last_access <= '%s'" : "AND last_access <= '%s'";
+      $wh = sprintf($wh, $end_date);
+      $sql = sprintf("%s %s", $sql, $wh);
+      //$this->db->where('last_access <=', $last_date);
     } 
-    //$this->db->where($where);
+    $this->db->where($sql);
     
     //3. Run filter
     $query = $this->db->get('clients'); //echo $this->db->last_query();

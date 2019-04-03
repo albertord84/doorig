@@ -52,11 +52,11 @@ class Admin extends CI_Controller {
   public function run_filter(){
     $token = (!empty($this->input->post('token'))) ? $this->input->post('token') : "";
     $init_date = (!empty($this->input->post('init_date'))) ? $this->input->post('init_date') : "";
-    $last_date = (!empty($this->input->post('last_date'))) ? $this->input->post('last_date') : "";
+    $end_date = (!empty($this->input->post('end_date'))) ? $this->input->post('end_date') : "";
     $status = intval($this->input->post('status'));
 
     $this->load->model('clients_model');
-    $result = $this->clients_model->get_clients_by_filter($token, $init_date, $last_date, $status); 
+    $result = $this->clients_model->get_clients_by_filter($token, $init_date, $end_date, $status); 
 
     $response = new ResponseArrayObject($result);      
     return $response->toJson();
