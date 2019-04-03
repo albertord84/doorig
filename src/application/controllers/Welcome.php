@@ -18,11 +18,7 @@ class Welcome extends CI_Controller {
         require_once config_item('business-response-class');
         require_once config_item('business-response-array-object-class');
     }
-    
-    public function email() {
-        $this->load->view('email');
-    }
-    
+        
     public function index() {
         $this->load->library('session');
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;

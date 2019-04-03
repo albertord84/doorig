@@ -1,15 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>ZURBemails</title>
-        <!--<link rel="stylesheet" type="text/css" href="stylesheets/email.css" />-->
-        <link href="<?php echo base_url()?>assets/css/email.css" rel="stylesheet"/>
+        <link href="http://localhost/doorig/src/assets/css/email.css" rel="stylesheet"/>
     </head>
     <body bgcolor="#FFFFFF">
 
-        <table class="head-wrap" bgcolor="#999999">
+<!--        <table class="head-wrap" bgcolor="#999999">
             <tr>
                 <td></td>
                 <td class="header container">
@@ -24,7 +22,7 @@
                 </td>
                 <td></td>
             </tr>
-        </table>
+        </table>-->
 
         <table class="body-wrap">
             <tr>
@@ -34,19 +32,31 @@
                         <table>
                             <tr>
                                 <td>
-                                    <h3>Welcome, Elijah Baily</h3>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                    <h3>Olá, <?php echo "José";//$_GET["username"]; ?>:</h3>
+                                    <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>-->
 
-                                    <p><img src="https://placehold.it/600x300" /></p>
+                                    <!--<p><img src="https://placehold.it/600x300" /></p>-->
 
                                     <p class="callout">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <a href="#">Do it Now! &raquo;</a>
+                                        Você acaba de fazer o segundo passo para se cadastrar na plataforma <a href="https://doorig.com/">DOORIG &raquo;</a>, parabéns!
                                     </p>
-                                    <h3>Title Ipsum <small>This is a note.</small></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Seu email cadastrado no nosso sistema é: <strong><?php echo "josergm86@gmail.com";//$_GET["useremail"]; ?></strong></p>
+                                    <h3></h3>
+                                    <p>Por favor, utilize o seguinte código de 4 dígitos para continuar o seu cadastro:</p>
+                                    <h3><?php echo "2121";//$_GET["verification_code"]; ?></h3>
+                                    
                                     <a class="btn">Click Me!</a>
-                                    <br />
-                                    <br />
+                                    <br/>
+                                    <br/>
+                                    
+                                    
+                                    
+
+                                    <p>Se tiver qualquer dúvida, por favor nos escreva!</p>
+                                    <p>Obrigado por usar os nossos serviços,</p>
+                                    <p>DOORIG SYSTEM</p>
+                                    
+                                    
 
                                     <table class="social" width="100%">
                                         <tr>
@@ -63,10 +73,10 @@
 
                                                 <table align="left" class="column">
                                                     <tr>
-                                                        <td>
+                                                        <td >
                                                             <h5 class="">Contact Info:</h5>
                                                             <p>Phone: <strong>408.341.0600</strong><br />
-                                                                Email: <strong><a href="emailto:hseldon@trantor.com">hseldon@trantor.com</a></strong></p>
+                                                                Email: <strong><a href="emailto:conFact@doorig.com">contact@doorig.com</a></strong></p>
                                                         </td>
                                                     </tr>
                                                 </table>
