@@ -121,24 +121,30 @@ class Clients_model extends CI_Model {
 
   function get_clients_by_filter (string $token, string $init_date, string $last_date, int $status) {
     // 1. Prepare the sql filter
-    $field = array('name' => $token, 'email' => $token);
-    
+    $where = null;
+    $like = array('name' => $token, 'email' => $token);
+        
     // 2. Inject the sql filter
-    if (!empty($token)) $this->db->or_like($field);
-    if ($status != -1) $this->db->or_where('status_id', $status);
+    //if (!empty($token)) $this->db->or_like($like);
+    if (!empty($token)) $where = sprintf("WHERE name LIKE %%%s");
+    
+    if ($status != -1) $this->db->where('status_id', $status);
+    //if ($status != -1) $where[] = array('status_id' => $status);
+    
     if (!empty($init_date) && !empty($last_date)) {
       $wh = sprintf("last_access >= '%s' AND last_access <= '%s'", $init_date, $last_date);
-      $this->db->or_where($wh);
+      $this->db->where($wh);
     }
     if (!empty($init_date) && empty($last_date)) {
-      $this->db->or_where('last_access >=', $init_date);
+      $this->db->where('last_access >=', $init_date);
     }
     else if (empty($init_date) && !empty($last_date)) {
-      $this->db->or_where('last_access <=', $last_date);
+      $this->db->where('last_access <=', $last_date);
     } 
-      
+    //$this->db->where($where);
+    
     //3. Run filter
-    $query = $this->db->get('clients');
+    $query = $this->db->get('clients'); //echo $this->db->last_query();
     return $query->result();
   }
   

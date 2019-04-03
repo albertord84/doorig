@@ -99,42 +99,22 @@
             <!--Start service-->
             <section>
               <div class="container">
-              <?php
-                foreach ($node_list as $n) {
-                  $html = sprintf(
-                    '<div class="col-md-4 col-md-12 col-xs-12 node-box ">
-                        <h3>Nodo <span id="node_name">%s</span></h3><br>
-                        <div class="text-justify">
-                          <h5>URL: <span id="url_node_dashboard">%s</span><br>
-                          <h5>IP: <span id="url_node_ip">%s</span></h5>
-                        </div>
-                        <div class="text-center">
-                          <button id="btn_node_access" class="btn btn-info">Acessar nodo</button>
-                        </div>
-                      </div>', $n->name, $n->description, $n->IP);
-                  echo $html;                  
-                }
-              ?>
-              <!--<div class="col-md-4 col-md-12 col-xs-12 node-box ">
-                  <h3>Nodo <span id="node_name">N1</span></h3><br>
-                  <div class="text-justify">
-                      <h5>URL: <span id="url_node_dashboard">https://n1.doorig.com/dashboard/admin</span><br>
-                      <h5>IP:  <span id="url_node_ip">192.168.0.1</span></h5>
-                  </div>    
-                  <div class="text-center">
-                      <button id="btn_node_access" class="btn btn-info">Acessar nodo</button>
-                  </div>
-                </div>
-                <div class="col-md-4 col-md-12 col-xs-12 node-box ">
-                  <h3>Nodo <span id="node_name">N2</span></h3><br>
-                  <div class="text-justify">
-                      <h5>URL: <span id="url_node_dashboard">https://n2.doorig.com/dashboard/admin</span><br>
-                      <h5>IP:  <span id="url_node_ip">192.168.0.2</span></h5>
-                  </div>    
-                  <div class="text-center">
-                      <button id="btn_node_access" class="btn btn-info">Acessar nodo</button>
-                  </div>
-                </div>-->
+                <?php
+                  foreach ($node_list as $n) {
+                    $html = sprintf(
+                      '<div class="col-md-4 col-md-12 col-xs-12 node-box ">
+                          <h3>Nodo <span id="node_name">%s</span></h3><br>
+                          <div class="text-justify">
+                            <h5>URL: <span id="url_node_dashboard">%s</span><br>
+                            <h5>IP: <span id="url_node_ip">%s</span></h5>
+                          </div>
+                          <div class="text-center">
+                            <button id="btn_node_access" class="btn btn-info">Acessar nodo</button>
+                          </div>
+                        </div>', $n->name, $n->description, $n->IP);
+                    echo $html;                  
+                  }
+                ?>         
               </div>
             </section>
             <!--End service-->
