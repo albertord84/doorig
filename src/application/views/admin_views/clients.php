@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-	<title>Maior visibilidade no Instagram</title>	
-        <!-- responsive meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-        <!-- For IE -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">	
-        <!-- master stylesheet -->
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css"<?php echo '?'.$SCRIPT_VERSION;?>>
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/wizard.css">
-        <!-- Minified Bootstrap 3 CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
-        <!-- Responsive stylesheet -->
-        <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">        
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
-        <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">        
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+  <head>
+    <meta charset="UTF-8">
+    <title>Maior visibilidade no Instagram</title>	
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+      <!-- For IE -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+      <!-- master stylesheet -->
+      <link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/style.css"<?php echo '?'.$SCRIPT_VERSION;?>>
+      <link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/wizard.css">
+      <!-- Minified Bootstrap 3 CSS-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
+      <!-- Responsive stylesheet -->
+      <link href="<?php echo base_url().'assets/'?>plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="<?php echo base_url().'assets/'?>css/responsive.css">        
+      <!-- Favicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url().'assets/'?>images/favicon/apple-touch-icon.html">
+      <link rel="icon" type="image/png" href="<?php echo base_url().'assets/'?>images/favicon/favicon.png" sizes="16x16">        
+      <script src='https://www.google.com/recaptcha/api.js'></script>
         <script type="text/javascript"> 
             var base_url = "<?php echo base_url();?>";
         </script>
-    </head>
+      <!-- Grid CSS -->
+      <link type="text/css" rel="stylesheet" href="<?php echo base_url().'assets/'?>css/jsgrid.min.css" />
+      <link type="text/css" rel="stylesheet" href="<?php echo base_url().'assets/'?>css/jsgrid-theme.min.css" />
+  </head>
 
     <body>
         <div class="boxed_wrapper">
@@ -155,9 +158,16 @@
             </section>
             
             <section>
-                <div id="list_container" class="container" style="border:1px solid gainsboro; min-height: 200px; margin-bottom: 80px">
-                    
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Static grid</h4>
+                  <div id="staticgrid"></div>
                 </div>
+              </div>
+              
+              <div id="list_container" class="container" style="border:1px solid gainsboro; min-height: 200px; margin-bottom: 80px">
+                    
+              </div>
             </section>
             <!--End service-->
 
@@ -188,8 +198,11 @@
             <!-- Bootstrap select picker js -->
             <script src="<?php echo base_url().'assets/'?>bootstrap-sl-1.12.1/bootstrap-select.js"></script>
             <!-- Bootstrap bootstrap touchspin js -->
-            <script src="<?php echo base_url().'assets/'?>jquery-ui-1.11.4/jquery-ui.js"></script>
-
+            <script src="<?php echo base_url().'assets/'?>jquery-ui-1.11.4/jquery-ui.js"></script>                      
+            <!-- Grid GUI js -->
+            <script src="<?php echo base_url().'assets/'?>js/perfect-scrollbar.jquery.min.js"></script>
+            <script src="<?php echo base_url().'assets/'?>js/jsgrid.min.js"></script>
+                        
             <!--Revolution Slider-->
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
             <script src="<?php echo base_url().'assets/'?>plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
