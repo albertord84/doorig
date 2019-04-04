@@ -62,14 +62,4 @@ class Admin extends CI_Controller {
     return $response->toJson();
   }
   
-  public function json(){
-    $data = array();
-    $data[] = array("name" => "Otto Clay111222", "Age" => 61, "email" => 6, "Address" => "Ap #897-1459 Quam Avenue", "Married" => false);
-    $data[] = array("name" => "Connor Johnston", "Age" => 73, "email" => 7, "Address" => "Ap #370-4647 Dis Av.", "Married" => true);
-    
-    //$response = new ResponseArrayObject($data);      
-    //return $response->toJson();
-    //echo json_encode($data, JSON_FORCE_OBJECT);
-    echo json_encode($data);
-  }
 }
