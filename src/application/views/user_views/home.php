@@ -275,7 +275,7 @@
                                     <p>Novos seguidores reais na sua conta.<br> Segmentações e filtros de qualidade.<br> Likes em postagens e comentários.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_visibility" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_visibility" class="see_more" style="color:#0660a9;">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +289,7 @@
                                     <p>Stories e postagens automatizadas nos horários desejados.<br> Edite suas fotos e videos antes de postar. <br><br></p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_posting" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_posting" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
                         </div>                       
@@ -317,7 +317,7 @@
                                     <p> Automatize o envio de Directs. Anuncie seus produtos e serviços. <br> Envie códigos promocionais ou cupom de desconto. </p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_directs" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_directs" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +331,7 @@
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
                                 </div>
                                 <div class="icon-area">                                    
-                                    <a id="see_more_deep_analisys" class="see_more" style="color:#0660a9"><h6>Ver mais</h6></a>
+                                    <a id="see_more_deep_analisys" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
                         </div>
