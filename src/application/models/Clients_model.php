@@ -119,40 +119,44 @@ class Clients_model extends CI_Model {
     return $query->result();
   }
 
-  function get_clients_by_filter (string $token, string $init_date, string $end_date, int $status) {
-    // 1. Prepare the sql filter
+  function get_clients_by_filter (string $token, string $init_date, string $end_date, int $status) {     
     $sql = null;
-    if (!empty($token)) $sql = "(name LIKE '%$token%' OR email LIKE '%$token%')";
+    if (!empty($token)) $sql = "(clients.name LIKE '%$token%' OR clients.email LIKE '%$token%')";
     
-    $wh = ($sql == null) ? "status_id=%d" : "AND status_id='%d'";    
+    $wh = ($sql == null) ? "clients.status_id=%d" : "AND clients.status_id='%d'";    
     if ($status != -1) {
       $wh = sprintf($wh, $status);
       $sql = sprintf("%s %s", $sql, $wh);
     }
       
-    // REVISAR SUB-CONSULTA PARA LAS FECHAS!!!!
     if (!empty($init_date) && !empty($end_date)) {
-      $wh = ($sql == null) ? "last_access >= '%s' AND last_access <= '%s'" : "AND last_access >= '%s' AND last_access <= '%s'";
+      $wh = ($sql == null) ? "clients.last_access >= '%s' AND clients.last_access <= '%s'" 
+                           : "AND clients.last_access >= '%s' AND clients.last_access <= '%s'";
       $wh = sprintf($wh, $init_date, $end_date);
       $sql = sprintf("%s %s", $sql, $wh);
-      //$this->db->where($sql);
     }
     if (!empty($init_date) && empty($end_date)) {
-      $wh = ($sql == null) ? "last_access >= '%s'" : "AND last_access >= '%s'";
+      $wh = ($sql == null) ? "clients.last_access >= '%s'" : "AND clients.last_access >= '%s'";
       $wh = sprintf($wh, $init_date);
       $sql = sprintf("%s %s", $sql, $wh);
-      //$this->db->where('last_access >=', $init_date);
     }
     else if (empty($init_date) && !empty($end_date)) {
-      $wh = ($sql == null) ? "last_access <= '%s'" : "AND last_access <= '%s'";
+      $wh = ($sql == null) ? "clients.last_access <= '%s'" : "AND clients.last_access <= '%s'";
       $wh = sprintf($wh, $end_date);
       $sql = sprintf("%s %s", $sql, $wh);
-      //$this->db->where('last_access <=', $last_date);
     } 
-    $this->db->where($sql);
+    $this->db->select('clients.name, '
+                      .'clients.email, '
+                      .'client_status.name as status, '
+                      .'nodes.description as node,'
+                      .'phone,'
+                      .'last_access');
+    $this->db->from('clients');
+    $this->db->join('client_status', 'client_status.id = clients.status_id');   
+    $this->db->join('nodes', 'nodes.id = clients.node_id');
+    $this->db->where($sql); 
     
-    //3. Run filter
-    $query = $this->db->get('clients'); //echo $this->db->last_query();
+    $query = $this->db->get(); 
     return $query->result();
   }
   

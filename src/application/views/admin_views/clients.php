@@ -159,15 +159,10 @@
             
             <section>
               <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Static grid</h4>
-                  <div id="staticgrid"></div>
+                  <div class="card-body">
+                  <div id="list_container"></div>
                 </div>
-              </div>
-              
-              <div id="list_container" class="container" style="border:1px solid gainsboro; min-height: 200px; margin-bottom: 80px">
-                    
-              </div>
+              </div>              
             </section>
             <!--End service-->
 
