@@ -62,7 +62,7 @@ namespace business {
                 $ci->gmail->send_contact_us($useremail, $username, $message, $company, $phone);
                 return TRUE;
             } catch (\Exception $exc) {
-                throw $e;
+                throw $exc;
             }
             return FALSE;
         }
