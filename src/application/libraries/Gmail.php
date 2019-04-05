@@ -71,9 +71,8 @@ class Gmail {
         //$url = "http://localhost/doorig/src/resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone";
         $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
         $url = str_replace('https:', 'http:', $url);
-        var_dump($url);
         $url = str_replace(" ", "%20", $url);
-        $body = file_get_contents($url);
+        $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message('Contact Us');
