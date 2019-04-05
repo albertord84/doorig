@@ -68,8 +68,8 @@ class Gmail {
         $this->CI->email->subject(T('Contact Us: ' . $username));
 
 	$lang = $GLOBALS['sistem_config']->LANGUAGE;
-        $url = "http://localhost/doorig/src/resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone";
-        //$url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
+        //$url = "http://localhost/doorig/src/resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone";
+        $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
         $body = @file_get_contents($url);
