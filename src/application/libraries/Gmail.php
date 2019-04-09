@@ -95,11 +95,11 @@ class Gmail {
         
         $a = base_url();
         
-//        $url = "http://localhost/doorig/src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
-        $url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+        $url = "http://localhost/doorig/src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
+//        $url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
-        print_r($url);
+        var_dump($url);
         $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
