@@ -356,8 +356,7 @@
                                 <div class="img-wrapper">
                                     <img src="<?php echo base_url().'assets/'?>images/video-sec/video-img.jpg" alt="clients story">
                                     <div class="hover">
-                                        <!--<a id="video_doorig" href="../../../www.youtube.com/watch46da.html?v=EfTUpvxEbqc" class="video-play video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>-->
-                                        <a id="video_doorig" href="" class="video-play-XXX video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>
+                                        <a id="video_doorig111" href="../../../www.youtube.com/watch?v=SJ9eVzO257Q" class="video-play video-play-btn" target="_self"><i class="flaticon-music-player-play"></i></a>
                                     </div>
                                 </div>
                             </div>
