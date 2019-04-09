@@ -95,12 +95,10 @@ class Gmail {
         
         $a = base_url();
         
-        $url = "http://localhost/doorig/src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
-//        $url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
-        $url = str_replace('https:', 'http:', $url);
-        $url = str_replace(" ", "%20", $url);
-        var_dump($url);
-        $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
+        $param['useremail'] = $useremail;
+        $param['username'] = $username;
+        $param['verification_code'] = $verification_code;
+        $body = $this->CI->load->view("../../resources/$lang/emails/link_purchase_step.php", $param, true);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Verification Code'));
@@ -121,11 +119,11 @@ class Gmail {
         $this->CI->email->subject(T('Recovery password link: ') . $link_recovery_password);
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
-//        $url = "http://localhost/doorig/src/resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password";
-        $url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
-        $url = str_replace('https:', 'http:', $url);
-        $url = str_replace(" ", "%20", $url);
-        $body = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
+        
+        $param['useremail'] = $useremail;
+        $param['username'] = $username;
+        $param['link_recovery_password'] = $link_recovery_password;
+        $body = $this->CI->load->view("../../resources/$lang/emails/link_recovery_password.php", $param, true);
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Recovery password link: '));
