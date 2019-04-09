@@ -99,6 +99,7 @@ class Gmail {
         $url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
+        print_r($url);
         $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
@@ -124,7 +125,6 @@ class Gmail {
         $url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
-        print_r($url);
         $body = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
