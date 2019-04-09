@@ -20,7 +20,9 @@ class Welcome extends CI_Controller {
     }
         
     public function index() {
+        $utms = $this->input->get('utms');
         $this->load->library('session');
+        $this->session->set_userdata('utms', $utms);
         $param['SCRIPT_VERSION'] = $GLOBALS['sistem_config']->SCRIPT_VERSION;
         $param["footer"] = $this->load->view('footer', '', true);
         $param["modals"] = $this->load->view('modals', '', true);

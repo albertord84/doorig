@@ -72,7 +72,7 @@ class Gmail {
         $url = base_url("resources/$lang/emails/contact_form.php?useremail=$useremail&username=$username&message=$message&company=$company&phone=$phone");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
-        $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
+        $body = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message('Contact Us');
@@ -96,10 +96,10 @@ class Gmail {
         $a = base_url();
         
         $url = "http://localhost/doorig/src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code";
-        //$url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
+//        $url = base_url("src/resources/$lang/emails/link_purchase_step.php?useremail=$useremail&username=$username&verification_code=$verification_code");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
-        $body = @file_get_contents($url);
+        $body = file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Verification Code'));
@@ -121,10 +121,10 @@ class Gmail {
 
         $lang = $GLOBALS['sistem_config']->LANGUAGE;
         $url = "http://localhost/doorig/src/resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password";
-        //$url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
+//        $url = base_url("resources/$lang/emails/link_recovery_password.php?useremail=$useremail&username=$username&link_recovery_password=$link_recovery_password");
         $url = str_replace('https:', 'http:', $url);
         $url = str_replace(" ", "%20", $url);
-        $body = @file_get_contents($url);
+        $body = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))));
         $this->CI->email->message($body);
 
         $this->CI->email->set_alt_message(T('Recovery password link: '));

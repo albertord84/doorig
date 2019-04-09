@@ -46,7 +46,7 @@ namespace business {
          */
         function __construct() {
             parent::__construct();
-            
+
             $this->Node = new Node($this);
 
 
@@ -144,9 +144,9 @@ namespace business {
                 throw ErrorCodes::getException(ErrorCodes::EMAIL_ALREADY_EXIST);
             }
             $CI = &get_instance();
-            $client_id = $CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
-            $this->load_data($client_id);
-            return $client_id;
+            $CI->Clients_model->update($id, $email, $name, $password, $status_id, $node_id, $phone, $verification_code, $init_date, $last_access, $utm_source, $utm_campain, $login_token);
+            $this->load_data($id);
+            return $this->Id;
         }
 
         /**
@@ -158,9 +158,9 @@ namespace business {
          */
         public function set_client_status($id = NULL, $status_id = NULL) {
             try {
-                $id = $id ? $id : $this->id;
+                $this->id = $id ? $id : $this->id;
                 $status_id = $status_id ? $status_id : $this->status_id;
-                $result = $this->Clients_model->update($id, NULL, NULL, NULL, $status_id);
+                $result = $this->update($this->id, NULL, NULL, NULL, $status_id);
             } catch (\Exception $exc) {
                 echo $exc->getTraceAsString();
             }
@@ -185,6 +185,10 @@ namespace business {
          */
         public function confirm_secure_code($Verification_code) {
             if ($this->Verification_code == $Verification_code) {
+                $CI = &get_instance();
+                $this->update($this->Id, $email = NULL, $name = NULL, $password = NULL, $status_id = NULL, $node_id = NULL, $phone = NULL, $verification_code = 'ok');
+                $this->set_client_status($this->Id, ClientStatus::ACTIVE);
+                $this->load_data($this->Id);
                 return TRUE;
             }
             return FALSE;
@@ -212,6 +216,9 @@ namespace business {
                 $Client->load_data_by_email($email);
                 if ($Client->check_pass($password) == FALSE) {
                     throw ErrorCodes::getException(ErrorCodes::WRONG_PASSWORD);
+                }
+                if ($Client->Status_id != ClientStatus::ACTIVE) {
+                    throw ErrorCodes::getException(ErrorCodes::VALIDATION_TOKEN_NOT_FOUND);
                 }
             } catch (Exception $exc) {
                 echo $exc->getTraceAsString();

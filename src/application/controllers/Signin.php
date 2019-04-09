@@ -255,8 +255,10 @@ class Signin extends CI_Controller {
         $key = $client_id . time();
         $login_token = md5($key);
 
-        //3. Save MD5 to validate login from dashboard
-        $Client->update($client_id, NULL, NULL, NULL, ClientStatus::ACTIVE, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $login_token);
+        //3. Save MD5 and UTM to validate login from dashboard
+        $utm_source  = $this->session->userdata('utms');
+        $utm_campain = $this->session->userdata('utmc');
+        $Client->update($client_id, NULL, NULL, NULL, ClientStatus::ACTIVE, NULL, NULL, NULL, NULL, NULL, $utm_source, $utm_campain, $login_token);
 
         //4. Load node url of client
         $Client->load_node_data();
