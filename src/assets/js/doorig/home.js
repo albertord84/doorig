@@ -26,4 +26,6 @@ $(document).ready(function () {
         modal_text_information("Análise de seguidores, curtidas, comentários e postages. Salve suas hashtags mais usadas em grupos! Você não precisa digitar sempre as mesmas hashtags. Crie grupos de hashtags para incluir em seus conteúdos e otimize tempo! Em dependência da complexidade da tarefa escolhida para fazer a análisis, os resultados podem demorar um tempo.");
         return false;
     });
+    
+    
 }); 
