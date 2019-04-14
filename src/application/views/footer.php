@@ -14,7 +14,7 @@
                         </a>
                     </div>
                     <div class="our-info">
-                        <p>Soluções tecnológicas para aumentar sua vissibilidade.</p>
+                        <p>Soluções tecnológicas para aumentar sua visibilidade.</p>
                         <p>Coronel Moreira César, 160, Icaraí, Niterói - RJ, 24230-061</p>
                         <!--<p>CNPJ - 999.9999.9999.99</p>-->
                         <p>contact@doorig.com</p>

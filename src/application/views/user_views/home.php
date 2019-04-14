@@ -205,7 +205,7 @@
                                     data-y="['middle','middle','middle','middle']"
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                                    <h1>Seja bem-vindo.<br>Você tém a solução aqui!</h1>
+                                    <h1>Seja bem-vindo.<br>Você tem a solução aqui!</h1>
                                 </div>
 
                                 <div class="tp-caption" 
@@ -244,7 +244,7 @@
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                                     <div class="btns-box">
-                                        <a href="#lnk_how_function" class="thm-btn bg-clr2">Contátenos</a>
+                                        <a href="#lnk_contact_us" class="thm-btn bg-clr2">Contato</a>
                                         <a href="<?php echo base_url().'index.php/signin/signin_view#lnk_sigin_section'?>" class="thm-btn bg-clr1">Cadastre-se</a>
                                     </div> 
                                 </div>
@@ -274,7 +274,7 @@
                                     <a ><h5>Maior visibilidade da sua marca </h5></a>
                                     <p>Novos seguidores reais na sua conta.<br> Segmentações e filtros de qualidade.<br> Likes em postagens e comentários.</p>
                                 </div>
-                                <div class="icon-area">                                    
+                                <div class="icon-area" style="margin-top: 20px">                                    
                                     <a id="see_more_visibility" class="see_more" style="color:#0660a9;">Ver mais</a>
                                 </div>
                             </div>
@@ -285,10 +285,10 @@
                                     <div class="icon-box">
                                         <i class="flaticon-business-plan"></i>
                                     </div>
-                                    <a ><h5>Agendamento de Postagens e Stories</h5></a>
+                                    <a ><h5>Agendamento de postagens e stories</h5></a>
                                     <p>Stories e postagens automatizadas nos horários desejados.<br> Edite suas fotos e videos antes de postar. <br><br></p>
                                 </div>
-                                <div class="icon-area">                                    
+                                <div class="icon-area" style="margin-top: 20px">                                    
                                     <a id="see_more_posting" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
@@ -313,10 +313,10 @@
                                     <div class="icon-box">
                                         <i class="flaticon-landing"></i>
                                     </div>
-                                    <a ><h5>Marketing com Envio de Directs</h5></a>
+                                    <a ><h5>Marketing com envio de directs</h5></a>
                                     <p> Automatize o envio de Directs. Anuncie seus produtos e serviços. <br> Envie códigos promocionais ou cupom de desconto. </p>
                                 </div>
-                                <div class="icon-area">                                    
+                                <div class="icon-area" style="margin-top: 25px">                                    
                                     <a id="see_more_directs" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
@@ -327,10 +327,10 @@
                                     <div class="icon-box">
                                         <i class="flaticon-website"></i>
                                     </div>
-                                    <a ><h5>Deep-account-analisys e estatísticas</h5></a>
+                                    <a ><h5>Deep-analysis e estatísticas</h5></a>
                                     <p>Análise de seguidores, curtidas, comentários e postages. <br>Análise estatístico avançado. <br> Métricas de qualidade.</p>
-                                </div>
-                                <div class="icon-area">                                    
+                                </div>                                
+                                <div class="icon-area" style="margin-top: 55px">
                                     <a id="see_more_deep_analisys" class="see_more" style="color:#0660a9">Ver mais</a>
                                 </div>
                             </div>
@@ -363,8 +363,16 @@
                        </div>
                        <div class="col-md-6 col-sm-12">
                             <div class="right-content-area"> 
-                                <div class="sec-title text-left"><h2>Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram. </h2></div>
-                                <p class="text-justify">Nossa plataforma, DOORIG, permite aumentar sua visibilidade, presença e reputação on-line através da captação de novos seguidores REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar suas conversões, minerar potenciais leads, agendar a publicação automática de postagens e envio de directs ao seus seguidores ou aos seguidres de um perfil de referência. Com a ferramenta de análisis estatístico inteligente, totalmente GRATIS, você pode ... </p>
+                                <div class="sec-title text-left"><h2>
+                                        Plataforma para aumentar sua visibilidade e melhorar sua interação no Instagram. </h2></div>
+                                <p class="text-justify">
+                                    Nossa plataforma, DOORIG, permite aumentar sua visibilidade,
+                                    presença e reputação on-line através da captação de novos seguidores
+                                    REAIS. Se você é empresário ou emprendedor, a DOORIG permite melhorar
+                                    suas conversões, minerar potenciais leads, agendar a publicação 
+                                    automática de postagens e envio de directs ao seus seguidores ou
+                                    aos seguidores de um perfil de referência. Com a ferramenta de análisis
+                                    estatístico inteligente, você pode analisar métericas sobre sua marca e outras. </p>
 
                                 <div class="about-item">
                                     <ul>

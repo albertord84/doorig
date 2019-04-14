@@ -27,5 +27,11 @@ $(document).ready(function () {
         return false;
     });
     
+    height = '380px';
+    $("#how-to-help-painel-1").height(height);
+    $("#how-to-help-painel-2").height(height);
+    $("#how-to-help-painel-3").height(height);
+    $("#how-to-help-painel-4").height(height);
+    
     
 }); 
